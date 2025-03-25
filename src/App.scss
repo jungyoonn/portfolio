@@ -1,0 +1,80 @@
+// Font Awesome
+@import "~font-awesome/css/font-awesome.min.css";
+
+// 기존 SCSS 파일 임포트
+@import "../src/scss/style.scss";
+
+// React 특화 스타일 오버라이드
+// .App {
+//   font-family: 'Poppins', sans-serif;
+// }
+
+// React Router 관련 수정
+// 화면 전환 시 부드러운 애니메이션
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+// 스크롤 애니메이션
+.ftco-animate {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ftco-animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// 슬라이더 스타일 조정
+.owl-carousel {
+  display: block;
+  
+  .owl-item {
+    opacity: 0.4;
+    
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+// React에서 Bootstrap과 충돌하는 부분 수정
+button:focus {
+  outline: none;
+}
+
+// 클래스 기반에서 함수형 컴포넌트로 변환 시 애니메이션 관련 조정
+.progress {
+  &-left, &-right {
+    .progress-bar {
+      transition: transform 1s linear !important;
+    }
+  }
+}
+
+// 모바일 메뉴 조정
+@media screen and (max-width: 768px) {
+  .navbar-collapse.show {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 4px;
+  }
+}
