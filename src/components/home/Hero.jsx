@@ -85,8 +85,8 @@
 
 import React, { useState, useEffect } from 'react';
 import '../../css/hero.css';
-import profileImg1 from '../../img/slider_profile_img1.png';
-import profileImg2 from '../../img/slider_profile_img2.png';
+import profileImg1 from '../../img/slider_profile_img2.png';
+import profileImg2 from '../../img/slider_profile_img3.png';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
