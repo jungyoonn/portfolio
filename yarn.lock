@@ -1244,6 +1244,13 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.7.2.tgz#7123d74b0c1e726794aed1184795dbce12186470"
   integrity sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg==
 
+"@fortawesome/fontawesome-svg-core@^6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.7.2.tgz#0ac6013724d5cc327c1eb81335b91300a4fce2f2"
+  integrity sha512-yxtOBWDrdi5DD5o1pmVdq3WMCvnobT0LU6R8RyyVXPvFRd2o79/0NCuQoCjNTeZz9EzA9xS3JxNWfv54RIHFEA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.7.2"
+
 "@fortawesome/free-brands-svg-icons@^6.7.2":
   version "6.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.7.2.tgz#4ebee8098f31da5446dda81edc344025eb59b27e"
@@ -7922,7 +7929,7 @@ pkg-up@^3.1.0:
     font-awesome "^4.7.0"
     jquery "^3.7.1"
     node-sass "^9.0.0"
-    portfolio "file:../../../AppData/Local/Yarn/Cache/v6/npm-portfolio-0.1.0-c2313dce-dad6-4b18-bf4e-2d3ad9ec2fa1-1742888176683/node_modules/portfolio"
+    portfolio "file:../../../AppData/Local/Yarn/Cache/v6/npm-portfolio-0.1.0-1eed695e-f56f-4d2c-b2d1-b4c714777a32-1743073274537/node_modules/portfolio"
     react "^19.0.0"
     react-bootstrap "^2.10.9"
     react-dom "^19.0.0"
@@ -7931,8 +7938,10 @@ pkg-up@^3.1.0:
     react-owl-carousel "^2.3.3"
     react-router-dom "^7.4.0"
     react-scripts "5.0.1"
+    react-slick "^0.30.3"
     react-waypoint "^10.3.0"
     sass "^1.86.0"
+    slick-carousel "^1.8.1"
     web-vitals "^2.1.0"
 
 possible-typed-array-names@^1.0.0:
