@@ -65,7 +65,7 @@ const Counter = () => {
           {counterData.map((item, index) => (
             <div className="col-md-3 justify-content-center counter-wrap ftco-animate" key={index}>
               <div className="block-18 d-flex">
-                <div className="icon d-flex justify-content-center align-items-center">
+                <div className="icon d-flex justify-content-center align-items-center text-white">
                   <FontAwesomeIcon icon={item.icon} size="2x" />
                 </div>
                 <div className="text">
