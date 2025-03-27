@@ -31,7 +31,7 @@ $secondary: #a0f669;
 html {
 	// overflow-x: hidden;
 }
-body {
+body, section {
 	font-family: $font-primary !important;
 	background: $white;
 	font-size: 16px;
@@ -50,7 +50,7 @@ a {
 	color: $primary;
 	&:hover, &:focus {
 		text-decoration: none;
-		color: $primary;
+		color: $primary !important;
 		outline: none !important;
 	}
 }
@@ -742,75 +742,101 @@ h1, h2, h3, h4, h5,
 
 //BUTTON
 .btn {
-	cursor: pointer;
-	font-size: 14px;
-	font-weight: 500;
-	@include border-radius(5px);
-	-webkit-box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
-	-moz-box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
-	box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
-	&:hover, &:active, &:focus {
-		outline: none;
-	}
-	&.btn-primary {
-		background: $primary;
-		border: 1px solid $primary !important;
-		color: $white !important;
-		&:hover {
-			border: 1px solid $primary;
-			color :$primary;
-		}
-		&.btn-outline-primary {
-			border: 2px solid $primary !important;
-			background: transparent !important;
-			color :$primary !important;
-			&:hover {
-				border: 2px solid transparent !important;
-				background: $primary !important;
-				color :$white !important;
-			}
-		}
-	}
-	&.btn-secondary {
-		background: $secondary !important;
-		border: 1px solid $secondary !important;
-		color: $white !important;
-		&:hover {
-			border: 1px solid $secondary !important;
-			background: transparent !important;
-			color :$secondary !important;
-		}
-		&.btn-outline-primary {
-			border: 1px solid $secondary;
-			background: transparent;
-			color :$secondary;
-			&:hover {
-				border: 1px solid transparent;
-				background: $secondary;
-				color :$white;
-			}
-		}
-	}
-	&.btn-white {
-		background: $white !important;
-		border: 1px solid $white !important;
-		color: $primary !important;
-		&:hover {
-			border: 1px solid $black;
-			background: $white !important;
-			color :$white;
-		}
-		&.btn-outline-white {
-			border: 1px solid $white;
-			background: transparent;
-			color :$white;
-			&:hover {
-				border: 1px solid transparent;
-				background: $white;
-				color :$white;
-			}
-		}
-	}
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  @include border-radius(5px);
+  -webkit-box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
+  -moz-box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
+  box-shadow: 0px 24px 36px -11px rgba(0,0,0,0.09);
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
+  
+  // 기본 버튼 스타일
+  &.btn-primary {
+    background: darken($primary, 20%) !important;
+    border: 1px solid darken($primary, 20%) !important;
+    color: $white !important;
+    &:hover {
+      border: 1px solid darken($primary, 30%) !important;
+      background: darken($primary, 30%) !important;
+      color: $white !important;
+    }
+    &:active, &.active {
+      border: 1px solid darken($primary, 40%) !important;
+      background: darken($primary, 40%) !important;
+      color: $white !important;
+    }
+  }
+  
+  // 아웃라인 프라이머리 버튼
+  &.btn-outline-primary {
+    border: 2px solid darken($primary, 20%) !important;
+    background: transparent !important;
+    color: darken($primary, 20%) !important;
+    &:hover {
+      border: 2px solid darken($primary, 30%) !important;
+      background: transparent !important;
+      color: darken($primary, 30%) !important;
+    }
+    &:active, &.active {
+      border: 2px solid darken($primary, 40%) !important;
+      background: transparent !important;
+      color: darken($primary, 40%) !important;
+    }
+  }
+  
+  // 세컨더리 버튼
+  &.btn-secondary {
+    background: $secondary !important;
+    border: 1px solid $secondary !important;
+    color: $white !important;
+    &:hover {
+      border: 1px solid $secondary !important;
+      background: transparent !important;
+      color: $secondary !important;
+    }
+    &:active, &.active {
+      border: 1px solid darken($secondary, 10%) !important;
+      background: transparent !important;
+      color: darken($secondary, 10%) !important;
+    }
+  }
+  
+  // 화이트 버튼
+  &.btn-white {
+    background: $white !important;
+    border: 1px solid $white !important;
+    color: $primary !important;
+    &:hover {
+      border: 1px solid $white !important;
+      background: rgba($white, 0.9) !important;
+      color: $primary !important;
+    }
+    &:active, &.active {
+      border: 1px solid darken($white, 10%) !important;
+      background: darken($white, 10%) !important;
+      color: $primary !important;
+    }
+  }
+  
+  // 아웃라인 화이트 버튼
+  &.btn-outline-white {
+    border: 1px solid $white !important;
+    background: transparent !important;
+    color: $white !important;
+    &:hover {
+      border: 1px solid transparent !important;
+      background: $white !important;
+      color: $primary !important;
+    }
+    &:active, &.active {
+      border: 1px solid darken($white, 10%) !important;
+      background: darken($white, 10%) !important;
+      color: $primary !important;
+    }
+  }
 }
 
 
@@ -1252,10 +1278,10 @@ textarea.form-control {
 }
 
 
-.ftco-animate {
-	opacity: 0;
-	visibility: hidden;
-}
+// .ftco-animate {
+// 	opacity: 0;
+// 	visibility: hidden;
+// }
 
 .bg-primary {
 	background: $primary!important;
