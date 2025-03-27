@@ -72,12 +72,15 @@ h1, h2, h3, h4, h5,
 
 
 .ftco-navbar-light {
-	background: transparent!important;
+	background: transparent !important;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 3;
+	z-index: 100;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+
 	@include media-breakpoint-down(md) {
 		background: $black!important;
 		position: relative;
