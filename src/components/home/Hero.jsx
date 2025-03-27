@@ -46,6 +46,10 @@ const Hero = () => {
             style={{ display: index === currentSlide ? 'block' : 'none' }}
           >
             <div className="diagonal-layout">
+            {/* <div 
+              className="blurred-background"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            ></div> */}
               <div className="content-wrapper">
                 <div className="text-area">
                   <p className="subheading">{slide.subheading}</p>
