@@ -1,5 +1,6 @@
 @import 'bootstrap/bootstrap';
 @import 'bootstrap/variables';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 $font-primary: 'Poppins',Arial, sans-serif;
 
@@ -10,7 +11,11 @@ $darken: #232931;
 $primary: #b1b493;
 $secondary: #a0f669;
 
-
+.noto-sans-kr {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -85,8 +90,8 @@ h1, h2, h3, h4, h5,
 
 	.navbar-brand {
 		color: $black;
-		padding-top: .7rem;
-		padding-bottom: .7rem;
+		padding-top: .9rem;
+		padding-bottom: .9rem;
 		span{
 			color: #b1b493;
 		}
@@ -755,35 +760,35 @@ h1, h2, h3, h4, h5,
   
   // 기본 버튼 스타일
   &.btn-primary {
-    background: darken($primary, 20%) !important;
-    border: 1px solid darken($primary, 20%) !important;
+    background: $primary !important;
+    border: 1px solid $primary !important;
     color: $white !important;
     &:hover {
-      border: 1px solid darken($primary, 30%) !important;
-      background: darken($primary, 30%) !important;
+      border: 1px solid darken($primary, 10%) !important;
+      background: darken($primary, 10%) !important;
       color: $white !important;
     }
     &:active, &.active {
-      border: 1px solid darken($primary, 40%) !important;
-      background: darken($primary, 40%) !important;
+      border: 1px solid darken($primary, 20%) !important;
+      background: darken($primary, 20%) !important;
       color: $white !important;
     }
   }
   
   // 아웃라인 프라이머리 버튼
   &.btn-outline-primary {
-    border: 2px solid darken($primary, 20%) !important;
+    border: 2px solid $primary !important;
     background: transparent !important;
-    color: darken($primary, 20%) !important;
+    color: $primary !important;
     &:hover {
-      border: 2px solid darken($primary, 30%) !important;
+      border: 2px solid darken($primary, 10%) !important;
       background: transparent !important;
-      color: darken($primary, 30%) !important;
+      color: darken($primary, 10%) !important;
     }
     &:active, &.active {
-      border: 2px solid darken($primary, 40%) !important;
+      border: 2px solid darken($primary, 20%) !important;
       background: transparent !important;
-      color: darken($primary, 40%) !important;
+      color: darken($primary, 20%) !important;
     }
   }
   
@@ -1519,6 +1524,7 @@ textarea.form-control {
 #section-counter{
 	position: relative;
 	z-index: 0;
+	background: #f8f9ee !important;
 }
 .ftco-counter {
 	overflow-x: hidden;
