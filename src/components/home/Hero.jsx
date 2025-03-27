@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../../css/hero.css';
 import profileImg1 from '../../img/slider_profile_img2.png';
 import profileImg2 from '../../img/slider_profile_img3.png';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,7 +63,8 @@ const Hero = () => {
                   </h1>
                   <div className="button-group">
                     <a href="#contact-section" className="btn btn-primary">Hire me</a>
-                    <a href="#" className="btn btn-outline-primary">Download CV</a>
+                    {/* <a href="#" className="btn btn-outline-primary">Visit github</a> */}
+                    <Link to={"https://github.com/jungyoonn"} className="btn btn-outline-primary">Visit github <FontAwesomeIcon icon={faGithub} className='fa-xl' /></Link>
                   </div>
                 </div>
                 <div className="image-area">
