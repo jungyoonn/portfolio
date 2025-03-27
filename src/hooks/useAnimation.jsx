@@ -53,7 +53,7 @@ export const useAnimation = (animation = 'fadeInUp', options = {}) => {
 export const useScrollAnimation = (selector = '.ftco-animate', animation = 'fadeInUp') => {
   const [elements, setElements] = useState([]);
   
-  // 요소가 뷰포트 내에 있는지 확인
+  // 요소가 뷰포트 내에 있는지 확인하는 함수
   const elementInView = useCallback((el, dividend = 1) => {
     const rect = el.getBoundingClientRect();
     return (
@@ -64,46 +64,40 @@ export const useScrollAnimation = (selector = '.ftco-animate', animation = 'fade
     );
   }, []);
 
-  // 애니메이션 적용
+  // 애니메이션 적용 함수
   const displayScrollElement = useCallback((element) => {
     if (!element.classList.contains('animated')) {
       element.classList.add('animated', animation);
     }
   }, [animation]);
 
-  // 스크롤 핸들러
-  const handleScrollAnimation = useCallback(() => {
-    elements.forEach((el) => {
-      if (elementInView(el, 1.25)) {
-        displayScrollElement(el);
-      }
-    });
-  }, [elements, elementInView, displayScrollElement]);
-
-  // 초기화 및 이벤트 리스너
+  // useEffect 하나로 통합
   useEffect(() => {
     // DOM이 로드된 후 요소 수집
     const scrollElements = Array.from(document.querySelectorAll(selector));
     setElements(scrollElements);
+    
+    // 스크롤 핸들러 정의
+    const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+          displayScrollElement(el);
+        }
+      });
+    };
 
+    // 초기 실행
+    setTimeout(() => {
+      handleScrollAnimation();
+    }, 300);
+    
     // 스크롤 이벤트 리스너 등록
     window.addEventListener('scroll', handleScrollAnimation, { passive: true });
     
-    // 초기 상태 확인을 위해 약간의 딜레이 후 실행
-    const timer = setTimeout(() => {
-      handleScrollAnimation();
-    }, 300);
-
     return () => {
       window.removeEventListener('scroll', handleScrollAnimation);
-      clearTimeout(timer);
     };
-  }, [selector, handleScrollAnimation]);
-
-  // 요소가 변경되면 스크롤 핸들러 다시 실행
-  useEffect(() => {
-    handleScrollAnimation();
-  }, [elements, handleScrollAnimation]);
+  }, [selector, elementInView, displayScrollElement]); // 불필요한 의존성 제거
 };
 
 /**
