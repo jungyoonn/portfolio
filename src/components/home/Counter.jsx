@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faHeart, faCoffee, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Counter = () => {
   // 카운터 참조
@@ -48,12 +50,12 @@ const Counter = () => {
     };
   }, []);
 
-  // 카운터 데이터
+  // 카운터 데이터 - 폰트어썸 아이콘으로 변경
   const counterData = [
-    { icon: 'flaticon-suitcase', number: 750, title: 'Project Complete' },
-    { icon: 'flaticon-loyalty', number: 568, title: 'Happy Clients' },
-    { icon: 'flaticon-coffee', number: 478, title: 'Cups of coffee' },
-    { icon: 'flaticon-calendar', number: 780, title: 'Years experienced' }
+    { icon: faBriefcase, number: 750, title: 'Project Complete' },
+    { icon: faHeart, number: 568, title: 'Happy Clients' },
+    { icon: faCoffee, number: 478, title: 'Cups of coffee' },
+    { icon: faCalendarAlt, number: 780, title: 'Years experienced' }
   ];
 
   return (
@@ -64,7 +66,7 @@ const Counter = () => {
             <div className="col-md-3 justify-content-center counter-wrap ftco-animate" key={index}>
               <div className="block-18 d-flex">
                 <div className="icon d-flex justify-content-center align-items-center">
-                  <span className={item.icon}></span>
+                  <FontAwesomeIcon icon={item.icon} size="2x" />
                 </div>
                 <div className="text">
                   <strong 
