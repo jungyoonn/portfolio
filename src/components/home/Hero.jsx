@@ -14,20 +14,32 @@ const Hero = () => {
   const slides = [
     {
       subheading: "Creative Full Stack Developer",
-      heading: "안녕하세요! 풀스택 개발자 허정윤입니다.",
-      highlight: "허정윤",
+      heading: (
+        <>
+          안녕하세요! 풀스택 개발자<br />
+          <span className="highlight">허정윤</span>입니다.
+        </>
+      ),
       image: profileImg1
     },
     {
       subheading: "Learning is the driving force of life",
-      heading: "빠르게 변하는 기술 트렌드를 연구하고 공부합니다.",
-      highlight: "연구하고 공부",
+      heading: (
+        <>
+          빠르게 변하는 기술 트렌드를<br />
+          <span className="highlight">연구하고 공부</span>합니다.
+        </>
+      ),
       image: profileImg2
     },
     {
       subheading: "Backend & Frontend",
-      heading: "책임감을 가지고 꾸준히 노력하여 성장하는 인재가 되겠습니다.",
-      highlight: "성장하는 인재",
+      heading: (
+        <>
+          책임감을 가지고 꾸준히 노력하여<br />
+          <span className="highlight">성장하는 인재</span>가 되겠습니다.
+        </>
+      ),
       image: profileImg3
     }
   ];
@@ -61,12 +73,10 @@ const Hero = () => {
               style={{ backgroundImage: `url(${slide.image})` }}
             ></div> */}
               <div className="content-wrapper">
-                <div className="text-area">
+                <div className="text-area col-md-7">
                   <p className="subheading">{slide.subheading}</p>
                   <h1 className="main-heading noto-sans-kr">
-                    {slide.heading.split(slide.highlight)[0]}
-                    <span className="highlight">{slide.highlight}</span>
-                    {slide.heading.split(slide.highlight)[1]}
+                    {slide.heading}
                   </h1>
                   <div className="button-group">
                     <a href="#contact-section" className="btn btn-primary">Hire me</a>
@@ -74,7 +84,7 @@ const Hero = () => {
                     <Link to={"https://github.com/jungyoonn"} className="btn btn-outline-primary">Visit github <FontAwesomeIcon icon={faGithub} className='fa-xl' /></Link>
                   </div>
                 </div>
-                <div className="image-area">
+                <div className="image-area col-md-5">
                   <img src={slide.image} alt="Profile" className="profile-img" />
                 </div>
               </div>
