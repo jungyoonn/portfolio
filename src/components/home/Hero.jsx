@@ -33,7 +33,7 @@ const Hero = () => {
       image: profileImg2
     },
     {
-      subheading: "Backend & Frontend",
+      subheading: "Major of Information and Communication Engineering.",
       heading: (
         <>
           책임감을 가지고 꾸준히 노력하여<br />
