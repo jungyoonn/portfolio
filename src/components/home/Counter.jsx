@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faCalendarCheck, faCalendarAlt, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faCalendarCheck, faCalendarAlt, faBookBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const Counter = () => {
   // 카운터 참조
@@ -52,8 +52,8 @@ const Counter = () => {
 
   // 카운터 데이터 - 폰트어썸 아이콘으로 변경
   const counterData = [
-    { icon: faCertificate, number: 3, title: 'Certificates' },
     { icon: faBriefcase, number: 4, title: 'Project Complete' },
+    { icon: faBookBookmark, number: 34, title: 'Github repositories' },
     { icon: faCalendarCheck, number: 1039, title: 'Contributions in 2024' },
     { icon: faCalendarAlt, number: 621, title: 'Contributions in 2025' }
   ];
