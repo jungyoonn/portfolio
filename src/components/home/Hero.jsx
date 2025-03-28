@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../css/hero.css';
 import profileImg1 from '../../img/slider_profile_img2.png';
 import profileImg2 from '../../img/slider_profile_img3.png';
+import profileImg3 from '../../img/slider_profile_img1.png';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,15 +14,21 @@ const Hero = () => {
   const slides = [
     {
       subheading: "Creative Full Stack Developer",
-      heading: "안녕하세요! 신입 개발자 허정윤입니다.",
+      heading: "안녕하세요! 풀스택 개발자 허정윤입니다.",
       highlight: "허정윤",
       image: profileImg1
     },
     {
-      subheading: "Backend & Frontend",
-      heading: "꾸준히 노력하고 성장하는 인재가 되겠습니다.",
-      highlight: "인재",
+      subheading: "Learning is the driving force of life",
+      heading: "빠르게 변하는 기술 트렌드를 연구하고 공부합니다.",
+      highlight: "연구하고 공부",
       image: profileImg2
+    },
+    {
+      subheading: "Backend & Frontend",
+      heading: "책임감을 가지고 꾸준히 노력하여 성장하는 인재가 되겠습니다.",
+      highlight: "성장하는 인재",
+      image: profileImg3
     }
   ];
   
