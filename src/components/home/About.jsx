@@ -11,7 +11,7 @@ const About = () => {
   const interests = [
     // { icon: faCertificate, text: 'Certificates : ' },
     { icon: faDatabase, text: 'SQL Developer' },
-    { icon: faMicrochip, text: '정보처리기사' },
+    { icon: faMicrochip, text: '정보처리기사', font: 'noto-sans-kr'},
     { icon: faLanguage, text: 'JLPT' },
   ];
 
@@ -43,11 +43,11 @@ const About = () => {
                 <div className="col-md-12 heading-section ftco-animate" ref={animRef}>
                   <span className="subheading">My Intro</span>
                   <h2 className="mb-4" style={{ fontSize: '34px', textTransform: 'capitalize', color: 'black' }}>About Me</h2>
-                  <p>{intro}</p>
+                  <p className='noto-sans-kr'>{intro}</p>
                   <ul className="about-info mt-4 px-md-0 px-2">
-                    <li className="d-flex"><span>Name:</span> <span>허정윤</span></li>
-                    <li className="d-flex"><span>Date of birth:</span> <span>1998년 5월 2일</span></li>
-                    <li className="d-flex"><span>Address:</span> <span>서울특별시 동작구 여의대방로 26길 56</span></li>
+                    <li className="d-flex"><span>Name:</span> <span className='noto-sans-kr'>허정윤</span></li>
+                    <li className="d-flex"><span>Date of birth:</span> <span className='noto-sans-kr'>1998년 5월 2일</span></li>
+                    <li className="d-flex"><span>Address:</span> <span className='noto-sans-kr'>서울특별시 동작구 여의대방로 26길 56</span></li>
                     <li className="d-flex"><span>Zip code:</span> <span>07055</span></li>
                     <li className="d-flex"><span>Email:</span> <span>sophia76256@gmail.com</span></li>
                     <li className="d-flex"><span>Phone: </span> <span>010-5191-9852</span></li>
@@ -61,7 +61,7 @@ const About = () => {
                         <div className="icon d-flex align-items-center justify-content-center">
                           <FontAwesomeIcon icon={interest.icon} className='mx-2 text-white'></FontAwesomeIcon>
                         </div>
-                        <div className="text">{interest.text}</div>
+                        <div className={`text fw-bold ${interest.font || ''}`}>{interest.text}</div>
                       </div>
                     ))}
                   </div>
