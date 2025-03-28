@@ -1,45 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
+  // 스킬 데이터
+  const [skills, setSkills] = useState([
+    { name: 'Java', value: 95, style: {} },
+    { name: 'Spring', value: 95, style: {} },
+    { name: 'C', value: 95, style: {} },
+    { name: 'C++', value: 95, style: {} },
+    { name: 'CSS', value: 95, style: {} },
+    { name: 'HTML', value: 98, style: {} },
+    { name: 'JSP', value: 83, style: {} },
+    { name: 'Javascript', value: 68, style: {} },
+    { name: 'jQuery', value: 68, style: {} },
+    { name: 'React', value: 92, style: {} },
+    { name: 'SQL', value: 95, style: {} }
+  ]);
+
+
   useEffect(() => {
-    // 원형 진행 막대 초기화 함수
-    const initializeProgressCircle = () => {
-      document.querySelectorAll('.progress').forEach(progress => {
-        const value = progress.getAttribute('data-value');
-        const left = progress.querySelector('.progress-left .progress-bar');
-        const right = progress.querySelector('.progress-right .progress-bar');
+    // 스킬 스타일 업데이트
+    setSkills(prevSkills => 
+      prevSkills.map(skill => {
+        const leftStyle = {};
+        const rightStyle = {};
         
-        if (value > 0) {
-          if (value <= 50) {
-            right.style.transform = `rotate(${value * 3.6}deg)`;
+        if (skill.value > 0) {
+          if (skill.value <= 50) {
+            rightStyle.transform = `rotate(${skill.value * 3.6}deg)`;
           } else {
-            right.style.transform = 'rotate(180deg)';
-            left.style.transform = `rotate(${(value - 50) * 3.6}deg)`;
+            rightStyle.transform = 'rotate(180deg)';
+            leftStyle.transform = `rotate(${(skill.value - 50) * 3.6}deg)`;
           }
         }
-      });
-    };
-
-    // 컴포넌트가 마운트된 후 진행 원형 초기화
-    initializeProgressCircle();
-    
-    // 윈도우 리사이즈 시 다시 초기화
-    window.addEventListener('resize', initializeProgressCircle);
-    
-    return () => {
-      window.removeEventListener('resize', initializeProgressCircle);
-    };
+        
+        return {
+          ...skill,
+          leftStyle,
+          rightStyle
+        };
+      })
+    );
   }, []);
-
-  // 스킬 데이터
-  const skills = [
-    { name: 'CSS', value: 95 },
-    { name: 'HTML', value: 98 },
-    { name: 'jQuery', value: 68 },
-    { name: 'Photoshop', value: 92 },
-    { name: 'WordPress', value: 83 },
-    { name: 'SEO', value: 95 }
-  ];
 
   return (
     <section className="ftco-section bg-light" id="skills-section">
@@ -47,23 +48,23 @@ const Skills = () => {
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">
             <span className="subheading">Skills</span>
-            <h2 className="mb-4">My Skills</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 className="mb-4 text-dark">My Skills</h2>
+            <p className='noto-sans-kr'>백엔드는 Java와 Spring framework, 프론트엔드는 HTML, JSP, Javascript, React 활용에 강점을 가지고 있습니다.</p>
           </div>
         </div>
         <div className="row progress-circle mb-5">
           {skills.map((skill, index) => (
             <div className="col-lg-4 mb-4" key={index}>
               <div className="bg-white rounded-lg shadow p-4">
-                <h2 className="h5 font-weight-bold text-center mb-4">{skill.name}</h2>
+                <h2 className="h5 font-weight-bold text-center mb-4 text-dark">{skill.name}</h2>
 
                 {/* Progress bar */}
-                <div className="progress mx-auto" data-value={skill.value}>
+                <div className="progress mx-auto text-dark" data-value={skill.value}>
                   <span className="progress-left">
-                    <span className="progress-bar border-primary"></span>
+                    <span className="progress-bar border-primary" style={skill.leftStyle}></span>
                   </span>
                   <span className="progress-right">
-                    <span className="progress-bar border-primary"></span>
+                    <span className="progress-bar border-primary" style={skill.rightStyle}></span>
                   </span>
                   <div className="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div className="h2 font-weight-bold">{skill.value}<sup className="small">%</sup></div>
