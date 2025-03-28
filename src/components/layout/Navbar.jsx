@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSleeping, setIsSleeping] = useState(false);
+  // const [isSleeping, setIsSleeping] = useState(false);
   const location = useLocation();
   
   // useEffect(() => {
@@ -68,10 +68,7 @@ const Navbar = () => {
   
   return (
     <nav 
-      className={`navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target 
-        ${isScrolled ? 'scrolled' : ''} 
-        ${isScrolled && !isSleeping ? 'awake' : ''} 
-        ${isScrolled && isSleeping ? 'sleep' : ''}`} 
+      className={`navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target ${isScrolled ? 'scrolled awake' : ''}`} 
       id="ftco-navbar"
     >
       <div className="container">
