@@ -10,9 +10,9 @@ const About = () => {
   // 자격증 데이터
   const interests = [
     // { icon: faCertificate, text: 'Certificates : ' },
-    { icon: faDatabase, text: 'SQL Developer' },
-    { icon: faMicrochip, text: '정보처리기사', font: 'noto-sans-kr'},
-    { icon: faLanguage, text: 'JLPT' },
+    { icon: faDatabase, text: 'SQL Developer', link: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/SQLD_%EC%9E%90%EA%B2%A9%EC%A6%9D.pdf" },
+    { icon: faMicrochip, text: '정보처리기사', font: 'noto-sans-kr', link: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC_%EC%9E%90%EA%B2%A9%EC%A6%9D.pdf" },
+    { icon: faLanguage, text: 'JLPT', link: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/JLPT_%EC%9E%90%EA%B2%A9%EC%A6%9D.pdf"},
   ];
 
   // 소개글
@@ -61,7 +61,7 @@ const About = () => {
                         <div className="icon d-flex align-items-center justify-content-center">
                           <FontAwesomeIcon icon={interest.icon} className='mx-2 text-white'></FontAwesomeIcon>
                         </div>
-                        <div className={`text fw-bold ${interest.font || ''}`}>{interest.text}</div>
+                        <div className={`text fw-bold ${interest.font || ''}`}><a href={`${interest.link}`} className='text-decoration-none text-dark'>{interest.text}</a></div>
                       </div>
                     ))}
                   </div>
