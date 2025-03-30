@@ -58,7 +58,7 @@ const Navbar = () => {
         {location.pathname === '/' ? (
           <a 
             className="navbar-brand" 
-            href="#" 
+            href="/" 
             onClick={scrollToTop}
           >
             Jungyoon<span>.</span>
