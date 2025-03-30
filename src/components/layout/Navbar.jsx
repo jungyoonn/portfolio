@@ -40,13 +40,33 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   
+  // 맨 위로 스크롤하는 함수 추가
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
     <nav 
       className={`navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target ${isScrolled ? 'scrolled awake' : ''}`} 
       id="ftco-navbar"
     >
       <div className="container">
-        <Link className="navbar-brand" to="/">Jungyoon<span>.</span></Link>
+        {location.pathname === '/' ? (
+          <a 
+            className="navbar-brand" 
+            href="#" 
+            onClick={scrollToTop}
+          >
+            Jungyoon<span>.</span>
+          </a>
+        ) : (
+          <Link className="navbar-brand" to="/">Jungyoon<span>.</span></Link>
+        )}
+        
         <button 
           className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" 
           type="button" 
