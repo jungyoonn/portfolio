@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAnimation } from '../../hooks/useAnimation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDatabase, faMicrochip, faLanguage, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faMicrochip, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import myProfileImg from '../../img/my-profile-img.jpg';
 
 const About = () => {
