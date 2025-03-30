@@ -3,17 +3,30 @@ import React, { useEffect, useState } from 'react';
 const Skills = () => {
   // 스킬 데이터
   const [skills, setSkills] = useState([
-    { name: 'Java', value: 95, style: {} },
-    { name: 'Spring', value: 95, style: {} },
+    { name: 'HTML', value: 97, style: {} },
     { name: 'C', value: 95, style: {} },
-    { name: 'C++', value: 95, style: {} },
-    { name: 'CSS', value: 95, style: {} },
-    { name: 'HTML', value: 98, style: {} },
-    { name: 'JSP', value: 83, style: {} },
-    { name: 'Javascript', value: 68, style: {} },
-    { name: 'jQuery', value: 68, style: {} },
-    { name: 'React', value: 92, style: {} },
-    { name: 'SQL', value: 95, style: {} }
+    { name: 'Spring', value: 92, style: {} },
+    { name: 'JPA, JPQL', value: 92, style: {} },
+    { name: 'CSS', value: 91, style: {} },
+    { name: 'Nodejs', value: 90, style: {} },
+    { name: 'Javascript', value: 89, style: {} },
+    { name: 'jQuery', value: 89, style: {} },
+    { name: 'MyBatis', value: 88, style: {} },
+    { name: 'Servlet', value: 88, style: {} },
+    { name: 'C++', value: 88, style: {} },
+    { name: 'JSP', value: 88, style: {} },
+    { name: 'SQL', value: 87, style: {} },
+    { name: 'Java', value: 85, style: {} },
+    { name: 'Ubuntu', value: 85, style: {} },
+    { name: 'AWS', value: 82, style: {} },
+    { name: 'React', value: 80, style: {} },
+    { name: 'NginX', value: 79, style: {} },
+    { name: 'Mustache', value: 76, style: {} },
+    { name: 'NoSQL', value: 72, style: {} },
+    { name: 'Kotlin', value: 71, style: {} },
+    { name: 'Querydsl', value: 70, style: {} },
+    { name: 'C#', value: 68, style: {} },
+    { name: 'Thymeleaf', value: 69, style: {} },
   ]);
 
 
@@ -55,11 +68,11 @@ const Skills = () => {
         <div className="row progress-circle mb-5">
           {skills.map((skill, index) => (
             <div className="col-lg-4 mb-4" key={index}>
-              <div className="bg-white rounded-lg shadow p-4">
+              <div className="bg-white rounded-lg shadow p-4 ">
                 <h2 className="h5 font-weight-bold text-center mb-4 text-dark">{skill.name}</h2>
 
                 {/* Progress bar */}
-                <div className="progress mx-auto text-dark" data-value={skill.value}>
+                <div className="progress mx-auto text-dark mb-4" data-value={skill.value}>
                   <span className="progress-left">
                     <span className="progress-bar border-primary" style={skill.leftStyle}></span>
                   </span>
@@ -72,14 +85,14 @@ const Skills = () => {
                 </div>
 
                 {/* Demo info */}
-                <div className="row text-center mt-4">
+                {/* <div className="row text-center mt-4">
                   <div className="col-6 border-right">
                     <div className="h4 font-weight-bold mb-0">28%</div><span className="small text-gray">Last week</span>
                   </div>
                   <div className="col-6">
                     <div className="h4 font-weight-bold mb-0">60%</div><span className="small text-gray">Last month</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
