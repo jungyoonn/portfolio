@@ -81,6 +81,7 @@ const Hero = () => {
                   <div className="button-group">
                     <a href="#contact-section" className="btn btn-primary">Hire me</a>
                     {/* <a href="#" className="btn btn-outline-primary">Visit github</a> */}
+                    <Link to={"https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/resume_%ED%97%88%EC%A0%95%EC%9C%A4.zip"} className="btn btn-secondary">Download resume</Link>
                     <Link to={"https://github.com/jungyoonn"} className="btn btn-outline-primary">Visit github <FontAwesomeIcon icon={faGithub} className='fa-xl' /></Link>
                   </div>
                 </div>
