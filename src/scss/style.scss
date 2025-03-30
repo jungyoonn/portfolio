@@ -9,7 +9,7 @@ $black: #000000;
 $darken: #232931;
 
 $primary: #b1b493;
-$secondary: #a0f669;
+$secondary: #9ea17e;
 
 .noto-sans-kr {
   font-family: "Noto Sans KR", sans-serif;
@@ -801,14 +801,14 @@ h1, h2, h3, h4, h5,
     border: 1px solid $secondary !important;
     color: $white !important;
     &:hover {
-      border: 1px solid $secondary !important;
-      background: transparent !important;
-      color: $secondary !important;
+      border: 1px solid darken($secondary, 10%) !important;
+      background: darken($secondary, 10%) !important;
+      color: $white !important;
     }
     &:active, &.active {
-      border: 1px solid darken($secondary, 10%) !important;
-      background: transparent !important;
-      color: darken($secondary, 10%) !important;
+      border: 1px solid darken($secondary, 20%) !important;
+      background: darken($secondary, 20%) !important;
+      color: $white !important;
     }
   }
   
