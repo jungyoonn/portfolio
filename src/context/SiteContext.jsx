@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 
-// 초기 상태 정의
+// 초기 상태 정의 - 각 컴포넌트의 데이터 통합
 const initialState = {
   isLoading: true,
   activeSection: 'home',
@@ -40,6 +40,7 @@ const initialState = {
       tags: ['Tech', 'SEO', 'Marketing']
     }
   ],
+  // Projects.jsx
   projects: [
     {
       id: 1,
@@ -94,8 +95,21 @@ const initialState = {
       client: 'Marketing Pro',
       completed: 'February 2020',
       description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+    },
+    {
+      id: 7,
+      title: 'Branding & Illustration Design',
+      category: 'Web Design',
+      image: 'images/work-7.jpg'
+    },
+    {
+      id: 8,
+      title: 'Branding & Illustration Design',
+      category: 'Web Design',
+      image: 'images/work-8.jpg'
     }
   ],
+  // Testimonials.jsx
   testimonials: [
     {
       id: 1,
@@ -117,56 +131,240 @@ const initialState = {
       position: 'Marketing Manager',
       image: 'images/person_3.jpg',
       text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+    },
+    {
+      id: 4,
+      name: 'Roger Scott',
+      position: 'Marketing Manager',
+      image: 'images/person_1.jpg',
+      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+    },
+    {
+      id: 5,
+      name: 'Roger Scott',
+      position: 'Marketing Manager',
+      image: 'images/person_2.jpg',
+      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
     }
   ],
+  // Skills.jsx
   skills: [
-    { name: 'CSS', value: 95, lastWeek: 28, lastMonth: 60 },
-    { name: 'HTML', value: 98, lastWeek: 28, lastMonth: 60 },
-    { name: 'jQuery', value: 68, lastWeek: 28, lastMonth: 60 },
-    { name: 'Photoshop', value: 92, lastWeek: 28, lastMonth: 60 },
-    { name: 'WordPress', value: 83, lastWeek: 28, lastMonth: 60 },
-    { name: 'SEO', value: 95, lastWeek: 28, lastMonth: 60 }
+    { 
+      name: 'HTML', 
+      value: 97, 
+      leftStyle: { transform: 'rotate(169.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' }
+    },
+    { 
+      name: 'C', 
+      value: 95, 
+      leftStyle: { transform: 'rotate(162deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Spring', 
+      value: 92, 
+      leftStyle: { transform: 'rotate(151.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'JPA, JPQL', 
+      value: 92, 
+      leftStyle: { transform: 'rotate(151.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'CSS', 
+      value: 91, 
+      leftStyle: { transform: 'rotate(147.6deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Nodejs', 
+      value: 90, 
+      leftStyle: { transform: 'rotate(144deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Javascript', 
+      value: 89, 
+      leftStyle: { transform: 'rotate(140.4deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'jQuery', 
+      value: 89, 
+      leftStyle: { transform: 'rotate(140.4deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'MyBatis', 
+      value: 88, 
+      leftStyle: { transform: 'rotate(136.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Servlet', 
+      value: 88, 
+      leftStyle: { transform: 'rotate(136.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'C++', 
+      value: 88, 
+      leftStyle: { transform: 'rotate(136.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'JSP', 
+      value: 88, 
+      leftStyle: { transform: 'rotate(136.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'SQL', 
+      value: 87, 
+      leftStyle: { transform: 'rotate(133.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Java', 
+      value: 85, 
+      leftStyle: { transform: 'rotate(126deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Ubuntu', 
+      value: 85, 
+      leftStyle: { transform: 'rotate(126deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'AWS', 
+      value: 82, 
+      leftStyle: { transform: 'rotate(115.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'React', 
+      value: 80, 
+      leftStyle: { transform: 'rotate(108deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'NginX', 
+      value: 79, 
+      leftStyle: { transform: 'rotate(104.4deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Mustache', 
+      value: 76, 
+      leftStyle: { transform: 'rotate(93.6deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'NoSQL', 
+      value: 72, 
+      leftStyle: { transform: 'rotate(79.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Kotlin', 
+      value: 71, 
+      leftStyle: { transform: 'rotate(75.6deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Querydsl', 
+      value: 70, 
+      leftStyle: { transform: 'rotate(72deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'C#', 
+      value: 68, 
+      leftStyle: { transform: 'rotate(64.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Thymeleaf', 
+      value: 69, 
+      leftStyle: { transform: 'rotate(68.4deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    }
   ],
+  // Services.jsx
   services: [
     {
-      title: 'Web Design',
-      icon: 'flaticon-3d-design',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faCode',
+      title: "웹 애플리케이션 개발",
+      description: "React, HTML, CSS, JavaScript를 활용한 반응형 웹 사이트 및 애플리케이션 개발"
     },
     {
-      title: 'Web Application',
-      icon: 'flaticon-app-development',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faServer',
+      title: "백엔드 시스템 구축",
+      description: "Spring Framework, Java를 활용한 안정적이고 확장 가능한 서버 시스템 구현"
     },
     {
-      title: 'Web Development',
-      icon: 'flaticon-web-programming',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faDatabase',
+      title: "데이터베이스 설계",
+      description: "SQL, JPA, MyBatis를 활용한 효율적인 데이터베이스 모델링 및 쿼리 최적화"
     },
     {
-      title: 'Banner Design',
-      icon: 'flaticon-branding',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faCloud',
+      title: "클라우드 인프라 구축",
+      description: "AWS, Ubuntu, NginX를 활용한 확장 가능한 클라우드 환경 설정 및 배포"
     },
     {
-      title: 'Branding',
-      icon: 'flaticon-computer',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faExchangeAlt',
+      title: "API 개발 및 통합",
+      description: "RESTful API 설계 및 개발, 외부 시스템과의 효율적인 데이터 통합"
     },
     {
-      title: 'Icon Design',
-      icon: 'flaticon-vector',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faMobileAlt',
+      title: "반응형 웹 구현",
+      description: "다양한 디바이스와 화면 크기에 최적화된, 사용자 중심의 직관적이고 매력적인 반응형 웹 인터페이스 설계 및 구현"
     },
     {
-      title: 'Graphic Design',
-      icon: 'flaticon-vector',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faSitemap',
+      title: "프로젝트 기획 및 설계",
+      description: "요구사항 분석, 기능 정의, 화면 설계 등 프로젝트의 초기 단계 기획 지원"
     },
     {
-      title: 'SEO',
-      icon: 'flaticon-zoom',
-      description: 'A small river named Duden flows by their place and supplies.'
+      iconType: 'faTools',
+      title: "시스템 유지 보수",
+      description: "기존 시스템의 성능 최적화, 버그 수정 및 새로운 기능 추가"
+    }
+  ],
+  // Portfolio.jsx
+  portfolios: [
+    {
+      id: 1,
+      title: 'Why Lead Generation is Key for Business Growth',
+      excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+      date: 'July 03, 2020',
+      author: 'Admin',
+      comments: 3,
+      image: 'images/image_1.jpg'
+    },
+    {
+      id: 2,
+      title: 'Why Lead Generation is Key for Business Growth',
+      excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+      date: 'July 03, 2020',
+      author: 'Admin',
+      comments: 3,
+      image: 'images/image_2.jpg'
+    },
+    {
+      id: 3,
+      title: 'Why Lead Generation is Key for Business Growth',
+      excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+      date: 'July 03, 2020',
+      author: 'Admin',
+      comments: 3,
+      image: 'images/image_3.jpg'
     }
   ]
 };
