@@ -68,7 +68,7 @@ const Navbar = () => {
         )}
         
         <button 
-          className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" 
+          className="navbar-toggler js-ftco-nav-toggle ftco-nav-toggle" 
           type="button" 
           onClick={toggleMenu}
           aria-expanded={isMenuOpen ? 'true' : 'false'}
@@ -108,8 +108,8 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#portfolio-section" className={`nav-link ${activeSection === 'portfolio-section' ? 'active' : ''}`}>
-                    <span>Portfolio</span>
+                  <a href="#work-experience-section" className={`nav-link ${activeSection === 'work-experience-section' ? 'active' : ''}`}>
+                    <span>WorkExperience</span>
                   </a>
                 </li>
                 <li className="nav-item">
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <li className="nav-item"><Link to="/#skills-section" className="nav-link"><span>Skills</span></Link></li>
                 <li className="nav-item"><Link to="/#services-section" className="nav-link"><span>Services</span></Link></li>
                 <li className="nav-item"><Link to="/#projects-section" className="nav-link"><span>Projects</span></Link></li>
-                <li className="nav-item"><Link to="/#portfolio-section" className="nav-link"><span>Portfolio</span></Link></li>
+                <li className="nav-item"><Link to="/#work-experience-section" className="nav-link"><span>WorkExperience</span></Link></li>
                 <li className="nav-item"><Link to="/#contact-section" className="nav-link"><span>Contact</span></Link></li>
               </>
             )}
