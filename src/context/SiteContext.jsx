@@ -104,11 +104,12 @@ const initialState = {
     },
     {
       id: 6,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
+      title: '배송지 거리별로 배달비가 달라지는 분식 가게 배달 API',
+      category: 'C',
       image: 'images/work-6.jpg',
-      client: 'Marketing Pro',
-      completed: 'February 2020',
+      position: '대학교 조별 과제',
+      role: '지역별, 거리별 배달비 책정 시스템 구현',
+      completed: '2019년 2학기',
       description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
     },
   ],
