@@ -1560,6 +1560,71 @@ textarea.form-control {
 	}
 }
 
+.dev-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.dev-area-item {
+  background: #FFFFFFB3;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.dev-area-item:hover {
+  background: #ffffff86;
+  transform: translateY(-3px);
+}
+
+/* 개발 철학 섹션 스타일 */
+.ftco-footer-widget {
+  padding-right: 15px; /* Links와 Development Philosophy 사이 간격 줄이기 */
+}
+
+/* 개발 철학 하위 항목 줄바꿈 방지 */
+.ftco-footer-widget .list-unstyled li {
+  white-space: nowrap; /* 줄바꿈 방지 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 너무 길면 말줄임표 표시 */
+  margin-bottom: 10px; /* 항목 간 간격 조정 */
+  color: #FFFFFFB3;
+  transition: transform 0.3s ease; 
+}
+
+.ftco-footer-widget .list-unstyled li:hover {
+  transform: translateX(5px); 
+}
+
+.ftco-footer-widget .fa-check-circle {
+  color: $primary;
+  transition: transform 0.3s ease; 
+}
+
+.ftco-footer-widget .list-unstyled li:hover .fa-check-circle {
+  transform: scale(1.2);
+}
+
+/* 모바일에서는 줄바꿈 허용 */
+@media (max-width: 768px) {
+  .ftco-footer-widget .list-unstyled li {
+    white-space: normal;
+  }
+}
+
+/* Links와 Development Philosophy 사이 간격 조정 */
+// .row.mb-5 {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// /* 각 섹션의 동일한 너비 확보 */
+// .col-md {
+//   flex: 1;
+//   padding: 0 10px;
+// }
 
 // Map
 

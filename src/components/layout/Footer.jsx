@@ -57,16 +57,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-md">
-            <div className="ftco-footer-widget mb-4">
-              <h2 className="ftco-heading-2">Specialties</h2>
-              <ul className="list-unstyled">
-                <li><a href="#skills-section" onClick={(e) => isHomePage ? scrollToSection(e, 'skills-section') : null}><span className="fa fa-chevron-right mr-2"></span>React 개발</a></li>
-                <li><a href="#skills-section" onClick={(e) => isHomePage ? scrollToSection(e, 'skills-section') : null}><span className="fa fa-chevron-right mr-2"></span>반응형 웹 디자인</a></li>
-                <li><a href="#skills-section" onClick={(e) => isHomePage ? scrollToSection(e, 'skills-section') : null}><span className="fa fa-chevron-right mr-2"></span>UI/UX 디자인</a></li>
-                <li><a href="#skills-section" onClick={(e) => isHomePage ? scrollToSection(e, 'skills-section') : null}><span className="fa fa-chevron-right mr-2"></span>프론트엔드 최적화</a></li>
-                <li><a href="#skills-section" onClick={(e) => isHomePage ? scrollToSection(e, 'skills-section') : null}><span className="fa fa-chevron-right mr-2"></span>웹 애플리케이션 개발</a></li>
-              </ul>
-            </div>
+          <div className="ftco-footer-widget mb-4">
+            <h2 className="ftco-heading-2">Development Philosophy</h2>
+            <ul className="list-unstyled">
+              <li><span className="fa fa-check-circle mr-2"></span>사용자 중심의 직관적인 인터페이스 설계</li>
+              <li><span className="fa fa-check-circle mr-2"></span>확장 가능하고 유지보수 용이한 아키텍처</li>
+              <li><span className="fa fa-check-circle mr-2"></span>성능과 보안을 고려한 최적화된 코드</li>
+              <li><span className="fa fa-check-circle mr-2"></span>지속적인 학습과 기술 트렌드 적용</li>
+              <li><span className="fa fa-check-circle mr-2"></span>협업과 코드 리뷰를 통한 품질 향상</li>
+            </ul>
+          </div>
           </div>
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
@@ -87,8 +87,7 @@ const Footer = () => {
               </div>
               <ul className="ftco-footer-social list-unstyled mt-2">
                 <li className="ftco-animate"><a href="https://github.com/jungyoonn" target="_blank" rel="noopener noreferrer"><span className="fa fa-github"></span></a></li>
-                <li className="ftco-animate"><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><span className="fa fa-linkedin"></span></a></li>
-                <li className="ftco-animate"><a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer"><span className="fa fa-instagram"></span></a></li>
+                <li className="ftco-animate"><a href="mailto:sophia76256@gmail.com"><span className="fa fa-envelope"></span></a></li>
               </ul>
             </div>
           </div>
