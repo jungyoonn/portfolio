@@ -32,7 +32,7 @@ const WorkExperience = () => {
         <div className="row justify-content-center mb-5 pb-5">
           <div className="col-md-7 heading-section text-center ftco-animate">
             <span className="subheading">Experience</span>
-            <h2 className="mb-4">Work Experience</h2>
+            <h2 className="mb-4 text-dark">Work Experience</h2>
             <p className="noto-sans-kr">웹 개발자로서의 실무 경험과 성과를 소개합니다.</p>
           </div>
         </div>
