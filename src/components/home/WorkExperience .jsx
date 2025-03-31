@@ -27,7 +27,7 @@ const WorkExperience = () => {
   };
 
   return (
-    <section className="ftco-section bg-light" id="work-experience-section">
+    <section className="ftco-section bg-light" id="work-experience">
       <div className="container">
         <div className="row justify-content-center mb-5 pb-5">
           <div className="col-md-7 heading-section text-center ftco-animate">
@@ -83,7 +83,7 @@ const WorkExperience = () => {
                   </div>
                   
                   <div className="mt-4">
-                    <a href="#contact-section" className="btn btn-primary btn-sm">
+                    <a href="#contact" className="btn btn-primary btn-sm">
                       <i className="fa fa-envelope mr-1"></i> 연락하기
                     </a>
                   </div>

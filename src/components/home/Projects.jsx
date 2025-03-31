@@ -11,7 +11,7 @@ const Projects = () => {
   const { projects } = state;
 
   return (
-    <section className="ftco-section ftco-project" id="projects-section">
+    <section className="ftco-section ftco-project" id="projects">
       <div className="container-fluid px-md-4">
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">

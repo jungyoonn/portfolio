@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home-section');
+  const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
 
   useEffect(() => {
@@ -83,37 +83,37 @@ const Navbar = () => {
               // Home page navigation
               <>
                 <li className="nav-item">
-                  <a href="#home-section" className={`nav-link ${activeSection === 'home-section' ? 'active' : ''}`}>
+                  <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>
                     <span>Home</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#about-section" className={`nav-link ${activeSection === 'about-section' ? 'active' : ''}`}>
+                  <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>
                     <span>About</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#skills-section" className={`nav-link ${activeSection === 'skills-section' ? 'active' : ''}`}>
+                  <a href="#skills" className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>
                     <span>Skills</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#services-section" className={`nav-link ${activeSection === 'services-section' ? 'active' : ''}`}>
+                  <a href="#services" className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}>
                     <span>Services</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#projects-section" className={`nav-link ${activeSection === 'projects-section' ? 'active' : ''}`}>
+                  <a href="#projects" className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>
                     <span>Projects</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#work-experience-section" className={`nav-link ${activeSection === 'work-experience-section' ? 'active' : ''}`}>
+                  <a href="#work-experience" className={`nav-link ${activeSection === 'work-experience' ? 'active' : ''}`}>
                     <span>WorkExperience</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#contact-section" className={`nav-link ${activeSection === 'contact-section' ? 'active' : ''}`}>
+                  <a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>
                     <span>Contact</span>
                   </a>
                 </li>
@@ -121,13 +121,13 @@ const Navbar = () => {
             ) : (
               // Other pages navigation
               <>
-                <li className="nav-item"><Link to="/#home-section" className="nav-link"><span>Home</span></Link></li>
-                <li className="nav-item"><Link to="/#about-section" className="nav-link"><span>About</span></Link></li>
-                <li className="nav-item"><Link to="/#skills-section" className="nav-link"><span>Skills</span></Link></li>
-                <li className="nav-item"><Link to="/#services-section" className="nav-link"><span>Services</span></Link></li>
-                <li className="nav-item"><Link to="/#projects-section" className="nav-link"><span>Projects</span></Link></li>
-                <li className="nav-item"><Link to="/#work-experience-section" className="nav-link"><span>WorkExperience</span></Link></li>
-                <li className="nav-item"><Link to="/#contact-section" className="nav-link"><span>Contact</span></Link></li>
+                <li className="nav-item"><Link to="/#home" className="nav-link"><span>Home</span></Link></li>
+                <li className="nav-item"><Link to="/#about" className="nav-link"><span>About</span></Link></li>
+                <li className="nav-item"><Link to="/#skills" className="nav-link"><span>Skills</span></Link></li>
+                <li className="nav-item"><Link to="/#services" className="nav-link"><span>Services</span></Link></li>
+                <li className="nav-item"><Link to="/#projects" className="nav-link"><span>Projects</span></Link></li>
+                <li className="nav-item"><Link to="/#work-experience" className="nav-link"><span>WorkExperience</span></Link></li>
+                <li className="nav-item"><Link to="/#contact" className="nav-link"><span>Contact</span></Link></li>
               </>
             )}
           </ul>

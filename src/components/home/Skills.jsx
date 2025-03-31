@@ -7,7 +7,7 @@ const Skills = () => {
   const { skills } = state;
 
   return (
-    <section className="ftco-section bg-light" id="skills-section">
+    <section className="ftco-section bg-light" id="skills">
       <div className="container">
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">

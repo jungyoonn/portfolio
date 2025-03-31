@@ -27,9 +27,9 @@ const Footer = () => {
               <h2 className="ftco-heading-2">About Me</h2>
               <p className=' noto-sans-kr'>풀스택 개발자로서 프론트엔드부터 백엔드까지 전반적인 웹 애플리케이션 개발에 집중하고 있습니다. 다양한 프론트엔드 기술과 백엔드 기술을 활용한 통합적인 웹 솔루션 구축에 관심이 많습니다.</p>
               {isHomePage ? (
-                <p><a href="#about-section" onClick={(e) => scrollToSection(e, 'about-section')} className="btn btn-primary fw-bold">Learn more</a></p>
+                <p><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="btn btn-primary fw-bold">Learn more</a></p>
               ) : (
-                <p><a href="/#about-section" className="btn btn-primary fw-bold">Learn more</a></p>
+                <p><a href="/#about" className="btn btn-primary fw-bold">Learn more</a></p>
               )}
             </div>
           </div>
@@ -39,23 +39,23 @@ const Footer = () => {
               <ul className="list-unstyled">
                 {isHomePage ? (
                   <>
-                    <li><a href="#home-section" className='noto-sans-kr' onClick={(e) => scrollToSection(e, 'home-section')}><span className="fa fa-chevron-right mr-2"></span>Home</a></li>
-                    <li><a href="#about-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'about-section')}><span className="fa fa-chevron-right mr-2"></span>About</a></li>
-                    {/* <li><a href="#skills-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'skills-section')}><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
-                    <li><a href="#services-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'services-section')}><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
-                    <li><a href="#projects-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'projects-section')}><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                    <li><a href="#work-experience-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'work-experience-section')}><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
-                    <li><a href="#contact-section" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'contact-section')}><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                    <li><a href="#home" className='noto-sans-kr' onClick={(e) => scrollToSection(e, 'home')}><span className="fa fa-chevron-right mr-2"></span>Home</a></li>
+                    <li><a href="#about" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'about')}><span className="fa fa-chevron-right mr-2"></span>About</a></li>
+                    {/* <li><a href="#skills" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'skills')}><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
+                    <li><a href="#services" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'services')}><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
+                    <li><a href="#projects" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'projects')}><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                    <li><a href="#work-experience" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'work-experience')}><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
+                    <li><a href="#contact" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'contact')}><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
                   </>
                 ) : (
                   <>
-                    <li><a href="/#home-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Home</a></li>
-                    <li><a href="/#about-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>About</a></li>
-                    {/* <li><a href="/#skills-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
-                    <li><a href="/#services-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
-                    <li><a href="/#projects-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                    <li><a href="/#work-experience-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
-                    <li><a href="/#contact-section" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                    <li><a href="/#home" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Home</a></li>
+                    <li><a href="/#about" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>About</a></li>
+                    {/* <li><a href="/#skills" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
+                    <li><a href="/#services" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
+                    <li><a href="/#projects" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                    <li><a href="/#work-experience" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
+                    <li><a href="/#contact" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
                   </>
                 )}
               </ul>

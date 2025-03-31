@@ -27,7 +27,7 @@ const About = () => {
   )
 
   return (
-    <section className="ftco-about ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    <section className="ftco-about ftco-section ftco-no-pt ftco-no-pb" id="about">
       <div className="container">
         <div className="row d-flex no-gutters">
           <div className="col-md-6 col-lg-5 d-flex">

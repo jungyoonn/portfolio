@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <section className="ftco-section contact-section ftco-no-pb" id="contact">
       <div className="container">
         <div className="row justify-content-center mb-5 pb-3">
           <div className="col-md-7 heading-section text-center ftco-animate">

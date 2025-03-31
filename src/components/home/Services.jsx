@@ -36,7 +36,7 @@ const Services = () => {
   };
 
   return (
-    <section className="ftco-section" id="services-section">
+    <section className="ftco-section" id="services">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-12 heading-section text-center ftco-animate mb-5">
