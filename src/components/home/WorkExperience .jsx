@@ -27,7 +27,7 @@ const WorkExperience = () => {
   };
 
   return (
-    <section className="ftco-section bg-light" id="experience-section">
+    <section className="ftco-section bg-light" id="work-experience-section">
       <div className="container">
         <div className="row justify-content-center mb-5 pb-5">
           <div className="col-md-7 heading-section text-center ftco-animate">
