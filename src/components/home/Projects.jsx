@@ -65,7 +65,7 @@ const Projects = () => {
         
         <div className="row mt-5">
           <div className="col-md-12 text-center">
-          <p className="noto-sans-kr">
+          <p className="noto-sans-kr fw-bold">
             더 자세한 프로젝트 정보는 <a href="https://github.com/jungyoonn" target="_blank" rel="noopener noreferrer" style={{ color: '#9ea17e' }} className='fw-bold'>
               <i className="fa fa-github"></i> GitHub
             </a>에서 확인하실 수 있습니다.
