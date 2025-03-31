@@ -30,7 +30,7 @@ const Projects = () => {
                 <div className="overlay"></div>
                 <div className="text text-center p-4">
                   <h3>
-                    <Link to={`/project/${project.id}`}>{project.title}</Link>
+                    <Link to={`/portfolio/${project.id}`}>{project.title}</Link>
                   </h3>
                   
                   {/* 카테고리는 한 줄에 표시되도록 처리 */}
@@ -53,7 +53,7 @@ const Projects = () => {
                   )}
                   
                   <div className="mt-3">
-                    <Link to={`/project/${project.id}`} className="btn btn-outline-light btn-sm">
+                    <Link to={`/portfolio/${project.id}`} className="btn btn-outline-light btn-sm">
                       Details <i className="fa fa-arrow-right ml-1"></i>
                     </Link>
                   </div>
