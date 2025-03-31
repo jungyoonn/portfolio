@@ -28,7 +28,7 @@ const Projects = () => {
                 style={{ backgroundImage: `url(${project.image})` }}
               >
                 <div className="overlay"></div>
-                <div className="text text-center p-4">
+                <div className="text text-center p-4 noto-sans-kr">
                   <h3>
                     <Link to={`/portfolio/${project.id}`}>{project.title}</Link>
                   </h3>
@@ -42,12 +42,12 @@ const Projects = () => {
                   
                   {/* 추가 정보 표시 - 간결하게 */}
                   {project.completed && (
-                    <div className="project-completed">
+                    <div className="project-completed noto-sans-kr">
                       <small><i className="fa fa-calendar mr-1"></i>마지막 작업 - {project.completed}</small>
                     </div>
                   )}
                   {project.position && (
-                    <div className="project-position">
+                    <div className="project-position noto-sans-kr">
                       <small><i className="fa fa-user mr-1"></i> {project.position}</small>
                     </div>
                   )}
