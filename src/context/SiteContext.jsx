@@ -1,4 +1,9 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import pilllawBackground from '../img/PILLLAW.jpg';
+import cookieBackground from '../img/cookie.jpg';
+import boardBackground from '../img/board_project.png';
+import miniBackground from '../img/mini_project.png';
+import publicKeyBackground from '../img/elliptic_curve_project.jpg';
 
 // 초기 상태 정의 - 각 컴포넌트의 데이터 통합
 const initialState = {
@@ -47,7 +52,7 @@ const initialState = {
       title: `영양제 추천 및 판매 사이트 'PILL LAW'`,
       category: 'Spring Framework, React, CSS, MariaDB',
       deploy: 'AWS, Nodejs, NginX, Ubuntu',
-      image: 'images/work-1.jpg',
+      image: pilllawBackground,
       position: '팀장',
       role: '메인 페이지 및 공통 컴포넌트, 사이트 소개 페이지, 내 정보 및 회원 파트',
       completed: 'March 2025',
@@ -58,7 +63,7 @@ const initialState = {
       title: `주변 취미 공유 및 원데이 클래스 추천 커뮤니티 플랫폼 'Cookie'`,
       category: 'Java Servlet, JSP, CSS, Javascript, myBatis, MariaDB',
       deploy: 'AWS, Nodejs, tomcat, Ubuntu',
-      image: 'images/work-2.jpg',
+      image: cookieBackground,
       position: '팀원',
       role: 'DB 설계, 메인 페이지 및 공통 컴포넌트, 회원가입 및 로그인, 원데이 클래스, 리뷰',
       completed: 'December 2024',
@@ -69,7 +74,7 @@ const initialState = {
       title: 'Java 기반의 키오스크 서비스를 콘솔 출력으로 구현',
       category: 'Java',
       deploy: '',
-      image: 'images/work-3.jpg',
+      image: miniBackground,
       position: '팀원',
       role: '장바구니 담기 및 결제 (일괄 결제와 분할 결제)',
       completed: 'October 2024',
@@ -80,7 +85,7 @@ const initialState = {
       title: 'Spring Framework 기반의 공지사항 게시판',
       category: 'Spring Framework, JSP, Javascript, CSS, MariaDB',
       deploy: '',
-      image: 'images/work-4.jpg',
+      image: boardBackground,
       position: '개인 프로젝트',
       role: '공지사항 목록과 상세 조회 및 카테고리별 필터링, 글 작성, 수정, 삭제',
       completed: 'March 2024',
@@ -88,14 +93,14 @@ const initialState = {
     },
     {
       id: 5,
-      title: `대학교 졸업 작품 캡스톤 디자인 (정보보안) '인증서 생성 후 상호 인증'`,
-      category: 'Web Design',
+      title: `대학교 졸업 작품 캡스톤 디자인 (정보보안) '공개키 방식을 이용한 상호 인증'`,
+      category: 'Linux, Raspberry Pi, C',
       deploy: '',
-      image: 'images/work-5.jpg',
+      image: publicKeyBackground,
       position: '대학교 졸업 작품',
-      role: '공지사항 목록과 상세 조회 및 카테고리별 필터링, 글 작성, 수정, 삭제',
-      completed: 'March 2020',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      role: '상호 인증 프로토콜 구현 및 보안 모듈 개발',
+      completed: 'October 2021',
+      description: '정보보안 기술의 핵심인 상호 인증 기능을 구현한 캡스톤 디자인 프로젝트입니다. 두 명의 가상 사용자가 각각의 공개키와 비밀키를 생성하고, Elliptic Curve 방식을 적용하여 암호화 및 복호화 과정을 구현했습니다. Linux 환경에서 개발했으며 Raspberry Pi를 활용해 실제 시스템에 적용 가능한 솔루션을 만들었습니다. 이 프로젝트를 통해 기존 암호화 방식보다 속도가 빠르고 효율적인 Elliptic Curve 암호화의 장점을 경험하고, 계산 능력이 제한적이거나 집적 회로 공간이 제한될 때 특히 유용한 보안 솔루션을 개발했습니다.'
     },
     {
       id: 6,
