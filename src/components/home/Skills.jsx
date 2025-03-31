@@ -1,59 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSite } from '../../context/SiteContext';
 
 const Skills = () => {
-  // 스킬 데이터
-  const [skills, setSkills] = useState([
-    { name: 'HTML', value: 97, style: {} },
-    { name: 'C', value: 95, style: {} },
-    { name: 'Spring', value: 92, style: {} },
-    { name: 'JPA, JPQL', value: 92, style: {} },
-    { name: 'CSS', value: 91, style: {} },
-    { name: 'Nodejs', value: 90, style: {} },
-    { name: 'Javascript', value: 89, style: {} },
-    { name: 'jQuery', value: 89, style: {} },
-    { name: 'MyBatis', value: 88, style: {} },
-    { name: 'Servlet', value: 88, style: {} },
-    { name: 'C++', value: 88, style: {} },
-    { name: 'JSP', value: 88, style: {} },
-    { name: 'SQL', value: 87, style: {} },
-    { name: 'Java', value: 85, style: {} },
-    { name: 'Ubuntu', value: 85, style: {} },
-    { name: 'AWS', value: 82, style: {} },
-    { name: 'React', value: 80, style: {} },
-    { name: 'NginX', value: 79, style: {} },
-    { name: 'Mustache', value: 76, style: {} },
-    { name: 'NoSQL', value: 72, style: {} },
-    { name: 'Kotlin', value: 71, style: {} },
-    { name: 'Querydsl', value: 70, style: {} },
-    { name: 'C#', value: 68, style: {} },
-    { name: 'Thymeleaf', value: 69, style: {} },
-  ]);
-
-
-  useEffect(() => {
-    // 스킬 스타일 업데이트
-    setSkills(prevSkills => 
-      prevSkills.map(skill => {
-        const leftStyle = {};
-        const rightStyle = {};
-        
-        if (skill.value > 0) {
-          if (skill.value <= 50) {
-            rightStyle.transform = `rotate(${skill.value * 3.6}deg)`;
-          } else {
-            rightStyle.transform = 'rotate(180deg)';
-            leftStyle.transform = `rotate(${(skill.value - 50) * 3.6}deg)`;
-          }
-        }
-        
-        return {
-          ...skill,
-          leftStyle,
-          rightStyle
-        };
-      })
-    );
-  }, []);
+  // SiteContext에서 skills 데이터 가져오기
+  const { state } = useSite();
+  const { skills } = state;
 
   return (
     <section className="ftco-section bg-light" id="skills-section">
