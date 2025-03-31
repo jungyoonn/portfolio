@@ -30,14 +30,47 @@ const Projects = () => {
                 <div className="overlay"></div>
                 <div className="text text-center p-4">
                   <h3>
-                    {/* 접근성 문제를 해결하기 위해 유효한 링크 경로 사용 또는 버튼으로 대체 */}
                     <Link to={`/project/${project.id}`}>{project.title}</Link>
                   </h3>
-                  <span>{project.category}</span>
+                  
+                  {/* 카테고리는 한 줄에 표시되도록 처리 */}
+                  <div className="category-wrapper" style={{ marginBottom: '10px' }}>
+                    {project.category.split(', ').map((cat, index) => (
+                      <span key={index} className="badge badge-light mr-1 mb-1">{cat}</span>
+                    ))}
+                  </div>
+                  
+                  {/* 추가 정보 표시 - 간결하게 */}
+                  {project.completed && (
+                    <div className="project-completed">
+                      <small><i className="fa fa-calendar mr-1"></i>마지막 작업 - {project.completed}</small>
+                    </div>
+                  )}
+                  {project.position && (
+                    <div className="project-position">
+                      <small><i className="fa fa-user mr-1"></i> {project.position}</small>
+                    </div>
+                  )}
+                  
+                  <div className="mt-3">
+                    <Link to={`/project/${project.id}`} className="btn btn-outline-light btn-sm">
+                      Details <i className="fa fa-arrow-right ml-1"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="row mt-5">
+          <div className="col-md-12 text-center">
+          <p className="noto-sans-kr">
+            더 자세한 프로젝트 정보는 <a href="https://github.com/jungyoonn" target="_blank" rel="noopener noreferrer" style={{ color: '#9ea17e' }} className='fw-bold'>
+              <i className="fa fa-github"></i> GitHub
+            </a>에서 확인하실 수 있습니다.
+          </p>
+          </div>
         </div>
       </div>
     </section>
