@@ -44,46 +44,56 @@ const initialState = {
   projects: [
     {
       id: 1,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
+      title: `영양제 추천 및 판매 사이트 'PILL LAW'`,
+      category: 'Spring Framework, React, CSS, MariaDB',
+      deploy: 'AWS, Nodejs, NginX, Ubuntu',
       image: 'images/work-1.jpg',
-      client: 'XYZ Company',
-      completed: 'July 2020',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      position: '팀장',
+      role: '메인 페이지 및 공통 컴포넌트, 사이트 소개 페이지, 내 정보 및 회원 파트',
+      completed: 'March 2025',
+      description: '바쁜 현대인들이 건강을 챙길 시간이나 정보를 찾는 부담을 덜어주고자 기획한 프로젝트입니다. 개별 소비자의 건강 상태와 생활 패턴에 맞춘 영양제를 추천하고 배송 시스템을 통합하여 사용자 경험을 향상시켰습니다. 다양한 영양제를 한 곳에서 비교하고 구매할 수 있는 환경을 제공하며, 팔로우와 쪽지 기능을 통해 사용자 간 의사소통을 지원함으로써 건강 관리에 대한 지속적인 관심과 플랫폼의 고정 고객층 형성을 유도했습니다.'
     },
     {
       id: 2,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
+      title: `주변 취미 공유 및 원데이 클래스 추천 커뮤니티 플랫폼 'Cookie'`,
+      category: 'Java Servlet, JSP, CSS, Javascript, myBatis, MariaDB',
+      deploy: 'AWS, Nodejs, tomcat, Ubuntu',
       image: 'images/work-2.jpg',
-      client: 'ABC Corporation',
-      completed: 'June 2020',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      position: '팀원',
+      role: 'DB 설계, 메인 페이지 및 공통 컴포넌트, 회원가입 및 로그인, 원데이 클래스, 리뷰',
+      completed: 'December 2024',
+      description: '사용자들이 취미를 공유하고 원데이 클래스를 쉽게 접할 수 있는 커뮤니티 플랫폼입니다. 별도의 커뮤니티 게시판을 통해 사용자 간 취미 정보를 교환하고, 다양한 이벤트를 제공하여 사용자 경험을 향상시켰습니다. 취미 공유를 통한 원데이 클래스 활성화와 지속적인 사용자 참여를 유도하는 서비스를 구현했습니다.'
     },
     {
       id: 3,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
+      title: 'Java 기반의 키오스크 서비스를 콘솔 출력으로 구현',
+      category: 'Java',
+      deploy: '',
       image: 'images/work-3.jpg',
-      client: '123 Industries',
-      completed: 'May 2020',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      position: '팀원',
+      role: '장바구니 담기 및 결제 (일괄 결제와 분할 결제)',
+      completed: 'October 2024',
+      description: '실생활에서 마주한 기술에 대한 호기심과 프로그래밍 구현방식에 대한 탐구심으로 Java 기반의 키오스크 시스템을 구현했습니다. 상품 출력부터 장바구니 기능, 분할결제와 일괄결제 옵션 등 실제 매장에서 사용되는 기능을 콘솔 환경에서 구현하여 객체지향 프로그래밍의 이해도를 높였습니다.'
     },
     {
       id: 4,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
+      title: 'Spring Framework 기반의 공지사항 게시판',
+      category: 'Spring Framework, JSP, Javascript, CSS, MariaDB',
+      deploy: '',
       image: 'images/work-4.jpg',
-      client: 'Creative Studio',
-      completed: 'April 2020',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      position: '개인 프로젝트',
+      role: '공지사항 목록과 상세 조회 및 카테고리별 필터링, 글 작성, 수정, 삭제',
+      completed: 'March 2024',
+      description: '처음 배웠던 Spring Framework를 익히고 활용해 보기 위해서 어떤 걸 만들까 고민하다가 웹 사이트 개발의 가장 기본이라고 생각하는 게시판 기능을 구현해 보았습니다. Spring MVC 구조와 JPA를 활용하여 게시글 CRUD, 카테고리별 필터링 등을 구현하고 CSS를 이용해 간단한 디자인을 적용했습니다. 이론으로 배운 내용을 실제 프로젝트에 적용함으로써 Spring의 핵심 개념과 웹 애플리케이션 개발 과정을 이해할 수 있었습니다.'
     },
     {
       id: 5,
-      title: 'Branding & Illustration Design',
+      title: `대학교 졸업 작품 캡스톤 디자인 (정보보안) '인증서 생성 후 상호 인증'`,
       category: 'Web Design',
+      deploy: '',
       image: 'images/work-5.jpg',
-      client: 'Design Lab',
+      position: '대학교 졸업 작품',
+      role: '공지사항 목록과 상세 조회 및 카테고리별 필터링, 글 작성, 수정, 삭제',
       completed: 'March 2020',
       description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
     },
@@ -96,18 +106,6 @@ const initialState = {
       completed: 'February 2020',
       description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
     },
-    {
-      id: 7,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-7.jpg'
-    },
-    {
-      id: 8,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-8.jpg'
-    }
   ],
   // Testimonials.jsx
   testimonials: [
