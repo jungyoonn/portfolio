@@ -1581,7 +1581,7 @@ textarea.form-control {
 
 /* 개발 철학 섹션 스타일 */
 .ftco-footer-widget {
-  padding-right: 15px; /* Links와 Development Philosophy 사이 간격 줄이기 */
+  // padding-right: 15px; /* Links와 Development Philosophy 사이 간격 줄이기 */
 }
 
 /* 개발 철학 하위 항목 줄바꿈 방지 */
@@ -1592,10 +1592,13 @@ textarea.form-control {
   margin-bottom: 10px; /* 항목 간 간격 조정 */
   color: #FFFFFFB3;
   transition: transform 0.3s ease; 
+	display: flex;
+  align-items: center;
 }
 
 .ftco-footer-widget .list-unstyled li:hover {
   transform: translateX(5px); 
+	color: $primary;
 }
 
 .ftco-footer-widget .fa-check-circle {
@@ -1605,6 +1608,12 @@ textarea.form-control {
 
 .ftco-footer-widget .list-unstyled li:hover .fa-check-circle {
   transform: scale(1.2);
+}
+
+.ftco-footer-widget .list-unstyled .list-align {
+  width: 20px; /* 모든 아이콘에 동일한 너비 설정 */
+  text-align: center; /* 아이콘 가운데 정렬 */
+  margin-right: 10px; /* 아이콘과 텍스트 사이 간격 일정하게 */
 }
 
 /* 모바일에서는 줄바꿈 허용 */
@@ -1620,11 +1629,11 @@ textarea.form-control {
 //   justify-content: space-between;
 // }
 
-// /* 각 섹션의 동일한 너비 확보 */
-// .col-md {
-//   flex: 1;
-//   padding: 0 10px;
-// }
+/* 각 섹션의 동일한 너비 확보 */
+.col-md {
+  flex: 1;
+  padding: 0 10px;
+}
 
 // Map
 
