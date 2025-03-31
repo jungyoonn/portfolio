@@ -15,9 +15,9 @@ const Projects = () => {
       <div className="container-fluid px-md-4">
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">
-            <span className="subheading">Accomplishments</span>
-            <h2 className="mb-4">Our Projects</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <span className="subheading">My Work</span>
+            <h2 className="mb-4 text-dark">Featured Projects</h2>
+            <p className='noto-sans-kr'>개발자로서 성장해온 여정 속에서 진행한 다양한 프로젝트들을 소개합니다. 팀 협업과 개인 학습을 통해 웹/앱 개발 역량을 키우고 문제 해결 능력을 향상시켜 왔습니다. 각 프로젝트는 저의 기술적 성장과 도전 정신을 담고 있습니다.</p>
           </div>
         </div>
         <div className="row">
