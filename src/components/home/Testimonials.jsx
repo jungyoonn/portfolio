@@ -2,8 +2,13 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useSite } from '../../context/SiteContext';
 
 const Testimonials = () => {
+  // SiteContext에서 testimonials 데이터 가져오기
+  const { state } = useSite();
+  const { testimonials } = state;
+
   // 슬라이더 설정
   const settings = {
     dots: true,
@@ -37,45 +42,6 @@ const Testimonials = () => {
       }
     ]
   };
-
-  // 고객 후기 데이터
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_1.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
-    },
-    {
-      id: 2,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_2.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
-    },
-    {
-      id: 3,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_3.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
-    },
-    {
-      id: 4,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_1.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
-    },
-    {
-      id: 5,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_2.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
-    }
-  ];
 
   return (
     <section className="ftco-section testimony-section bg-primary">

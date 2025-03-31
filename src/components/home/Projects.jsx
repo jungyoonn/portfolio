@@ -1,60 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useScrollAnimation } from '../../hooks/useAnimation';
+import { useSite } from '../../context/SiteContext';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   useScrollAnimation();
   
-  // 프로젝트 데이터
-  const [projects] = useState([
-    {
-      id: 1,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-1.jpg'
-    },
-    {
-      id: 2,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-2.jpg'
-    },
-    {
-      id: 3,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-3.jpg'
-    },
-    {
-      id: 4,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-4.jpg'
-    },
-    {
-      id: 5,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-5.jpg'
-    },
-    {
-      id: 6,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-6.jpg'
-    },
-    {
-      id: 7,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-7.jpg'
-    },
-    {
-      id: 8,
-      title: 'Branding & Illustration Design',
-      category: 'Web Design',
-      image: 'images/work-8.jpg'
-    }
-  ]);
+  // SiteContext에서 projects 데이터 가져오기
+  const { state } = useSite();
+  const { projects } = state;
 
   return (
     <section className="ftco-section ftco-project" id="projects-section">
@@ -75,7 +29,10 @@ const Projects = () => {
               >
                 <div className="overlay"></div>
                 <div className="text text-center p-4">
-                  <h3><a href="#">{project.title}</a></h3>
+                  <h3>
+                    {/* 접근성 문제를 해결하기 위해 유효한 링크 경로 사용 또는 버튼으로 대체 */}
+                    <Link to={`/project/${project.id}`}>{project.title}</Link>
+                  </h3>
                   <span>{project.category}</span>
                 </div>
               </div>
