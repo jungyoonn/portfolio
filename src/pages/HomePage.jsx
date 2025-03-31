@@ -8,12 +8,12 @@ import Skills from '../components/home/Skills';
 import Services from '../components/home/Services';
 import Projects from '../components/home/Projects';
 import Testimonials from '../components/home/Testimonials';
-import Portfolio from '../components/home/Portfolio';
 import Contact from '../components/home/Contact';
 import HireMeSection from '../components/home/HireMeSection';
 
 // 애니메이션 훅 불러오기
 import { useScrollAnimation } from '../hooks/useAnimation';
+import WorkExperience from '../components/home/WorkExperience ';
 
 const HomePage = () => {
   // 스크롤 애니메이션 적용
@@ -34,7 +34,7 @@ const HomePage = () => {
       <HireMeSection />
       <Projects />
       <Testimonials />
-      <Portfolio />
+      <WorkExperience />
       <Contact />
     </div>
   );
