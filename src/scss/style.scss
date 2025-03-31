@@ -1225,64 +1225,96 @@ h1, h2, h3, h4, h5,
 }
 
 
-//PROJECT
-.project{
-	width: 100%;
-	height: 285px;
-	margin-bottom: 30px;
-	position: relative;
-	z-index: 0;
-	border-radius: 5px;
-	overflow: hidden;
-	.overlay{
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		content: '';
-		opacity: 0;
-		background: $black;
-		z-index: -1;
-		border-radius: 5px;
-		@include transition(.6s);
-		@include media-breakpoint-down(sm){
-			opacity: .2;
-		}
-	}
-	.text{
-		max-width: 80%;
-		z-index: 1;
-		opacity: 0;
-		@include transition(.3s);
-		h3{
-			font-size: 20px;
-			font-weight: 600;
-			a{
-				color: $white;
-			}
-		}
-		span{
-			color: $primary;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			font-weight: 600;
-		}
-		@include media-breakpoint-down(sm){
-			opacity: 1;
-			span{
-				color: rgba(255,255,255,.8);
-			}
-		}
-	}
-	&:hover, &:focus{
-		.overlay{
-			opacity: .4;
-		}
-		.text{
-			opacity: 1;
-		}
-	}
+// PROJECT
+.project {
+  width: 100%;
+  height: 300px; // 높이를 조금 늘려서 콘텐츠가 더 들어갈 수 있게 함
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0;
+    background: $black;
+    z-index: -1;
+    border-radius: 5px;
+    @include transition(.6s);
+    @include media-breakpoint-down(sm) {
+      opacity: .2;
+    }
+  }
+  
+  .text {
+    max-width: 90%; // 너비를 늘려 더 많은 콘텐츠를 표시
+    z-index: 1;
+    opacity: 0;
+    @include transition(.3s);
+    padding: 15px; // 내부 패딩 추가
+    
+    h3 {
+      font-size: 18px; // 글자 크기 약간 줄여 더 많은 텍스트가 들어가도록
+      font-weight: 600;
+      line-height: 1.3; // 줄 간격 조정
+      margin-bottom: 10px; // 제목과 다른 요소 사이 간격
+      
+      a {
+        color: $white;
+      }
+    }
+    
+    span.badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      background-color: rgba(255,255,255,0.2);
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      font-size: 12px;
+      padding: 3px 8px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .project-completed,
+    .project-position {
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .mt-3 {
+      margin-top: 10px !important;
+    }
+    
+    .btn-outline-light {
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+    
+    @include media-breakpoint-down(sm) {
+      opacity: 1;
+    }
+  }
+  
+  &:hover, &:focus {
+    .overlay {
+      opacity: .7; // 오버레이 불투명도 증가로 텍스트 가독성 향상
+    }
+    .text {
+      opacity: 1;
+    }
+  }
 }
 
 
