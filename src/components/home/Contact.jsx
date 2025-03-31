@@ -168,10 +168,10 @@ const Contact = () => {
               </div>
               <div className="dbox w-100 d-flex">
                 <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="fa fa-globe"></span>
+                  <span className="fa fa-clock-o fa-lg"></span>
                 </div>
                 <div className="text">
-                  <p className='noto-sans-kr'><span>Website:</span> <a href="https://yoursite.com">yoursite.com</a></p>
+                  <p className='noto-sans-kr fw-bold'><span>Response Time:</span> 24시간 이내</p>
                 </div>
               </div>
             </div>
