@@ -51,9 +51,9 @@ const Contact = () => {
       <div className="container">
         <div className="row justify-content-center mb-5 pb-3">
           <div className="col-md-7 heading-section text-center ftco-animate">
-            <span className="subheading">Contact us</span>
-            <h2 className="mb-4">Have a Project?</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <span className="subheading">Contact me</span>
+            <h2 className="mb-4 text-dark">Have a Project?</h2>
+            <p className='noto-sans-kr'>함께 협업하고 싶은 프로젝트가 있으신가요? 언제든지 연락 주시면 빠르게 답변 드리겠습니다.</p>
           </div>
         </div>
 
@@ -61,8 +61,8 @@ const Contact = () => {
           <div className="col-md-8">
             <form onSubmit={handleSubmit} className="bg-light p-4 p-md-5 contact-form">
               {submitted && (
-                <div className="alert alert-success mb-4" role="alert">
-                  Thank you for your message! We'll get back to you soon.
+                <div className="alert alert-success mb-4 noto-sans-kr" role="alert">
+                  메시지가 성공적으로 전송되었습니다! 곧 연락드리겠습니다.
                 </div>
               )}
               {error && (
@@ -147,7 +147,7 @@ const Contact = () => {
                   <span className="fa fa-map-marker"></span>
                 </div>
                 <div className="text">
-                  <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                  <p className='noto-sans-kr'><span>Address:</span> 서울특별시 동작구 여의대방로 26길 56</p>
                 </div>
               </div>
               <div className="dbox w-100 d-flex">
@@ -155,7 +155,7 @@ const Contact = () => {
                   <span className="fa fa-phone"></span>
                 </div>
                 <div className="text">
-                  <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                  <p className='noto-sans-kr'><span>Phone:</span> <a href="tel://1234567920">010-5191-9852</a></p>
                 </div>
               </div>
               <div className="dbox w-100 d-flex">
@@ -163,7 +163,7 @@ const Contact = () => {
                   <span className="fa fa-paper-plane"></span>
                 </div>
                 <div className="text">
-                  <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                  <p className='noto-sans-kr'><span>Email:</span> <a href="mailto:sophia76256@gmail.com">sophia76256@gmail.com</a></p>
                 </div>
               </div>
               <div className="dbox w-100 d-flex">
@@ -171,7 +171,7 @@ const Contact = () => {
                   <span className="fa fa-globe"></span>
                 </div>
                 <div className="text">
-                  <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                  <p className='noto-sans-kr'><span>Website:</span> <a href="https://yoursite.com">yoursite.com</a></p>
                 </div>
               </div>
             </div>
