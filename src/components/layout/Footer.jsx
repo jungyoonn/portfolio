@@ -64,13 +64,33 @@ const Footer = () => {
           <div className="col-md">
             <div className="ftco-footer-widget mb-4">
               <h2 className="ftco-heading-2">Technical Expertise</h2>
-              <ul className="list-unstyled">
+              {/* 버전 1 */}
+              {/* <ul className="list-unstyled">
                 <li><span className="fa fa-laptop mr-2 list-align"></span><span className="noto-sans-kr">웹 애플리케이션</span></li>
                 <li><span className="fa fa-server mr-2 list-align"></span><span className="noto-sans-kr">API 개발</span></li>
                 <li><span className="fa fa-database mr-2 list-align"></span><span className="noto-sans-kr">데이터 모델링</span></li>
                 <li><span className="fa fa-mobile mr-2 fa-lg list-align"></span><span className="noto-sans-kr">모바일 앱</span></li>
                 <li><span className="fa fa-paint-brush mr-2 list-align"></span><span className="noto-sans-kr">UI 컴포넌트</span></li>
-              </ul>
+              </ul> */}
+
+              {/* 버전 2 */}
+              <div className="dev-areas noto-sans-kr fw-bold">
+                <div className="dev-area-item">
+                  <span className="fa fa-laptop fa-fw fa-lg"></span> 웹 애플리케이션
+                </div>
+                <div className="dev-area-item">
+                  <span className="fa fa-server fa-fw fa-lg"></span> API 개발
+                </div>
+                <div className="dev-area-item">
+                  <span className="fa fa-database fa-fw fa-lg"></span> 데이터 모델링
+                </div>
+                <div className="dev-area-item">
+                  <span className="fa fa-mobile fa-fw fa-lg"></span> 모바일 앱
+                </div>
+                <div className="dev-area-item">
+                  <span className="fa fa-paint-brush fa-fw fa-lg"></span> UI 컴포넌트
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-md">
