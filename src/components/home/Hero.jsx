@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../css/hero.css';
 import profileImg1 from '../../img/slider_profile_img2.png';
-import profileImg2 from '../../img/slider_profile_img3.png';
+import profileImg2 from '../../img/slider_profile_img9.png';
 import profileImg3 from '../../img/slider_profile_img1.png';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from 'react-router-dom';
