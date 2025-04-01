@@ -4,6 +4,7 @@ import cookieBackground from '../img/cookie.jpg';
 import boardBackground from '../img/board_project.png';
 import miniBackground from '../img/mini_project.png';
 import publicKeyBackground from '../img/elliptic_curve_project.jpg';
+import deliveryBackground from '../img/first_project.png';
 
 // 초기 상태 정의 - 각 컴포넌트의 데이터 통합
 const initialState = {
@@ -97,7 +98,7 @@ const initialState = {
       category: 'Linux, Raspberry Pi, C',
       deploy: '',
       image: publicKeyBackground,
-      position: '대학교 졸업 작품',
+      position: '팀원',
       role: '상호 인증 프로토콜 구현 및 보안 모듈 개발',
       completed: 'October 2021',
       description: '정보보안 기술의 핵심인 상호 인증 기능을 구현한 캡스톤 디자인 프로젝트입니다. 두 명의 가상 사용자가 각각의 공개키와 비밀키를 생성하고, Elliptic Curve 방식을 적용하여 암호화 및 복호화 과정을 구현했습니다. Linux 환경에서 개발했으며 Raspberry Pi를 활용해 실제 시스템에 적용 가능한 솔루션을 만들었습니다. 이 프로젝트를 통해 기존 암호화 방식보다 속도가 빠르고 효율적인 Elliptic Curve 암호화의 장점을 경험하고, 계산 능력이 제한적이거나 집적 회로 공간이 제한될 때 특히 유용한 보안 솔루션을 개발했습니다.'
@@ -105,12 +106,12 @@ const initialState = {
     {
       id: 6,
       title: '배송지 거리별로 배달비가 달라지는 분식 가게 배달 API',
-      category: 'C',
-      image: 'images/work-6.jpg',
+      category: 'C++',
+      image: deliveryBackground,
       position: '대학교 조별 과제',
       role: '지역별, 거리별 배달비 책정 시스템 구현',
       completed: '2019년 2학기',
-      description: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
+      description: '대학교 프로그래밍 수업의 일환으로 C++을 활용하여 배달 서비스 API를 구현한 프로젝트입니다. 배송지와 가게 간의 거리를 계산하여 거리별로 차등화된 배달비를 산정하는 알고리즘을 개발했습니다. 지역 코드와 실제 거리 데이터를 매핑하고, 사용자 주문 정보에 따라 자동으로 배달비를 계산하는 시스템을 구축했습니다. 이 프로젝트를 통해 알고리즘 설계 능력을 향상시키고, 실제 비즈니스 로직을 프로그래밍으로 구현하는 경험을 쌓았습니다.'
     },
   ],
   // Testimonials.jsx
