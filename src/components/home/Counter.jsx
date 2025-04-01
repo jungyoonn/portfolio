@@ -53,9 +53,9 @@ const Counter = () => {
   // 카운터 데이터 - 폰트어썸 아이콘으로 변경
   const counterData = [
     { icon: faBriefcase, number: 4, title: 'Project Complete' },
-    { icon: faBookBookmark, number: 34, title: 'Github repositories' },
+    { icon: faBookBookmark, number: 35, title: 'Github repositories' },
     { icon: faCalendarCheck, number: 1039, title: 'Contributions in 2024' },
-    { icon: faCalendarAlt, number: 621, title: 'Contributions in 2025' }
+    { icon: faCalendarAlt, number: 675, title: 'Contributions in 2025' }
   ];
 
   return (
