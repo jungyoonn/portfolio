@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="48.623" viewBox="0 0 100 48.623">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_2" data-name="사각형 2" width="100" height="30.202" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="logo" transform="translate(0 6.549)">
+    <g id="color" transform="translate(0 -6.549)">
+      <rect id="사각형_1" data-name="사각형 1" width="6.183" height="29.411" transform="translate(67.648 0.79)"/>
+      <path id="패스_1" data-name="패스 1" d="M88.116.89V6.572h7.79V30.3h6.183V6.572h7.79V.89Z" transform="translate(-9.881 -0.1)"/>
+      <g id="그룹_2" data-name="그룹 2">
+        <g id="그룹_1" data-name="그룹 1" clip-path="url(#clip-path)">
+          <path id="패스_2" data-name="패스 2" d="M41.2,22.066V16.777H30.915V.889H25.177V18.594a3.471,3.471,0,0,0,3.472,3.472Z" transform="translate(-2.823 -0.1)" fill="#5ab88f"/>
+          <path id="패스_3" data-name="패스 3" d="M55.645,22.757A11.379,11.379,0,1,0,44.267,11.378,11.378,11.378,0,0,0,55.645,22.757m0-17.5a6.012,6.012,0,0,1,5.935,6.087,5.937,5.937,0,1,1-11.87,0A6.012,6.012,0,0,1,55.647,5.26" transform="translate(-4.964 0)" fill="#5ab88f"/>
+          <path id="패스_4" data-name="패스 4" d="M5.886,15.555a9.127,9.127,0,0,1,9.127-9.127h3.514l0-5.538H14.706a14.706,14.706,0,0,0,0,29.412H62.06V24.682H15.013a9.127,9.127,0,0,1-9.127-9.127" transform="translate(0 -0.1)" fill="#5ab88f"/>
+        </g>
+      </g>
+    </g>
+    <g id="그룹_4926" data-name="그룹 4926" transform="translate(0 33.074)">
+      <text id="CLOUD_SERVICE" data-name="CLOUD SERVICE" transform="translate(3 6)" fill="#828282" font-size="10" font-family="S-CoreDream-4Regular, 'S-Core Dream \34 '" letter-spacing="0.15em"><tspan x="0" y="0">CLOUD SERVICE</tspan></text>
+    </g>
+  </g>
+</svg>
