@@ -29,7 +29,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Pages
 import HomePage from './pages/HomePage';
-import PortfolioPage from './pages/PortfolioPage'
+// import PortfolioPage from './pages/PortfolioPage'
 import SinglePortfolioPage from './pages/SinglePortfolioPage';
 
 // Components
@@ -60,7 +60,6 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/:id" element={<SinglePortfolioPage />} />
         </Routes>
         <Footer />
