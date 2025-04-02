@@ -1,4 +1,10 @@
 /* WorkExperience.css */
+#work-experience {
+  background-color: #f8f9fb;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .work-experience-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
