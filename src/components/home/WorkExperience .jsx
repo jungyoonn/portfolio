@@ -170,7 +170,7 @@ const WorkExperience = () => {
                       <FontAwesomeIcon icon={faPencilRuler} className="mr-2" />
                       보유 역량
                     </h5>
-                    <div className="skills-container noto-sans-kr">
+                    <div className="skills-container noto-sans-kr fw-bold">
                       {workExperience.skills.map((skill, index) => (
                         <span key={index} className="skill-badge">
                           {skill}
