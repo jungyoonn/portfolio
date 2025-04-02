@@ -1,7 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../../hooks/useAnimation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTasks, faTrophy, faCode, faEnvelope, faMapMarker, faClock, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faTrophy, faEnvelope, faMapMarker, faClock, faBuilding, faProjectDiagram, faFileAlt, faSitemap, faPencilRuler } from '@fortawesome/free-solid-svg-icons';
 import companyLogo from '../../img/logo.svg';
 import '../../css/work-experience.css';
 
@@ -9,42 +9,61 @@ const WorkExperience = () => {
   // 스크롤 애니메이션 적용
   useScrollAnimation();
   
-  // 직장 경력 데이터 - 실제 정보로 수정
+  // 직장 경력 데이터
   const workExperience = {
     company: "(주)클로잇",
     position: "클라우드 엔지니어",
     period: "September 2022 - February 2023",
     location: "서울특별시, 대한민국",
+    jobDescription: "사내 관리 페이지 개편 프로젝트의 기획/설계 담당",
+    projects: [
+      {
+        name: "사내 PMS(Project Management System) 개편 프로젝트",
+        description: "기존 레거시 시스템을 최신 기술 스택으로 마이그레이션하고 UI/UX를 개선하는 프로젝트",
+        role: "기획 및 설계, 문서화, 산출물 관리",
+        tasks: [
+          "AS-IS 기능 분석 및 분류",
+          "각 부서별/계열사별 회의를 통한 요구사항 수집",
+          "요구사항 정의 및 정의서 작성",
+          "요구사항별 우선순위 부여",
+          "TO-BE 기능 정의",
+          "화면 설계 및 설계서 작성",
+          "각종 산출물 관리"
+        ],
+        technologies: ["Google Sheets", "Google Slides", "Coda", "Slack", "MS Office"]
+      }
+    ],
     responsibilities: [
-      "React와 TypeScript를 활용한 웹 애플리케이션 개발",
-      "REST API 연동 및 데이터 시각화 컴포넌트 구현",
-      "사용자 인터페이스 개선 및 반응형 웹 디자인 적용",
-      "코드 리뷰 및 테스트 주도 개발 참여",
-      "애자일 스크럼 방법론 기반 프로젝트 협업"
+      "프로젝트 요구사항 수집 및 분석",
+      "요구사항 정의서 작성 및 관리",
+      "UI/UX 화면 설계 및 화면 설계서 작성",
+      "이해관계자와의 효율적인 커뮤니케이션",
+      "프로젝트 산출물 문서화 및 관리"
     ],
     achievements: [
-      "주요 페이지 로딩 시간 30% 개선",
-      "접근성 표준 준수를 통한 웹 사이트 품질 향상",
-      "재사용 가능한 컴포넌트 라이브러리 구축에 기여"
+      "다수의 본사 부서 및 계열사의 요구사항을 성공적으로 수집 및 통합",
+      "150개 이상의 요구사항을 분석하고 우선순위화하여 개발 로드맵 수립에 기여",
+      "직관적인 화면 설계를 통해 사용자 경험 개선 방향 제시"
     ],
-    skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Git", "Jira"],
-    testimonial: "짧은 기간이었지만 다양한 프로젝트에 참여하며 실무 경험을 쌓을 수 있었습니다. 특히 팀 협업을 통한 문제 해결 능력과 새로운 기술 습득에 큰 성장이 있었습니다."
+    skills: ["요구사항 분석", "화면 설계", "문서화", "Slack", "Coda", "MS Office"],
+    testimonial: "짧은 기간이었지만 프로젝트 기획 단계에서 중요한 역할을 수행하며 분석 및 문서화 능력을 키울 수 있었습니다. 특히 다양한 이해관계자들과의 소통을 통해 효과적인 요구사항 수집 및 정의 역량을 향상시킬 수 있었습니다."
   };
 
   return (
-    <section className="ftco-section " id="work-experience">
+    <section className="ftco-section" id="work-experience">
       <div className="container">
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center ftco-animate">
             <span className="subheading">Experience</span>
             <h2 className="mb-4 text-dark">Work Experience</h2>
-            <p className='noto-sans-kr'>웹 개발자로서의 실무 경험과 성과를 소개합니다. 짧은 기간이지만 프로젝트 전반에 참여하며 다양한 기술을 실무에 적용해 보았습니다.</p>
+            <p className='noto-sans-kr'>기획과 설계 단계에서의 실무 경험과 성과를 소개합니다. 프로젝트 초기 단계에서 요구사항 수집부터 화면 설계까지 다양한 업무를 담당했습니다.</p>
           </div>
         </div>
         
         <div className="row d-flex">
           <div className="col-md-12 ftco-animate">
             <div className="work-experience-card p-4 shadow bg-white">
+              {/* 회사 및 직위 정보 */}
               <div className="row mb-4">
                 <div className="col-md-9">
                   <div className="d-flex align-items-center mb-2">
@@ -57,6 +76,9 @@ const WorkExperience = () => {
                         <FontAwesomeIcon icon={faBuilding} className="mr-2" />
                         {workExperience.company}
                       </h4>
+                      <p className="job-description noto-sans-kr mt-2">
+                        {workExperience.jobDescription}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -76,12 +98,47 @@ const WorkExperience = () => {
                 </div>
               </div>
               
+              {/* 프로젝트 정보 */}
+              <div className="projects-section mb-4">
+                <h5 className="section-title noto-sans-kr">
+                  <FontAwesomeIcon icon={faProjectDiagram} className="mr-2" />
+                  참여 프로젝트
+                </h5>
+                
+                {workExperience.projects.map((project, index) => (
+                  <div key={index} className="project-item p-3 mb-3 bg-light rounded">
+                    <h6 className="project-name noto-sans-kr fw-bold">
+                      <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
+                      {project.name}
+                    </h6>
+                    <p className="project-description noto-sans-kr mb-2">{project.description}</p>
+                    <p className="project-role noto-sans-kr mb-2"><strong>역할:</strong> {project.role}</p>
+                    
+                    <div className="project-tasks mb-3">
+                      <strong className="noto-sans-kr">담당 업무:</strong>
+                      <ul className="noto-sans-kr small-list">
+                        {project.tasks.map((task, taskIndex) => (
+                          <li key={taskIndex}>{task}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="project-technologies fw-bold">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
               <div className="row">
                 <div className="col-md-8 pr-md-5">
+                  {/* 주요 업무 */}
                   <div className="responsibilities mb-4">
                     <h5 className="section-title noto-sans-kr">
-                      <FontAwesomeIcon icon={faTasks} className="mr-2" />
-                      주요 업무
+                      <FontAwesomeIcon icon={faSitemap} className="mr-2" />
+                      주요 업무 및 책임
                     </h5>
                     <ul className="noto-sans-kr work-list">
                       {workExperience.responsibilities.map((responsibility, index) => (
@@ -90,6 +147,7 @@ const WorkExperience = () => {
                     </ul>
                   </div>
                   
+                  {/* 주요 성과 */}
                   <div className="achievements mb-4">
                     <h5 className="section-title noto-sans-kr">
                       <FontAwesomeIcon icon={faTrophy} className="mr-2" />
@@ -104,10 +162,11 @@ const WorkExperience = () => {
                 </div>
                 
                 <div className="col-md-4">
+                  {/* 사용 기술 */}
                   <div className="skills-used">
                     <h5 className="section-title mb-3 noto-sans-kr">
-                      <FontAwesomeIcon icon={faCode} className="mr-2" />
-                      사용 기술
+                      <FontAwesomeIcon icon={faPencilRuler} className="mr-2" />
+                      보유 역량
                     </h5>
                     <div className="skills-container noto-sans-kr">
                       {workExperience.skills.map((skill, index) => (
@@ -118,6 +177,7 @@ const WorkExperience = () => {
                     </div>
                   </div>
                   
+                  {/* 연락하기 버튼 */}
                   <div className="contact-action mt-4 text-center noto-sans-kr">
                     <a href="#contact" className="contact-btn">
                       <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> 연락하기
@@ -126,6 +186,7 @@ const WorkExperience = () => {
                 </div>
               </div>
               
+              {/* 소감 */}
               <div className="testimonial mt-4">
                 <blockquote className="mb-0">
                   <i className="fa fa-quote-left mr-2"></i>
