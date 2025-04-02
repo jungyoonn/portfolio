@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useScrollAnimation } from '../../hooks/useAnimation';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   useScrollAnimation();
+
+  // EmailJS 초기화
+  useEffect(() => {
+    // 라이브러리 초기화
+    emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+  }, []);
 
   // 폼 상태 관리
   const [formData, setFormData] = useState({
@@ -16,6 +23,10 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // EmailJS 설정
+  const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 
   // 입력 변경 핸들러
   const handleInputChange = (e) => {
@@ -32,18 +43,25 @@ const Contact = () => {
     setLoading(true);
     setError(null);
     
-    // 실제 구현에서는 이 부분에 API 호출 또는 이메일 전송 로직 추가
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setLoading(false);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    // EmailJS를 통한 실제 이메일 전송
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData)
+      .then((response) => {
+        console.log('이메일 전송 성공:', response);
+        setSubmitted(true);
+        setLoading(false);
+        // 폼 초기화
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      })
+      .catch((err) => {
+        console.error('이메일 전송 실패:', err);
+        setError('메시지 전송에 실패했습니다. 다시 시도해 주세요.');
+        setLoading(false);
       });
-    }, 1000);
   };
 
   return (
@@ -66,7 +84,7 @@ const Contact = () => {
                 </div>
               )}
               {error && (
-                <div className="alert alert-danger mb-4" role="alert">
+                <div className="alert alert-danger mb-4 noto-sans-kr" role="alert">
                   {error}
                 </div>
               )}
