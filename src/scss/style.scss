@@ -1923,6 +1923,9 @@ textarea.form-control {
 
 
 .contact-section {
+	padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+
 	.img{
 		width: 100%;
 		background-position: top center;
@@ -1937,7 +1940,7 @@ textarea.form-control {
 	}
 	.contact-form{
 		width: 100%;
-		border-radius: 5px;
+		border-radius: 10px;
 		.btn-primary{
 			@include media-breakpoint-down(sm){
 				display: block;
