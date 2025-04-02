@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSite } from '../context/SiteContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt, faUser, faTools, faServer, faCode, faLightbulb, faTasks, faUsers, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faUser, faServer, faCode, faLightbulb, faTasks, faUsers, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../css/single-portfolio-page.css';
 
@@ -43,9 +43,16 @@ const SinglePortfolioPage = () => {
           <div className="row no-gutters slider-text align-items-end justify-content-center">
             <div className="col-md-9 ftco-animate pb-5 text-center">
               <p className="breadcrumbs">
-                <span className="mr-2"><Link to="/">Home <i className="fa fa-chevron-right"></i></Link></span> 
-                <span className="mr-2"><Link to="/#projects">Projects <i className="fa fa-chevron-right"></i></Link></span> 
-                <span className="noto-sans-kr">프로젝트 상세</span>
+                {/* <span className="mr-2 fw-bold"><Link to="/">Home <i className="fa fa-chevron-right"></i></Link></span> 
+                <span className="mr-2 fw-bold"><Link to="/#projects">Projects <i className="fa fa-chevron-right"></i></Link></span> 
+                <span className="noto-sans-kr fw-bold">Project Detail</span> */}
+                {project.projectLink && (
+                  <div className="mt-3 noto-sans-kr">
+                    <Link to={project.projectLink} className="btn btn-outline-dark btn-sm fw-bold">
+                      사이트 방문하기 <i className="fa fa-arrow-right ml-1"></i>
+                    </Link>
+                  </div>
+                )}
               </p>
               <h1 className="mb-0 bread noto-sans-kr">{project.title}</h1>
             </div>
@@ -268,7 +275,7 @@ const SinglePortfolioPage = () => {
                   {categories.map((category, index) => (
                     <a 
                       key={index} 
-                      href="#" 
+                      href="/" 
                       className="tag-cloud-link"
                       onClick={(e) => e.preventDefault()}
                     >
@@ -314,7 +321,7 @@ const OtherProjects = ({ currentId }) => {
             </h3>
             <div className="meta">
               <div>
-                <a href="#" onClick={(e) => e.preventDefault()}>
+                <a href="/" onClick={(e) => e.preventDefault()}>
                   <span className="fa fa-calendar mr-2"></span>{project.completed}
                 </a>
               </div>
