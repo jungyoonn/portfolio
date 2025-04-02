@@ -2,7 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSite } from '../context/SiteContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt, faUser, faServer, faCode, faLightbulb, faTasks, faUsers, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faCalendarAlt, 
+  faUser, 
+  faServer, 
+  faCode, 
+  faLightbulb, 
+  faTasks, 
+  faUsers, 
+  faGraduationCap,
+  faListAlt,
+  faFileAlt,
+  faSitemap,
+  faDownload,
+  faChartLine,
+  faExclamationTriangle,
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../css/single-portfolio-page.css';
 
@@ -88,6 +103,53 @@ const SinglePortfolioPage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* 상세 기능 설명 */}
+              {project.features && (
+                <div className="features mb-5">
+                  <h2 className="mb-4 noto-sans-kr section-title">
+                    <FontAwesomeIcon icon={faListAlt} className="mr-2" />
+                    주요 기능
+                  </h2>
+                  <div className="accordion" id="featuresAccordion">
+                    {project.features.map((feature, index) => (
+                      <div className="card mb-3" key={index}>
+                        <div className="card-header" id={`heading${index}`}>
+                          <h5 className="mb-0">
+                            <button className="btn btn-link noto-sans-kr" type="button" data-toggle="collapse" data-target={`#collapse${index}`}>
+                              {feature.title}
+                            </button>
+                          </h5>
+                        </div>
+                        <div id={`collapse${index}`} className={`collapse ${index === 0 ? 'show' : ''}`} data-parent="#featuresAccordion">
+                          <div className="card-body">
+                            <div className="row">
+                              <div className="col-md-6 mb-3">
+                                <img src={feature.image} alt={feature.title} className="img-fluid rounded" />
+                              </div>
+                              <div className="col-md-6">
+                                <p className="noto-sans-kr">{feature.description}</p>
+                                <h6 className="noto-sans-kr font-weight-bold">사용 기술:</h6>
+                                <div className="mb-3">
+                                  {feature.tech && feature.tech.map((tech, techIndex) => (
+                                    <span key={techIndex} className="badge badge-secondary mr-2 mb-2 p-2">{tech}</span>
+                                  ))}
+                                </div>
+                                {feature.codeSnippet && (
+                                  <div className="code-snippet mt-3">
+                                    <h6 className="noto-sans-kr font-weight-bold">주요 코드:</h6>
+                                    <pre className="bg-light p-3 rounded">{feature.codeSnippet}</pre>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               
               {/* 문제 해결 */}
               {project.challenge && project.solution && (
@@ -122,6 +184,100 @@ const SinglePortfolioPage = () => {
                     <div className="card-body">
                       <p className="card-text noto-sans-kr">{project.collaboration}</p>
                     </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* 아키텍처 다이어그램 */}
+              {project.architecture && (
+                <div className="architecture mb-5">
+                  <h2 className="mb-4 noto-sans-kr section-title">
+                    <FontAwesomeIcon icon={faSitemap} className="mr-2" />
+                    시스템 아키텍처
+                  </h2>
+                  <div className="card shadow-sm mb-3">
+                    <div className="card-body">
+                      <div className="text-center mb-3">
+                        <img 
+                          src={project.architecture.diagram} 
+                          alt="시스템 아키텍처 다이어그램" 
+                          className="img-fluid"
+                          style={{ maxWidth: '100%' }}
+                        />
+                      </div>
+                      <p className="noto-sans-kr">{project.architecture.description}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* 성능 최적화 사례 */}
+              {project.performance && (
+                <div className="performance mb-5">
+                  <h2 className="mb-4 noto-sans-kr section-title">
+                    <FontAwesomeIcon icon={faChartLine} className="mr-2" />
+                    성능 최적화
+                  </h2>
+                  <div className="card shadow-sm mb-3">
+                    <div className="card-body">
+                      <div className="row mb-4">
+                        <div className="col-md-6">
+                          <h5 className="card-title noto-sans-kr">최적화 전</h5>
+                          <div className="performance-metrics p-3 bg-light rounded">
+                            <p className="noto-sans-kr mb-2">
+                              <FontAwesomeIcon icon={faExclamationTriangle} className="text-warning mr-2" />
+                              {project.performance.before}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <h5 className="card-title noto-sans-kr">최적화 후</h5>
+                          <div className="performance-metrics p-3 bg-light rounded">
+                            <p className="noto-sans-kr mb-2">
+                              <FontAwesomeIcon icon={faChartLine} className="text-success mr-2" />
+                              {project.performance.after}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <h5 className="card-title noto-sans-kr">최적화 방법</h5>
+                      <p className="card-text noto-sans-kr">{project.performance.methods}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* 프로젝트 산출물 */}
+              {project.documents && project.documents.length > 0 && (
+                <div className="documents mb-5">
+                  <h2 className="mb-4 noto-sans-kr section-title">
+                    <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
+                    프로젝트 산출물
+                  </h2>
+                  <div className="row">
+                    {project.documents.map((doc, index) => (
+                      <div className="col-md-6 mb-3" key={index}>
+                        <div className="card h-100">
+                          <div className="card-body">
+                            <h5 className="card-title noto-sans-kr">
+                              <FontAwesomeIcon icon={doc.icon} className="mr-2" />
+                              {doc.title}
+                            </h5>
+                            <p className="card-text noto-sans-kr small">{doc.description}</p>
+                          </div>
+                          <div className="card-footer bg-white border-top-0">
+                            <a 
+                              href={doc.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="btn btn-sm btn-outline-primary"
+                            >
+                              <FontAwesomeIcon icon={faDownload} className="mr-1" /> 다운로드
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

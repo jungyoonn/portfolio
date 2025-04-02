@@ -5,6 +5,12 @@ import boardBackground from '../img/board_project.png';
 import miniBackground from '../img/mini_project.png';
 import publicKeyBackground from '../img/elliptic_curve_project.jpg';
 import deliveryBackground from '../img/first_project.png';
+import { 
+  faDatabase, 
+  faDesktop, 
+  faCodeBranch, 
+  faFileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 // 초기 상태 정의 - 각 컴포넌트의 데이터 통합
 const initialState = {
@@ -65,7 +71,58 @@ const initialState = {
       learning: "이 프로젝트를 통해 React와 Spring의 통합 및 RESTful API 설계에 대한 실무 경험을 쌓았습니다. 팀장으로서 프로젝트 관리 능력을 키웠으며, 사용자 중심의 UI/UX 설계의 중요성을 배웠습니다. 특히 클라우드 환경에서의 배포와 운영 경험은 현업에서 많은 도움이 될 것이라 생각합니다.",
       results: "프로젝트 발표에서 높은 평가를 받았으며, 특히 사용자 맞춤형 추천 알고리즘과 직관적인 UI가 호평을 받았습니다. 현업 개발자들로부터 실제 서비스로 발전시킬 만한 가치가 있다는 피드백을 받았으며, 팀 역량 강화와 포트폴리오 향상에 크게 기여했습니다.",
       githubLink: "https://github.com/jungyoonn/pillLaw_backend",
-      projectLink: "https://pilllaw.eeerrorcode.com/pilllaw"
+      projectLink: "https://pilllaw.eeerrorcode.com/pilllaw",
+      features: [
+        {
+          title: "사용자 인증 시스템",
+          image: "/images/features/auth-feature.png",
+          description: "JWT 기반 인증 시스템으로 안전한 사용자 로그인과 회원가입을 구현했습니다. 소셜 로그인 지원과 권한 기반 접근 제어를 통합했습니다.",
+          tech: ["JWT", "Spring Security", "OAuth2"],
+          codeSnippet: "const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1d' });"
+        },
+        {
+          title: "실시간 데이터 대시보드",
+          image: "/images/features/dashboard.png",
+          description: "WebSocket을 활용한 실시간 데이터 시각화 대시보드로, 사용자 행동 패턴을 분석하고 관리자에게 즉각적인 피드백을 제공합니다.",
+          tech: ["Socket.io", "Chart.js", "Redux"],
+          codeSnippet: "socket.on('data-update', (data) => { setChartData(processDataForChart(data)); });"
+        }
+      ],
+      documents: [
+        {
+          title: "ERD 다이어그램",
+          description: "데이터베이스 설계 구조와 테이블 간 관계를 보여주는 ERD 다이어그램입니다.",
+          url: "/documents/project-erd.pdf",
+          icon: faDatabase
+        },
+        {
+          title: "요구사항 정의서",
+          description: "프로젝트 요구사항 명세와 기능 목록이 담긴 문서입니다.",
+          url: "/documents/requirements.pdf",
+          icon: faFileAlt
+        },
+        {
+          title: "발표 자료",
+          description: "프로젝트 최종 발표에 사용된 프레젠테이션 자료입니다.",
+          url: "/documents/presentation.pdf",
+          icon: faDesktop
+        },
+        {
+          title: "API 명세서",
+          description: "백엔드 API의 엔드포인트, 요청/응답 형식을 정의한 문서입니다.",
+          url: "/documents/api-spec.pdf",
+          icon: faCodeBranch
+        }
+      ],
+      architecture: {
+        diagram: "/images/architecture-diagram.png",
+        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+      },
+      performance: {
+        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
+        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
+        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
+      }
     },
     {
       id: 2,

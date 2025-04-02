@@ -203,32 +203,84 @@
   border-color: #9ea17e;
 }
 
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-  .hero-wrap.hero-wrap-2 {
-    height: 300px;
-  }
-  
-  .sidebar {
-    margin-top: 40px;
-  }
-  
-  .tech-container .badge {
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
+/* 아코디언 스타일 */
+.accordion .card-header {
+  background-color: #f8f9fa;
+  border-bottom: none;
+  border-radius: 8px !important;
 }
 
-@media (max-width: 576px) {
-  .hero-wrap.hero-wrap-2 {
-    height: 250px;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .card-body {
-    padding: 1rem;
-  }
+.accordion .card {
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.accordion .btn-link {
+  color: #9ea17e;
+  font-weight: 600;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion .btn-link:hover,
+.accordion .btn-link:focus {
+  color: #6c7156;
+  text-decoration: none;
+}
+
+.accordion .card-body {
+  padding: 1.5rem;
+}
+
+/* 코드 스니펫 스타일 */
+.code-snippet pre {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* 프로젝트 산출물 스타일 */
+.documents .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.documents .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.documents .card-footer {
+  background-color: transparent;
+  border-top: none;
+}
+
+/* 아키텍처 다이어그램 스타일 */
+.architecture img {
+  max-width: 100%;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+/* 성능 최적화 사례 스타일 */
+.performance-metrics {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.performance-metrics .text-success {
+  color: #28a745 !important;
+}
+
+.performance-metrics .text-warning {
+  color: #ffc107 !important;
 }
