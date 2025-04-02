@@ -54,6 +54,14 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
+.card-text {
+  color: #999999;
+}
+
+.badge-primary {
+  background-color: #b1b493 !important;
+}
+
 /* 기술 태그 스타일 */
 .tech-container {
   display: flex;
