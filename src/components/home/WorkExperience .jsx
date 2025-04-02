@@ -15,11 +15,11 @@ const WorkExperience = () => {
     position: "클라우드 엔지니어",
     period: "September 2022 - February 2023",
     location: "서울특별시, 대한민국",
-    jobDescription: "사내 관리 페이지 개편 프로젝트의 기획/설계 담당",
+    jobDescription: "사내 관리 페이지 개편 및 클라우드 환경 마이그레이션 프로젝트의 기획/설계 담당",
     projects: [
       {
         name: "사내 PMS(Project Management System) 개편 프로젝트",
-        description: "기존 레거시 시스템을 최신 기술 스택으로 마이그레이션하고 UI/UX를 개선하는 프로젝트",
+        description: "기존 레거시 시스템을 클라우드 기반 최신 기술 스택으로 마이그레이션하고 기능 개편, 업무 표준화 및 UI/UX를 개선하는 프로젝트",
         role: "기획 및 설계, 문서화, 산출물 관리",
         tasks: [
           "AS-IS 기능 분석 및 분류",
@@ -38,15 +38,17 @@ const WorkExperience = () => {
       "요구사항 정의서 작성 및 관리",
       "UI/UX 화면 설계 및 화면 설계서 작성",
       "이해관계자와의 효율적인 커뮤니케이션",
-      "프로젝트 산출물 문서화 및 관리"
+      "프로젝트 산출물 문서화 및 관리",
+      "클라우드 엔지니어링 교육 참여"
     ],
     achievements: [
       "다수의 본사 부서 및 계열사의 요구사항을 성공적으로 수집 및 통합",
       "150개 이상의 요구사항을 분석하고 우선순위화하여 개발 로드맵 수립에 기여",
-      "직관적인 화면 설계를 통해 사용자 경험 개선 방향 제시"
+      "직관적인 화면 설계를 통해 사용자 경험 개선 방향 제시",
+      "클라우드 기반 시스템으로의 전환을 위한 명확한 요구사항 정의에 기여",
     ],
-    skills: ["요구사항 분석", "화면 설계", "문서화", "Slack", "Coda", "MS Office"],
-    testimonial: "짧은 기간이었지만 프로젝트 기획 단계에서 중요한 역할을 수행하며 분석 및 문서화 능력을 키울 수 있었습니다. 특히 다양한 이해관계자들과의 소통을 통해 효과적인 요구사항 수집 및 정의 역량을 향상시킬 수 있었습니다."
+    skills: ["요구사항 분석", "화면 설계", "문서화", "Slack", "Coda", "MS Office", "클라우드 인프라 이해", "AWS 기초 지식"],
+    testimonial: "짧은 기간이었지만 프로젝트 기획 단계에서 중요한 역할을 수행하며 분석 및 문서화 능력을 키울 수 있었습니다. 특히 다양한 이해관계자들과의 소통을 통해 효과적인 요구사항 수집 및 정의 역량을 향상시킬 수 있었습니다. 또한 클라우드 기반 시스템으로의 마이그레이션 프로젝트에 참여함으로써 클라우드 인프라에 대한 이해도를 높이고, 확장성과 효율성을 고려한 설계 방법론을 배울 수 있었던 소중한 경험이었습니다."
   };
 
   return (
@@ -71,7 +73,7 @@ const WorkExperience = () => {
                       <img src={companyLogo} alt="Company Logo" className="img-fluid mt-3" />
                     </div>
                     <div>
-                      <h3 className="mb-0 text-dark noto-sans-kr">{workExperience.position}</h3>
+                      <h3 className="mb-1 text-dark noto-sans-kr fw-bold">{workExperience.position}</h3>
                       <h4 className="company-name noto-sans-kr">
                         <FontAwesomeIcon icon={faBuilding} className="mr-2" />
                         {workExperience.company}
