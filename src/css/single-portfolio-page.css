@@ -1,0 +1,226 @@
+/* 헤더 영역 스타일 */
+.hero-wrap.hero-wrap-2 {
+  height: 600px;
+  position: relative;
+}
+
+.hero-wrap.hero-wrap-2 .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f8f9fa !important;
+  opacity: 0.6 !important;
+}
+
+.project-img img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 섹션 제목 스타일 */
+.section-title {
+  color: #9ea17e;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* 카드 스타일 */
+.card.shadow-sm {
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.shadow-sm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-title {
+  color: #9ea17e;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.role-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 기술 태그 스타일 */
+.tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tech-container .badge {
+  padding: 8px 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* 사이드바 스타일 */
+.sidebar-box {
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.heading-sidebar {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.heading-sidebar:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #b1b493;
+}
+
+.project-info-list .d-flex {
+  margin-bottom: 15px;
+}
+
+.project-info-list strong {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* 태그 클라우드 스타일 */
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-cloud-link {
+  display: inline-block !important;
+  padding: 7px 15px !important;
+  margin-right: 5px !important;
+  margin-bottom: 10px !important;
+  font-size: 14px !important;
+  background: #fff !important;
+  color: #b1b493 !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.tag-cloud-link:hover {
+  background: #b1b493 !important;
+  border: 1px solid #b1b493 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* 다른 프로젝트 목록 스타일 */
+.block-21 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.block-21:last-child {
+  border-bottom: none;
+}
+
+.block-21 .blog-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+.block-21 .text .heading {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.block-21 .text .heading a {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.block-21 .text .heading a:hover {
+  color: #b1b493;
+  text-decoration: none;
+}
+
+.block-21 .text .meta {
+  font-size: 14px;
+  color: #999;
+}
+
+.block-21 .text .meta a {
+  color: #999;
+  text-decoration: none;
+}
+
+/* GitHub 버튼 스타일 */
+.github-link .btn {
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.github-link .btn-primary {
+  background-color: #b1b493;
+  border-color: #b1b493;
+}
+
+.github-link .btn-primary:hover {
+  background-color: #9ea17e;
+  border-color: #9ea17e;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .hero-wrap.hero-wrap-2 {
+    height: 300px;
+  }
+  
+  .sidebar {
+    margin-top: 40px;
+  }
+  
+  .tech-container .badge {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-wrap.hero-wrap-2 {
+    height: 250px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
