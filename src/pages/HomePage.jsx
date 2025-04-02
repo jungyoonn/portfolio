@@ -9,11 +9,11 @@ import Services from '../components/home/Services';
 import Projects from '../components/home/Projects';
 import Testimonials from '../components/home/Testimonials';
 import Contact from '../components/home/Contact';
+import WorkExperience from '../components/home/WorkExperience ';
 import HireMeSection from '../components/home/HireMeSection';
 
 // 애니메이션 훅 불러오기
 import { useScrollAnimation } from '../hooks/useAnimation';
-import WorkExperience from '../components/home/WorkExperience ';
 
 const HomePage = () => {
   // 스크롤 애니메이션 적용
