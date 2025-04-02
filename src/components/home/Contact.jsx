@@ -24,6 +24,21 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // 성공 메시지 자동 숨김 설정
+  useEffect(() => {
+    let timer;
+    if (submitted) {
+      // 5초 후 성공 메시지 숨기기
+      timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    }
+    // 컴포넌트 언마운트 시 타이머 정리
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [submitted]);
+
   // EmailJS 설정
   const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
