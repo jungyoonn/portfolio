@@ -17,7 +17,7 @@ const Projects = () => {
           <div className="col-md-12 heading-section text-center ftco-animate">
             <span className="subheading">My Work</span>
             <h2 className="mb-4 text-dark">Featured Projects</h2>
-            <p className='noto-sans-kr'>개발자로서 성장해온 여정 속에서 진행한 다양한 프로젝트들을 소개합니다. 팀 협업과 개인 학습을 통해 웹/앱 개발 역량을 키우고 문제 해결 능력을 향상시켜 왔습니다. 각 프로젝트는 저의 기술적 성장과 도전 정신을 담고 있습니다.</p>
+            <p className='noto-sans-kr'>개발자로서 성장해온 여정 속에서 진행한 프로젝트들을 소개합니다. 팀 협업과 개인 학습을 통해 웹/앱 개발 역량을 키우고 문제 해결 능력을 향상시켜 왔습니다. 각 프로젝트는 저의 기술적 성장과 도전 정신을 담고 있습니다.</p>
           </div>
         </div>
         <div className="row">
@@ -60,9 +60,14 @@ const Projects = () => {
 
                   {project.projectLink && (
                   <div className="mt-3 noto-sans-kr">
-                    <Link to={`${project.projectLink}`} className="btn btn-outline-light btn-sm">
+                    <a 
+                      href={`${project.projectLink}`} 
+                      className="btn btn-outline-light btn-sm"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       사이트 방문하기 <i className="fa fa-arrow-right ml-1"></i>
-                    </Link>
+                    </a>
                   </div>
                   )}
                 </div>
