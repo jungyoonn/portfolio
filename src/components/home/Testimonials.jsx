@@ -44,7 +44,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="ftco-section testimony-section bg-primary">
+    <section className="ftco-section testimony-section">
       <div className="container">
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section heading-section-white text-center ftco-animate">
