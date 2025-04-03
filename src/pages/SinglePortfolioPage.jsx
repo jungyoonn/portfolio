@@ -63,9 +63,14 @@ const SinglePortfolioPage = () => {
                 <span className="noto-sans-kr fw-bold">Project Detail</span> */}
                 {project.projectLink && (
                   <div className="mt-3 noto-sans-kr">
-                    <Link to={project.projectLink} className="btn btn-outline-dark btn-sm fw-bold">
+                    <a 
+                      href={project.projectLink} 
+                      className="btn btn-outline-dark btn-sm fw-bold"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       사이트 방문하기 <i className="fa fa-arrow-right ml-1"></i>
-                    </Link>
+                    </a>
                   </div>
                 )}
               </p>
