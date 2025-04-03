@@ -188,7 +188,7 @@ const Contact = () => {
                   <span className="fa fa-phone"></span>
                 </div>
                 <div className="text">
-                  <p className='noto-sans-kr'><span>Phone:</span> <a href="tel://1234567920">010-5191-9852</a></p>
+                  <p className='noto-sans-kr'><span>Phone:</span> <a href="tel:+821051919852">010-5191-9852</a></p>
                 </div>
               </div>
               <div className="dbox w-100 d-flex">
