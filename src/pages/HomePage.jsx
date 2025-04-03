@@ -7,7 +7,7 @@ import About from '../components/home/About';
 import Skills from '../components/home/Skills';
 import Services from '../components/home/Services';
 import Projects from '../components/home/Projects';
-import Testimonials from '../components/home/Testimonials';
+import DeveloperJourney from '../components/home/DeveloperJourney';
 import Contact from '../components/home/Contact';
 import WorkExperience from '../components/home/WorkExperience ';
 import HireMeSection from '../components/home/HireMeSection';
@@ -33,7 +33,7 @@ const HomePage = () => {
       <Services />
       <HireMeSection />
       <Projects />
-      <Testimonials />
+      <DeveloperJourney />
       <WorkExperience />
       <Contact />
     </div>
