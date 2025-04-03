@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useSite } from '../context/SiteContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -458,11 +458,19 @@ const SinglePortfolioPage = () => {
 const OtherProjects = ({ currentId }) => {
   const { state } = useSite();
   const { projects } = state;
+  const navigate = useNavigate(); // useNavigate 훅 추가
   
   // 현재 프로젝트를 제외한 다른 프로젝트 중 최대 3개 선택
   const otherProjects = projects
     .filter(project => project.id !== currentId)
     .slice(0, 3);
+  
+  // 프로젝트 목록으로 이동하는 함수
+  const handleProjectsButtonClick = (e) => {
+    e.preventDefault();
+    // 홈 페이지로 이동하면서 projects 섹션으로 스크롤하도록 state 전달
+    navigate('/', { state: { scrollToSection: 'projects' } });
+  };
   
   return (
     <div>
@@ -485,6 +493,14 @@ const OtherProjects = ({ currentId }) => {
           </div>
         </div>
       ))}
+      <div className="mt-3 noto-sans-kr text-center">
+        <button 
+          className="btn btn-outline-secondary btn-sm fw-bold"
+          onClick={handleProjectsButtonClick}
+        >
+          프로젝트 목록 보기
+        </button>
+      </div>
     </div>
   );
 };
