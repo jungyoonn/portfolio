@@ -7932,10 +7932,11 @@ pkg-up@^3.1.0:
     "@testing-library/user-event" "^13.2.1"
     bootstrap "^5.3.3"
     bootstrap-icons "^1.11.3"
+    emailjs-com "^3.2.0"
     font-awesome "^4.7.0"
     jquery "^3.7.1"
     node-sass "^9.0.0"
-    portfolio "file:../../../AppData/Local/Yarn/Cache/v6/npm-portfolio-0.1.0-c2a6400e-dd26-4fb4-8787-e03c6a91c5be-1743605380720/node_modules/portfolio"
+    portfolio "file:../../../AppData/Local/Yarn/Cache/v6/npm-portfolio-0.1.0-676c68a2-30ab-4f97-92aa-4b3713747151-1743665437678/node_modules/portfolio"
     react "^19.0.0"
     react-bootstrap "^2.10.9"
     react-dom "^19.0.0"
@@ -8784,6 +8785,11 @@ react-helmet-async@^2.0.5:
     invariant "^2.2.4"
     react-fast-compare "^3.2.2"
     shallowequal "^1.1.0"
+
+react-icons@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
+  integrity sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==
 
 react-is@^16.13.1, react-is@^16.3.2:
   version "16.13.1"
