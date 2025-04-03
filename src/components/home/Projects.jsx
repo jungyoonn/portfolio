@@ -60,7 +60,7 @@ const Projects = () => {
 
                   {project.projectLink && (
                   <div className="mt-3 noto-sans-kr">
-                    <Link to={`/portfolio/${project.id}`} className="btn btn-outline-light btn-sm">
+                    <Link to={`${project.projectLink}`} className="btn btn-outline-light btn-sm">
                       사이트 방문하기 <i className="fa fa-arrow-right ml-1"></i>
                     </Link>
                   </div>
