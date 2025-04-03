@@ -210,42 +210,63 @@ const initialState = {
       githubLink: "https://github.com/jungyoonn/C-Assignment-Project"
     }
   ],
-  // Testimonials.jsx
-  testimonials: [
+  // DeveloperJourney.jsx
+  journeyEvents: [
     {
       id: 1,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_1.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+      date: '2019년 2학기',
+      title: '프로그래밍 기초와 알고리즘',
+      description: 'C++을 활용한 배달 서비스 API 구현 프로젝트로 알고리즘 설계와 객체지향 프로그래밍의 기본을 익혔습니다.',
+      iconType: 'code',
+      technologies: ['C++', '객체지향 프로그래밍', '알고리즘 설계'],
     },
     {
       id: 2,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_2.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+      date: 'October 2021',
+      title: '정보보안 기초',
+      description: 'Elliptic Curve 암호화 방식을 적용한 상호 인증 시스템 개발로 보안 프로그래밍에 첫 발을 디뎠습니다.',
+      iconType: 'graduationCap',
+      technologies: ['Linux', 'Raspberry Pi', 'C', 'Elliptic Curve 암호화'],
     },
     {
       id: 3,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_3.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+      date: 'March 2024',
+      title: '백엔드 개발 시작',
+      description: 'Spring Framework를 학습하고 첫 번째 공지사항 게시판 애플리케이션을 개발하며 웹 개발의 기초를 다졌습니다.',
+      iconType: 'server',
+      technologies: ['Spring Framework', 'JSP', 'MariaDB', 'RESTful API'],
     },
     {
       id: 4,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_1.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+      date: 'October 2024',
+      title: '객체지향 프로그래밍 전문성',
+      description: '자바 기반 콘솔 키오스크 시스템을 개발하며 객체지향 설계 패턴과 복잡한 결제 처리 로직을 구현했습니다.',
+      iconType: 'code',
+      technologies: ['Java', '객체지향 설계 패턴', '콘솔 애플리케이션'],
     },
     {
       id: 5,
-      name: 'Roger Scott',
-      position: 'Marketing Manager',
-      image: 'images/person_2.jpg',
-      text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.'
+      date: 'December 2024',
+      title: '풀스택 웹 개발',
+      description: '취미 공유 및 원데이 클래스 추천 커뮤니티 플랫폼 \'Cookie\'를 개발하며 데이터베이스 설계와 사용자 인증에 집중했습니다.',
+      iconType: 'desktop',
+      technologies: ['Java Servlet', 'JSP', 'JavaScript', 'myBatis', 'MariaDB'],
+    },
+    {
+      id: 6,
+      date: 'March 2025',
+      title: '현대적 웹 기술',
+      description: '\'PILL LAW\' 영양제 비교 및 판매 플랫폼을 팀장으로서 개발하며 현대적인 웹 기술과 클라우드 서비스를 활용했습니다.',
+      iconType: 'rocket',
+      technologies: ['React', 'Spring Framework', 'RESTful APIs', 'AWS'],
+    },
+    {
+      id: 7,
+      date: 'Present',
+      title: '지속적인 학습',
+      description: '클라우드 기술, 모바일 개발, 현대적인 프론트엔드 프레임워크에 대한 지식을 확장하고 있습니다.',
+      iconType: 'mobileAlt',
+      technologies: ['React Native', 'Docker', 'Kubernetes', 'CI/CD'],
     }
   ],
   // Skills.jsx
