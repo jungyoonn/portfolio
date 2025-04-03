@@ -44,6 +44,7 @@ const Footer = () => {
                     {/* <li><a href="#skills" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'skills')}><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
                     <li><a href="#services" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'services')}><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
                     <li><a href="#projects" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'projects')}><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                    <li><a href="#timeline" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'timeline')}><span className="fa fa-chevron-right mr-2"></span>Timeline</a></li>
                     <li><a href="#work-experience" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'work-experience')}><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
                     <li><a href="#contact" className='noto-sans-kr'  onClick={(e) => scrollToSection(e, 'contact')}><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
                   </>
@@ -54,6 +55,7 @@ const Footer = () => {
                     {/* <li><a href="/#skills" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Skills</a></li> */}
                     <li><a href="/#services" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Services</a></li>
                     <li><a href="/#projects" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                    <li><a href="/#timeline" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Timeline</a></li>
                     <li><a href="/#work-experience" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Work Experience</a></li>
                     <li><a href="/#contact" className='noto-sans-kr' ><span className="fa fa-chevron-right mr-2"></span>Contact</a></li>
                   </>

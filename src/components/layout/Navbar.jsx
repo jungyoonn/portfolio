@@ -170,6 +170,15 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a 
+                href="#timeline" 
+                className={`nav-link ${activeSection === 'timeline' ? 'active' : ''}`}
+                onClick={(e) => handleNavLinkClick(e, 'timeline')}
+              >
+                <span>Timeline</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a 
                 href="#work-experience" 
                 className={`nav-link ${activeSection === 'work-experience' ? 'active' : ''}`}
                 onClick={(e) => handleNavLinkClick(e, 'work-experience')}
