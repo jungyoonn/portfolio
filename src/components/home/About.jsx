@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAnimation } from '../../hooks/useAnimation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDatabase, faMicrochip, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faMicrochip, faLanguage, faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faAws } from "@fortawesome/free-brands-svg-icons";
 import myProfileImg from '../../img/my-profile-img.jpg';
 
 const About = () => {
   const { ref: animRef } = useAnimation();
+  const [copied, setCopied] = useState(false);
+
+  // 이메일 복사 함수
+  const copyToClipboard = (email) => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // 2초 후 상태 초기화
+    });
+  };
 
   // 자격증 데이터
   const interests = [
@@ -51,12 +60,24 @@ const About = () => {
                     <li className="d-flex"><span>Date of birth:</span> <span className='noto-sans-kr'>1998년 5월 2일</span></li>
                     <li className="d-flex"><span>Address:</span> <span className='noto-sans-kr'>서울특별시 동작구 여의대방로 26길 56</span></li>
                     <li className="d-flex"><span>Zip code:</span> <span>07055</span></li>
-                    <li className="d-flex"><span>Email:</span> <span>sophia76256@gmail.com</span></li>
+                    <li className="d-flex">
+                      <span>Email:</span> 
+                      <div className='fw-bold' style={{ color: '#BEB99E', marginRight: '40px', flex: '1' }}>sophia76256@gmail.com
+                        <button 
+                          onClick={() => copyToClipboard('sophia76256@gmail.com')} 
+                          className="btn btn-sm bg-transparent border-0 px-3 text-secondary"
+                          title="이메일 주소 복사"
+                          style={{ cursor: 'pointer' }}
+                        >
+                          <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
+                        </button>
+                        {copied && <small className="text-success ml-1">(복사됨)</small>}
+                      </div>
+                    </li>
                     <li className="d-flex"><span>Phone: </span> <span>010-5191-9852</span></li>
                   </ul>
                 </div>
                 <div className="col-md-12">
-                  {/* <div className="d-flex about-info mt-4 text-dark fw-bold"><span>Certificates </span></div> */}
                   <div className="my-interest d-lg-flex w-100">
                     {interests.map((interest, index) => (
                       <div className="interest-wrap d-flex align-items-center" key={index}>
@@ -65,7 +86,14 @@ const About = () => {
                         </div>
                         <div className={`text fw-bold ${interest.font || ''}`}>
                           {interest.link ? (
-                            <a href={`${interest.link}`} className='text-decoration-none text-dark'>{interest.text}</a>
+                            <a 
+                              href={`${interest.link}`} 
+                              className='text-decoration-none text-dark'
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                            >
+                              {interest.text}
+                            </a>
                           ) : (
                             <span>{interest.text}</span>
                           )}
