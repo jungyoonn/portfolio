@@ -174,7 +174,7 @@ const Navbar = () => {
                 className={`nav-link ${activeSection === 'work-experience' ? 'active' : ''}`}
                 onClick={(e) => handleNavLinkClick(e, 'work-experience')}
               >
-                <span>WorkExperience</span>
+                <span>Work Experience</span>
               </a>
             </li>
             <li className="nav-item">
