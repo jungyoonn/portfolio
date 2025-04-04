@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f9f9f9" rx="10" ry="10"/>
+  <text x="500" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">3-티어 아키텍처 시스템 구성도</text>
+  
+  <!-- AWS Cloud Box -->
+  <rect x="20" y="30" width="160" height="40" rx="5" ry="5" fill="#232f3e" stroke="#232f3e" stroke-width="1"/>
+  <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">AWS EC2 호스팅</text>
+  
+  <!-- Client Layer -->
+  <rect x="50" y="80" width="900" height="130" rx="8" ry="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="500" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0d47a1">프론트엔드 레이어 (SPA)</text>
+  
+  <!-- Client Components -->
+  <rect x="100" y="130" width="160" height="50" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+  <text x="180" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0d47a1">React 컴포넌트</text>
+  
+  <rect x="290" y="130" width="160" height="50" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+  <text x="370" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0d47a1">Context API / SiteContext</text>
+  
+  <rect x="480" y="130" width="160" height="50" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+  <text x="560" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0d47a1">React Router</text>
+  
+  <rect x="670" y="130" width="160" height="50" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+  <text x="750" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0d47a1">CSS / Bootstrap</text>
+  
+  <!-- Arrows from Client to API -->
+  <path d="M180,180 L180,230" stroke="#333" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M750,180 L750,230" stroke="#333" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Web Server Layer -->
+  <rect x="50" y="230" width="900" height="100" rx="8" ry="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="500" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1b5e20">웹 서버 레이어</text>
+  
+  <!-- Web Server Components -->
+  <rect x="100" y="280" width="220" height="40" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
+  <text x="210" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1b5e20">NginX (리버스 프록시)</text>
+  
+  <rect x="380" y="280" width="220" height="40" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
+  <text x="490" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1b5e20">Node.js (정적 파일 서빙)</text>
+  
+  <rect x="660" y="280" width="220" height="40" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
+  <text x="770" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1b5e20">RESTful API 엔드포인트</text>
+  
+  <!-- Arrow from Web Server to Backend -->
+  <path d="M500,330 L500,360" stroke="#333" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Backend Layer -->
+  <rect x="50" y="360" width="900" height="110" rx="8" ry="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="500" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e65100">백엔드 레이어</text>
+  
+  <!-- Backend Components -->
+  <rect x="100" y="405" width="160" height="50" rx="5" ry="5" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
+  <text x="180" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e65100">Spring Boot</text>
+  
+  <rect x="290" y="405" width="160" height="50" rx="5" ry="5" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
+  <text x="370" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e65100">컨트롤러/서비스 계층</text>
+  
+  <rect x="480" y="405" width="160" height="50" rx="5" ry="5" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
+  <text x="560" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e65100">JPA/데이터 접근 계층</text>
+  
+  <rect x="670" y="405" width="160" height="50" rx="5" ry="5" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
+  <text x="750" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e65100">Security/인증 모듈</text>
+  
+  <!-- Data Storage Layer -->
+  <rect x="50" y="490" width="900" height="80" rx="8" ry="8" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  <text x="500" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#4a148c">데이터 레이어</text>
+  
+  <!-- Database Components -->
+  <rect x="180" y="530" width="220" height="40" rx="5" ry="5" fill="#e1bee7" stroke="#8e24aa" stroke-width="1"/>
+  <text x="290" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4a148c">MySQL 데이터베이스</text>
+  
+  <rect x="600" y="530" width="220" height="40" rx="5" ry="5" fill="#e1bee7" stroke="#8e24aa" stroke-width="1"/>
+  <text x="710" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4a148c">AWS S3 (이미지 저장소)</text>
+  
+  <!-- AWS Architecture -->
+  <rect x="840" y="170" width="190" height="130" rx="5" ry="5" fill="#f5f5f5" stroke="#616161" stroke-width="1"/>
+  <text x="935" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#424242">AWS 인프라</text>
+  
+  <rect x="860" y="200" width="150" height="30" rx="3" ry="3" fill="#fafafa" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="935" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">EC2 인스턴스</text>
+  
+  <rect x="860" y="235" width="150" height="30" rx="3" ry="3" fill="#fafafa" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="935" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">S3 버킷</text>
+  
+  <rect x="860" y="270" width="150" height="30" rx="3" ry="3" fill="#fafafa" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="935" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">Ubuntu 환경</text>
+  
+  <!-- OS Layer -->
+  <rect x="840" y="305" width="190" height="50" rx="5" ry="5" fill="#f5f5f5" stroke="#616161" stroke-width="1"/>
+  <text x="935" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#424242">운영 환경</text>
+  <text x="935" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">Ubuntu</text>
+  
+  <!-- Arrow for MySQL Connection -->
+  <path d="M370,455 L290,530" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Arrow for S3 Connection -->
+  <path d="M630,455 L700,530" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
