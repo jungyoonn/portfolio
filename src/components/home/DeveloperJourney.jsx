@@ -38,7 +38,7 @@ const DeveloperJourney = () => {
           <div className="col-md-12 heading-section text-center ftco-animate">
             <span className="subheading">Developer Journey</span>
             <h2 className="mb-4">My Technical Growth Timeline</h2>
-            <p className='noto-sans-kr'>Java, Spring, React를 활용한 풀스택 개발 역량과 기획부터 배포까지 원스톱 프로세스로 프로젝트를 진행해온 기술적 성장과 도전 여정입니다.</p>
+            <p className='noto-sans-kr'>대학교 새내기 시절부터 현재 시점까지, 끊임없는 기술적 성장과 도전 여정입니다. 정보보안, 웹 개발, 클라우드 인프라 구축 경험을 통해 끊임없이 발전하는 개발자로서의 열정과 여정을 담았습니다.</p>
           </div>
         </div>
         

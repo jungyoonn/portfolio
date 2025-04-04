@@ -157,33 +157,31 @@
 }
 
 .timeline-item.left .circle {
-  right: -10px;
+  right: -30px;
   top: 20px;
 }
 
 .timeline-item.right .circle {
-  left: -10px;
+  left: -30px;
   top: 20px;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .journey-timeline::after {
-    left: 31px;
-  }
   
   .timeline-item {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 25px;
     padding-right: 25px;
     left: 0;
+    z-index: 1;
   }
   
   .timeline-item.right,
   .timeline-item.left {
     left: 0;
-    padding-left: 70px;
-    padding-right: 25px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
   
   .timeline-item.left .timeline-icon,
@@ -194,6 +192,60 @@
   .timeline-item.left .circle,
   .timeline-item.right .circle {
     left: 20px;
+  }
+
+  /* 타임라인 아이템 컨텐츠에 더 많은 좌측 패딩 추가 */
+  .timeline-item-content {
+    /* padding-left: 40px;
+    margin: 40px; */
+  }
+  
+  /* 아이콘 위치 및 사이즈 조정 */
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    left: 10px;
+  }
+  
+  /* 타임라인 선 위치 조정 */
+  .journey-timeline::after {
+    left: 25px;
+  }
+  
+  /* 원형 인디케이터 위치 조정 */
+  .timeline-item.left .circle,
+  .timeline-item.right .circle {
+    left: 1px;
+  }
+  
+  /* 왼쪽 패딩 증가로 컨텐츠가 아이콘과 겹치지 않도록 */
+  .timeline-item.right,
+  .timeline-item.left {
+    padding-left: 10px;
+  }
+  
+  /* 모바일에서 날짜와 제목이 더 잘 보이도록 조정 */
+  .timeline-item-content time {
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+  
+  .timeline-item-content h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  /* 기술 태그가 작은 화면에서도 잘 보이도록 조정 */
+  .technology-tags {
+    gap: 6px;
+  }
+  
+  .tech-tag {
+    padding: 4px 8px;
+    font-size: 11px;
   }
 }
 
