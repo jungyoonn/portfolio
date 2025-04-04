@@ -236,6 +236,10 @@
 }
 
 /* 코드 스니펫 스타일 */
+.code-snippet {
+  margin-top: 15px;
+}
+
 .code-snippet pre {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 0.9rem;
@@ -243,7 +247,69 @@
   background-color: #f8f9fa;
   padding: 1rem;
   border-radius: 5px;
+  border: 1px solid #e9ecef;
+  
+  /* 높이 조절 및 스크롤바 설정 */
+  max-height: 250px; /* 이미지 높이에 맞게 조절 */
   overflow-x: auto;
+  overflow-y: auto;
+  
+  /* 스크롤바 스타일링 (웹킷 기반 브라우저) */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* 파이어폭스용 스크롤바 스타일링 */
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* 코드 스니펫 내부 텍스트가 줄바꿈 없이 스크롤 되도록 설정 */
+.code-snippet pre code {
+  white-space: pre;
+  word-wrap: normal;
+}
+
+/* 미디어 쿼리로 모바일 환경에서 높이 조정 */
+@media (max-width: 768px) {
+  .code-snippet pre {
+    max-height: 200px; /* 모바일에서 더 작게 조정 */
+  }
+}
+
+/* 텍스트 하이라이팅을 위한 스타일 */
+.code-snippet pre .keyword {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.code-snippet pre .string {
+  color: #28a745;
+}
+
+.code-snippet pre .comment {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* 코드 스니펫 헤더 스타일 */
+.code-snippet h6 {
+  margin-bottom: 8px;
 }
 
 /* 프로젝트 산출물 스타일 */
