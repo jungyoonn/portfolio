@@ -44,6 +44,13 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   
+  // 메뉴 닫기 함수
+  const closeMenu = () => {
+    if (window.innerWidth < 992) { // lg 중단점 (992px)
+      setIsMenuOpen(false);
+    }
+  };
+  
   // 맨 위로 스크롤하는 함수 추가
   const scrollToTop = (e) => {
     e.preventDefault();
@@ -51,6 +58,7 @@ const Navbar = () => {
       top: 0,
       behavior: 'smooth'
     });
+    closeMenu(); // 메뉴 닫기 추가
   };
 
   // 상세 페이지에서 홈 페이지의 특정 섹션으로 이동하는 함수
@@ -69,6 +77,7 @@ const Navbar = () => {
         });
       }
     }
+    closeMenu(); // 메뉴 닫기 추가
   };
   
   // 홈 페이지 진입 시 스크롤 처리
@@ -93,6 +102,18 @@ const Navbar = () => {
     }
   }, [isHomePage, location.state, navigate]);
   
+  // 화면 크기 변경 시 메뉴 상태 처리
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 992) { // lg 중단점 이상이면
+        setIsMenuOpen(false); // 모바일 메뉴 닫기 (필요한 경우)
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   return (
     <nav 
       className={`navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target ${isScrolled ? 'scrolled awake' : ''}`} 
@@ -112,7 +133,7 @@ const Navbar = () => {
         )}
         
         <button 
-          className="navbar-toggler js-ftco-nav-toggle ftco-nav-toggle" 
+          className={`navbar-toggler js-ftco-nav-toggle ftco-nav-toggle ${isMenuOpen ? '' : 'collapsed'}`}
           type="button" 
           onClick={toggleMenu}
           aria-expanded={isMenuOpen ? 'true' : 'false'}
