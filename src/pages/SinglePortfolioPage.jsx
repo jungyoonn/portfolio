@@ -25,6 +25,11 @@ const SinglePortfolioPage = () => {
   const { id } = useParams();
   const { getProjectById } = useSite();
   const [project, setProject] = useState(null);
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  const toggleFeature = (index) => {
+    setActiveFeature(activeFeature === index ? null : index);
+  };
   
   useEffect(() => {
     // 페이지 로드 시 상단으로 스크롤
@@ -121,18 +126,25 @@ const SinglePortfolioPage = () => {
                       <div className="card mb-3" key={index}>
                         <div className="card-header" id={`heading${index}`}>
                           <h5 className="mb-0">
-                            <button className="btn btn-link noto-sans-kr" type="button" data-toggle="collapse" data-target={`#collapse${index}`}>
+                            <button 
+                              className="btn btn-link noto-sans-kr" 
+                              type="button"
+                              onClick={() => toggleFeature(index)}
+                            >
                               {feature.title}
                             </button>
                           </h5>
                         </div>
-                        <div id={`collapse${index}`} className={`collapse ${index === 0 ? 'show' : ''}`} data-parent="#featuresAccordion">
+                        <div 
+                          id={`collapse${index}`} 
+                          className={`collapse ${activeFeature === index ? 'show' : ''}`}
+                        >
                           <div className="card-body">
                             <div className="row">
                               <div className="col-md-6 mb-3">
                                 <img src={feature.image} alt={feature.title} className="img-fluid rounded" />
                               </div>
-                              <div className="col-md-6">
+                              <div className="col-md-6 noto-sans-kr">
                                 <p className="noto-sans-kr">{feature.description}</p>
                                 <h6 className="noto-sans-kr font-weight-bold">사용 기술:</h6>
                                 <div className="mb-3">
@@ -169,10 +181,22 @@ const SinglePortfolioPage = () => {
                       <p className="card-text noto-sans-kr">{project.challenge}</p>
                     </div>
                   </div>
-                  <div className="card shadow-sm">
+                  <div className="card shadow-sm mb-3">
                     <div className="card-body">
                       <h5 className="card-title noto-sans-kr">해결 방법</h5>
                       <p className="card-text noto-sans-kr">{project.solution}</p>
+                    </div>
+                  </div>
+                  <div className="card shadow-sm mb-3">
+                    <div className="card-body">
+                      <h5 className="card-title noto-sans-kr">발생했던 문제</h5>
+                      <p className="card-text noto-sans-kr">{project.problem}</p>
+                    </div>
+                  </div>
+                  <div className="card shadow-sm mb-3">
+                    <div className="card-body">
+                      <h5 className="card-title noto-sans-kr">해결 과정</h5>
+                      <p className="card-text noto-sans-kr">{project.resolve}</p>
                     </div>
                   </div>
                 </div>
