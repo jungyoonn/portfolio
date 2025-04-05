@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Cookie 플랫폼 - 시스템 아키텍처</text>
+  
+  <!-- Client -->
+  <rect x="50" y="120" width="150" height="80" rx="10" ry="10" fill="#f8d7da" stroke="#dc3545" stroke-width="2"/>
+  <text x="125" y="165" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">웹 브라우저</text>
+  <text x="125" y="185" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">클라이언트</text>
+  
+  <!-- AWS Environment -->
+  <rect x="250" y="100" width="500" height="400" rx="10" ry="10" fill="#e2e3e5" stroke="#6c757d" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="500" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">AWS EC2 (Ubuntu)</text>
+  
+  <!-- NginX -->
+  <rect x="300" y="150" width="120" height="60" rx="5" ry="5" fill="#cce5ff" stroke="#0d6efd" stroke-width="2"/>
+  <text x="360" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">NginX</text>
+  
+  <!-- Tomcat -->
+  <rect x="300" y="250" width="400" height="200" rx="10" ry="10" fill="#d4edda" stroke="#198754" stroke-width="2"/>
+  <text x="500" y="275" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Apache Tomcat 서버</text>
+  
+  <!-- Maven Project -->
+  <rect x="320" y="290" width="360" height="140" rx="5" ry="5" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <text x="500" y="315" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">단일 Maven 프로젝트</text>
+  
+  <!-- Frontend -->
+  <rect x="340" y="330" width="140" height="80" rx="5" ry="5" fill="#f5f5f5" stroke="#6c757d" stroke-width="2"/>
+  <text x="410" y="355" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">프론트엔드</text>
+  <text x="410" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">JSP</text>
+  <text x="410" y="395" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">JavaScript / CSS</text>
+  
+  <!-- Backend -->
+  <rect x="520" y="330" width="140" height="80" rx="5" ry="5" fill="#f5f5f5" stroke="#6c757d" stroke-width="2"/>
+  <text x="590" y="355" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">백엔드</text>
+  <text x="590" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Java Servlet</text>
+  <text x="590" y="395" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">myBatis</text>
+  
+  <!-- Node.js -->
+  <rect x="580" y="150" width="120" height="60" rx="5" ry="5" fill="#cce5ff" stroke="#0d6efd" stroke-width="2"/>
+  <text x="640" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Node.js</text>
+  
+  <!-- Database -->
+  <rect x="400" y="480" width="200" height="80" rx="10" ry="10" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+  <text x="500" y="520" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">MariaDB</text>
+  <text x="500" y="540" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">데이터베이스</text>
+  
+  <!-- Arrows -->
+  <!-- Client to NginX -->
+  <line x1="200" y1="160" x2="300" y2="180" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- NginX to Tomcat -->
+  <line x1="360" y1="210" x2="360" y2="250" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- NginX to Node.js -->
+  <line x1="420" y1="180" x2="580" y2="180" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Frontend to Backend -->
+  <line x1="480" y1="370" x2="520" y2="370" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Backend to Database -->
+  <line x1="590" y1="410" x2="500" y2="480" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Node.js to Database -->
+  <line x1="640" y1="210" x2="640" y2="480" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="480" x2="600" y2="520" stroke="#333333" stroke-width="2"/>
+  
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <rect x="50" y="480" width="300" height="100" rx="5" ry="5" fill="#ffffff" stroke="#6c757d" stroke-width="2"/>
+  <text x="200" y="505" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">사용 기술</text>
+  <text x="80" y="525" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#333333">• 프론트엔드: JSP, JavaScript, CSS, jQuery, AJAX</text>
+  <text x="80" y="545" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#333333">• 백엔드: Java Servlet, myBatis</text>
+  <text x="80" y="565" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#333333">• 데이터베이스: MariaDB</text>
+</svg>
