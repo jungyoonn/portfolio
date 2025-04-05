@@ -8,6 +8,9 @@ import deliveryBackground from '../img/first_project.png';
 import pilllawSignin from "../img/PILLLAW_Signin.jpg";
 import pilllawCategory from "../img/PILLLAW_Category.jpg";
 import pilllawArchitecture from "../img/PILLLAW_system_architecture.svg";
+import cookieOneday from '../img/cookie_oneday.png'
+import cookieCommunity from '../img/cookie_community.png'
+import cookieArchitecture from '../img/cookie-architecture.svg'
 import { 
   faDatabase, 
   faDesktop, 
@@ -15,6 +18,7 @@ import {
   faFileAlt,
   faChartLine,
   faSitemap,
+  faPencilRuler
 } from '@fortawesome/free-solid-svg-icons';
 
 // 초기 상태 정의 - 각 컴포넌트의 데이터 통합
@@ -178,7 +182,7 @@ private Claims parseToken(String token) {
       ],
       architecture: {
         diagram: `${pilllawArchitecture}`,
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 NginX, Nodejs를 활용했습니다."
+        description: "프로젝트는 React 기반의 SPA 프론트엔드와 Spring Framework REST API 백엔드, MariaDB 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 백엔드와 프론트엔드를 분리하여 개발하고 각각의 빌드 파일을 별도로 관리했습니다. 이미지 관리는 AWS S3을 활용했고, 배포에는 AWS EC2(Ubuntu)와 NginX, Nodejs를 활용하여 안정적인 서비스 환경을 구축했습니다."
       },
       performance: {
         before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
@@ -193,70 +197,146 @@ private Claims parseToken(String token) {
       deploy: 'AWS, Nodejs, tomcat, Ubuntu',
       image: cookieBackground,
       position: '팀원',
-      role: 'DB 설계, 메인 페이지 및 공통 컴포넌트, 회원가입 및 로그인, 원데이 클래스, 리뷰',
+      role: 'DB 설계, 메인 페이지 및 공통 컴포넌트, 회원가입 및 로그인, 원데이 클래스, 리뷰 파트',
       completed: 'December 2024',
       description: '사용자들이 취미를 공유하고 원데이 클래스를 쉽게 접할 수 있는 커뮤니티 플랫폼입니다. 별도의 커뮤니티 게시판을 통해 사용자 간 취미 정보를 교환하고, 다양한 이벤트를 제공하여 사용자 경험을 향상시켰습니다. 취미 공유를 통한 원데이 클래스 활성화와 지속적인 사용자 참여를 유도하는 서비스를 구현했습니다.',
       challenge: "지역 기반 취미 활동과 원데이 클래스를 연결하는 커뮤니티 플랫폼을 구축하는 것이 목표였습니다. 사용자들이 취미를 공유하고 클래스를 쉽게 찾을 수 있는 인터페이스가 필요했습니다.",
-      solution: "Java Servlet과 JSP를 활용하여 사용자 중심의 인터페이스를 구현했습니다. 데이터베이스 설계부터 시작해 MyBatis를 통한 효율적인 데이터 접근 계층을 구축했습니다. 특히 메인 페이지와 로그인/회원가입 부분을 담당하여 사용자 경험을 최적화했습니다.",
-      problem: "",
-      resove: "",
-      collaboration: "팀원으로서 데이터베이스 설계와 메인 페이지 개발을 담당했습니다. 팀원들과 Trello를 활용해 작업 진행 상황을 공유하고, 주 2회 코드 리뷰를 통해 품질을 향상시켰습니다. 특히 UI/UX 디자이너와 긴밀히 협력하여 사용자 중심의 인터페이스를 구현했습니다.",
-      deploymentDetails: "AWS EC2 인스턴스와 Ubuntu 환경에서 Tomcat 서버를 구성했습니다. Node.js를 활용하여 추가 기능을 구현했으며, 데이터베이스는 MariaDB를 사용했습니다. 서버 모니터링과 로그 관리를 위한 도구를 구축하여 안정적인 운영 환경을 마련했습니다.",
-      learning: "JSP와 Servlet 기반의 웹 애플리케이션 개발 경험을 통해 웹의 기본 동작 원리를 깊이 이해하게 되었습니다. 데이터베이스 설계부터 구현까지 전체 과정을 경험하며 데이터 모델링 능력을 향상시켰고, 사용자 인증 및 세션 관리와 같은 보안 관련 지식을 습득했습니다.",
+      solution: "Java Servlet과 JSP를 활용하여 사용자 중심의 인터페이스를 구현했습니다. 데이터베이스 설계부터 시작해 MyBatis를 통한 효율적인 데이터 접근 계층을 구축했습니다. 특히 메인 페이지와 로그인/회원가입, 원데이 클래스와 리뷰 부분을 담당하여 사용자가 원데이 클래스를 신청하고 참여하게 하여 취미 활동에 도움을 주고, 리뷰를 남기고 커뮤니티 게시판에서 관련 정보를 공유하며 원데이 클래스에 대한 관심이 높아지게 했습니다.",
+      problem: "원데이 클래스 목록 페이지에서 최신순/인기순 정렬 로직을 구현하던 시점에서 정렬 버튼을 클릭하면 페이지가 다시 로딩되면서 데이터 또한 재 로딩되어 딜레이가 많이 체감되었습니다.",
+      resolve: "이런 현상은 사용자 경험 최적화에 맞지 않다고 생각해서 해결점을 찾던 중 비동기 방식의 ajax를 알게 되어, 이를 공부하고 적용하여 데이터가 재 로딩 되며 페이지가 새로고침 되는 것 같이 보이는 현상을 해결했습니다.",
+      collaboration: "팀원으로서 데이터베이스 설계와 메인 페이지, 회원가입/로그인, 원데이 클래스, 리뷰 파트 개발을 담당했습니다. 팀원들과 Discord를 활용해 작업 진행 상황을 공유하고, 주 2회 코드 리뷰를 통해 품질을 향상시켰습니다. 특히 UI/UX 설계 과정에서 팀원들과의 지속적인 소통과 적극적인 피드백으로 사용자 중심의 인터페이스를 구현했습니다.",
+      deploymentDetails: "AWS EC2 인스턴스와 Ubuntu 환경에서 NginX를 리버스 프록시로 설정하고 Tomcat 서버를 구성했습니다. NginX는 정적 파일 서빙과 요청 라우팅을 담당하고, Tomcat은 JSP와 서블릿 처리를 맡았습니다. Nodejs를 활용하여 추가 기능을 구현했으며, 데이터베이스는 MariaDB를 사용했습니다. 전체 시스템을 체계적으로 구성하여 안정적이고 확장 가능한 서비스 환경을 마련했습니다.",
+      learning: "JSP와 Servlet 기반의 웹 애플리케이션 개발 경험을 통해 웹의 기본 동작 원리를 깊이 이해하게 되었습니다. 데이터베이스 설계부터 구현까지 전체 과정을 경험하며 데이터 모델링 능력을 향상시켰고, 사용자 인증 및 세션 관리와 같은 보안 관련 지식을 습득했습니다. 특히 비동기 처리 방식을 공부하고 활용하면서 백엔드의 데이터를 json 형식으로 주고받는 것이 편리하다는 것을 배웠습니다.",
       results: "교육 과정 내 최종 프로젝트 발표에서 우수한 성적을 거두었으며, 특히 지역 기반 취미 커뮤니티라는 아이디어의 독창성과 구현 완성도를 인정받았습니다. 사용자 경험을 중심으로 한 설계 접근법이 좋은 평가를 받았습니다.",
       githubLink: "https://github.com/jungyoonn/cookie",
       projectLink: "https://cookie.eeerrorcode.com/",
       features: [
         {
-          title: "지역 기반 클래스 검색 시스템",
-          image: "/images/features/map-search.png",
-          description: "사용자의 위치를 기반으로 반경 내 원데이 클래스를 검색하고 지도 상에 표시해주는 기능입니다. 거리, 평점, 가격 등의 필터링을 제공합니다.",
-          tech: ["Kakao Maps API", "JavaScript", "myBatis", "jQuery"],
-          codeSnippet: "const nearbyClasses = await searchClassByLocation(userLocation, radius, { sort: 'rating', categories: selectedCategories });"
+          title: "클래스 검색 및 조회 시스템",
+          image: `${cookieOneday}`,
+          description: "전체 원데이 클래스 조회 기능과 사용자가 관심 있는 키워드로 원데이 클래스를 검색하면 해당 키워드가 포함된 클래스가 필터링되는 기능입니다. 최신순과 인기순 정렬이 가능하며, 평점, 조회수, 메인 썸네일 등의 기본 정보를 제공합니다.",
+          tech: ["ajax", "JavaScript", "myBatis", "jQuery"],
+          codeSnippet: `const boardClassService = (function() {
+  function sortCbno(cp, cri, param, callback) {
+  let url = "oneday/list/api"
+  url = cp + url;
+  
+  if(cri) {
+    if(cri.keyword) {
+      
+    }
+  }
+      if(param && param.cbno) { 
+    url += "/cbno/" + param.cbno;
+  }
+  if(param && param.viewCount) {
+    url += "/vc/" + param.viewCount;
+  }
+
+  $.ajax({
+    url,
+    data : cri
+  }).done(function(data) {
+          if(callback) callback(data);
+      });
+  
+  }
+  
+  return {sortCbno};
+})();
+
+$(".latest-list").click(function() {
+  event.preventDefault();
+  $(this).hasClass("fw-bold") ? '' : $(this).addClass("fw-bold");
+  $(".trend-list").removeClass("fw-bold");
+  
+  const cbno = 99999999;
+  
+  $(".show-lists").html("");
+  list(cri, {cbno});
+  
+  $(".show-lists > div .stars").html(scoreStr($(".show-lists > div").data("cbno")));
+});
+
+// 인기순
+$(".trend-list").click(function() {
+  event.preventDefault();
+  $(this).hasClass("fw-bold") ? '' : $(this).addClass("fw-bold");
+  $(".latest-list").removeClass("fw-bold");
+  
+  const viewCount = 99999999;
+  
+  $(".show-lists").html("");
+  list(cri, {viewCount});
+});
+`
         },
         {
           title: "취미 커뮤니티 게시판",
-          image: "/images/features/community.png",
+          image: `${cookieCommunity}`,
           description: "사용자들이 취미 활동에 대한 경험과 정보를 공유할 수 있는 커뮤니티 게시판입니다. 카테고리별 분류와 인기 게시글 하이라이트 기능을 제공합니다.",
-          tech: ["Java Servlet", "JSP", "myBatis", "AJAX"],
-          codeSnippet: "$.ajax({ url: '/community/posts', type: 'GET', data: { category: selectedCategory, page: currentPage } });"
+          tech: ["Java Servlet", "JSP", "myBatis", "jstl"],
+          codeSnippet: `<c:forEach items="\${listLikes}" var="like">
+<tr >
+    <td class="text-center bg-cookie"><i class="fa-solid fa-fire text-danger"></i> </td>
+    <td class="text-left bg-cookie"><span class="badge bg-secondary ">인기</span> <a href="view?pno=\${like.pno}&\${pageDto.cri.qs2}">\${like.title}</a></td>
+    <td class="text-center bg-cookie">\${like.writer}</td>
+    <td class="text-center bg-cookie">\${like.regdate}</td>
+    <td class="text-center bg-cookie">\${like.viewCount}</td>
+</tr>
+
+</c:forEach>
+
+
+
+<c:forEach items="\${boards}" var="b">
+
+<tr>
+    <td class="text-center">\${b.pno}</td>
+    <td class="text-left"><a href="view?pno=\${b.pno}&\${pageDto.cri.qs2}" class="text-cookie-secondary text-decoration-none ">\${b.title}</a></td>
+    <td class="text-center">\${b.writer}</td>
+    <td class="text-center">\${b.regdate}</td>
+    <td class="text-center">\${b.viewCount}</td>
+</tr>
+</c:forEach>
+`
         }
       ],
       documents: [
         {
           title: "ERD 다이어그램",
           description: "데이터베이스 설계 구조와 테이블 간 관계를 보여주는 ERD 다이어그램입니다.",
-          url: "/documents/project-erd.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/cookie_ERD.pdf",
           icon: faDatabase
         },
         {
-          title: "클래스 예약 시스템 설계서",
-          description: "원데이 클래스 예약 및 결제 프로세스의 시스템 설계 문서입니다.",
-          url: "/documents/reservation-system.pdf",
-          icon: faCodeBranch
+          title: "요구사항 정의서",
+          description: "프로젝트 요구사항 명세와 기능 목록이 담긴 문서입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/cookie_software_requirements.xlsx",
+          icon: faFileAlt
         },
         {
-          title: "커뮤니티 운영 가이드라인",
-          description: "건전한 커뮤니티 문화를 위한 콘텐츠 정책 및 운영 가이드라인입니다.",
-          url: "/documents/community-guidelines.pdf",
-          icon: faFileAlt
+          title: "화면 설계서",
+          description: "UI/UX와 기능을 연결한 화면 설계 자료입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/cookie_%ED%99%94%EB%A9%B4%EC%84%A4%EA%B3%84%EC%84%9C.pptx",
+          icon: faPencilRuler
         },
         {
           title: "발표 자료",
           description: "프로젝트 최종 발표에 사용된 프레젠테이션 자료입니다.",
-          url: "/documents/presentation.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/cookie+%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pptx",
           icon: faDesktop
         }
       ],
       architecture: {
-        diagram: "/images/architecture-diagram.png",
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+        diagram: `${cookieArchitecture}`,
+        description: "프로젝트는 JSP 기반의 프론트엔드와 Java Servlet 백엔드가 단일 Maven 프로젝트로 통합된 모놀리식 아키텍처를 사용했습니다. 데이터 접근 계층으로는 MyBatis를 활용했으며, MariaDB 데이터베이스를 사용했습니다. 배포에는 AWS EC2(Ubuntu)와 NginX, Nodejs를 활용하여 안정적인 서비스 환경을 구축했습니다."
       },
       performance: {
-        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
-      }
+        before: "페이지 초기 로딩 시간 3.8초, AJAX 요청 응답 시간 750ms, DOM 렌더링 완료 시간 2.2초",
+        after: "페이지 초기 로딩 시간 1.6초, AJAX 요청 응답 시간 230ms, DOM 렌더링 완료 시간 0.9초",
+        methods: "이미지 지연 로딩, jQuery 선택자 최적화, myBatis 쿼리 튜닝, 서버 사이드 캐싱 구현, CSS/JS 파일 압축 및 병합, JSP 페이지 조각화를 통한 부분 로딩 적용 등의 기법으로 성능을 개선했습니다."
+      },
     },
     {
       id: 3,
