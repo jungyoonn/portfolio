@@ -234,7 +234,7 @@ const SinglePortfolioPage = () => {
                           style={{ maxWidth: '100%' }}
                         />
                       </div>
-                      <p className="noto-sans-kr">{project.architecture.description}</p>
+                      <p className="noto-sans-kr text-secondary">{project.architecture.description}</p>
                     </div>
                   </div>
                 </div>
