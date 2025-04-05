@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- 배경 -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Java 기반 키오스크 시스템 아키텍처</text>
+  
+  <!-- 콘솔 UI 계층 -->
+  <rect x="100" y="100" width="600" height="80" rx="10" ry="10" fill="#ffe0e0" stroke="#ff6666" stroke-width="2"/>
+  <text x="400" y="135" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333333">콘솔 사용자 인터페이스 (UI Layer)</text>
+  <text x="280" y="165" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">사용자 모드</text>
+  <text x="520" y="165" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">관리자 모드</text>
+  
+  <!-- 서비스 계층 -->
+  <rect x="100" y="220" width="600" height="180" rx="10" ry="10" fill="#e0f0ff" stroke="#6699cc" stroke-width="2"/>
+  <text x="400" y="245" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333333">서비스 계층 (Service Layer)</text>
+  
+  <!-- 서비스 클래스들 -->
+  <rect x="120" y="270" width="140" height="100" rx="5" ry="5" fill="#ffffff" stroke="#6699cc" stroke-width="2"/>
+  <text x="190" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">ProductService</text>
+  <text x="190" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">상품 정보 관리</text>
+  <text x="190" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">상품 목록 출력</text>
+  <text x="190" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Singleton Pattern</text>
+  
+  <rect x="275" y="270" width="140" height="100" rx="5" ry="5" fill="#ffffff" stroke="#6699cc" stroke-width="2"/>
+  <text x="345" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">OrderService</text>
+  <text x="345" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">장바구니 관리</text>
+  <text x="345" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">상품 추가/제거</text>
+  <text x="345" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Singleton Pattern</text>
+  
+  <rect x="430" y="270" width="140" height="100" rx="5" ry="5" fill="#ffffff" stroke="#6699cc" stroke-width="2"/>
+  <text x="500" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">PayService</text>
+  <text x="500" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">결제 처리</text>
+  <text x="500" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">일괄/분할 결제</text>
+  <text x="500" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Singleton Pattern</text>
+  
+  <rect x="585" y="270" width="140" height="100" rx="5" ry="5" fill="#ffffff" stroke="#6699cc" stroke-width="2"/>
+  <text x="655" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">AdminService</text>
+  <text x="655" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">관리자 인증</text>
+  <text x="655" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">상품 추가/삭제</text>
+  <text x="655" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Singleton Pattern</text>
+  
+  <!-- 모델 계층 -->
+  <rect x="100" y="440" width="600" height="120" rx="10" ry="10" fill="#e0ffe0" stroke="#66cc99" stroke-width="2"/>
+  <text x="400" y="465" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333333">모델 계층 (Model Layer)</text>
+  
+  <!-- 모델 클래스들 -->
+  <rect x="130" y="490" width="120" height="50" rx="5" ry="5" fill="#ffffff" stroke="#66cc99" stroke-width="2"/>
+  <text x="190" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Product</text>
+  
+  <rect x="270" y="490" width="120" height="50" rx="5" ry="5" fill="#ffffff" stroke="#66cc99" stroke-width="2"/>
+  <text x="330" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Order</text>
+  
+  <rect x="410" y="490" width="120" height="50" rx="5" ry="5" fill="#ffffff" stroke="#66cc99" stroke-width="2"/>
+  <text x="470" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Admin</text>
+  
+  <rect x="550" y="490" width="120" height="50" rx="5" ry="5" fill="#ffffff" stroke="#66cc99" stroke-width="2"/>
+  <text x="610" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Utils</text>
+  
+  <!-- 연결 화살표 -->
+  <!-- UI에서 서비스로 -->
+  <line x1="280" y1="180" x2="190" y2="270" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="280" y1="180" x2="345" y2="270" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="280" y1="180" x2="500" y2="270" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 관리자 모드 연결 -->
+  <line x1="520" y1="180" x2="655" y2="270" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="520" y1="180" x2="190" y2="270" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- 서비스들 간의 상호작용 -->
+  <line x1="260" y1="320" x2="275" y2="320" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="415" y1="320" x2="430" y2="320" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="585" y1="320" x2="260" y2="320" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- 서비스에서 모델로 -->
+  <line x1="190" y1="370" x2="190" y2="490" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="345" y1="370" x2="330" y2="490" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="370" x2="330" y2="490" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="655" y1="370" x2="470" y2="490" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="655" y1="370" x2="190" y2="490" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- 화살표 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333"/>
+    </marker>
+  </defs>
+  
+  <!-- 범례 -->
+  <rect x="50" y="580" width="700" height="1" fill="#cccccc"/>
+  <text x="400" y="595" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">주요 패턴: 싱글톤 패턴(서비스 계층 공유), 전략 패턴(결제 방식), MVC 아키텍처 스타일</text>
+</svg>
