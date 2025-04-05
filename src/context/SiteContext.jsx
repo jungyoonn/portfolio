@@ -12,6 +12,8 @@ import cookieOneday from '../img/cookie_oneday.png'
 import cookieCommunity from '../img/cookie_community.png'
 import cookieArchitecture from '../img/cookie-architecture.svg'
 import kioskArchitecture from '../img/kiosk-architecture.svg'
+import kioskPay from '../img/kiosk_pay.png'
+import kioskCart from '../img/kiosk_cart.png'
 import boardArchitecture from '../img/board-architecture.svg'
 import { 
   faDatabase, 
@@ -361,7 +363,7 @@ $(".trend-list").click(function() {
       features: [
         {
           title: "결제 전략 패턴 구현",
-          image: "/images/features/payment-strategy.png",
+          image: `${kioskPay}`,
           description: "메모리 절약을 위해, 인스턴스가 필요할 때 똑같은 인스턴스를 새로 만들지 않고 기존의 인스턴스를 가져와 활용하는 싱글톤 패턴을 활용하여 일괄결제와 분할결제를 유연하게 처리하는 시스템입니다. 결제 방식에 따라 동적으로 알고리즘을 선택하여 실행합니다.",
           tech: ["Java", "Singleton Pattern", "OOP"],
           codeSnippet: `/**
@@ -404,7 +406,7 @@ public void paySuccess(List<Product> bag) {
         },
         {
           title: "장바구니 관리 시스템",
-          image: "/images/features/cart-system.png",
+          image: `${kioskCart}`,
           description: "마찬가지로 싱글톤 패턴을 활용하여 사용자가 선택한 상품을 장바구니에 추가, 수정, 삭제할 수 있는 기능입니다. 전체 주문 금액 계산과 결제 진행 가능 여부 등의 비즈니스 로직을 처리합니다.",
           tech: ["Java", "Singleton Pattern", "OOP"],
           codeSnippet: `/**
