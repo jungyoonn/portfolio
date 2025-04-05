@@ -11,6 +11,8 @@ import pilllawArchitecture from "../img/PILLLAW_system_architecture.svg";
 import cookieOneday from '../img/cookie_oneday.png'
 import cookieCommunity from '../img/cookie_community.png'
 import cookieArchitecture from '../img/cookie-architecture.svg'
+import kioskArchitecture from '../img/kiosk-architecture.svg'
+import boardArchitecture from '../img/board-architecture.svg'
 import { 
   faDatabase, 
   faDesktop, 
@@ -215,7 +217,7 @@ private Claims parseToken(String token) {
           title: "클래스 검색 및 조회 시스템",
           image: `${cookieOneday}`,
           description: "전체 원데이 클래스 조회 기능과 사용자가 관심 있는 키워드로 원데이 클래스를 검색하면 해당 키워드가 포함된 클래스가 필터링되는 기능입니다. 최신순과 인기순 정렬이 가능하며, 평점, 조회수, 메인 썸네일 등의 기본 정보를 제공합니다.",
-          tech: ["ajax", "JavaScript", "myBatis", "jQuery"],
+          tech: ["ajax", "Javascript", "myBatis", "jQuery"],
           codeSnippet: `const boardClassService = (function() {
   function sortCbno(cp, cri, param, callback) {
   let url = "oneday/list/api"
@@ -341,18 +343,18 @@ $(".trend-list").click(function() {
     {
       id: 3,
       title: 'Java 기반의 키오스크 서비스를 콘솔 출력으로 구현',
-      category: 'Java',
+      category: 'Java, Singleton Pattern',
       deploy: '',
       image: miniBackground,
       position: '팀원',
-      role: '장바구니 담기 및 결제 (일괄 결제와 분할 결제)',
+      role: '장바구니 담기, 담긴 상품 갯수 추가/삭제 및 결제 (일괄 결제와 분할 결제)',
       completed: 'October 2024',
-      description: '실생활에서 마주한 기술에 대한 호기심과 프로그래밍 구현방식에 대한 탐구심으로 Java 기반의 키오스크 시스템을 구현했습니다. 상품 출력부터 장바구니 기능, 분할결제와 일괄결제 옵션 등 실제 매장에서 사용되는 기능을 콘솔 환경에서 구현하여 객체지향 프로그래밍의 이해도를 높였습니다.',
+      description: '실생활에서 마주한 기술에 대한 호기심과 프로그래밍 구현방식에 대한 탐구심으로 Java 기반의 키오스크 시스템을 구현했습니다. 상품 출력부터 장바구니 기능, 분할결제와 일괄결제 옵션, 관리자 모드 등 실제 매장에서 사용되는 기능을 콘솔 환경에서 구현하여 객체지향 프로그래밍의 이해도를 높였습니다.',
       challenge: "콘솔 환경에서 실제 키오스크 시스템의 핵심 기능을 구현하는 것이 과제였습니다. 특히 다양한 결제 방식을 객체지향적으로 설계하는 것이 도전 과제였습니다.",
-      solution: "Java의 객체지향 특성을 활용하여 상품, 장바구니, 결제 시스템을 모듈화했습니다. 특히 분할 결제와 일괄 결제라는 두 가지 결제 방식을 전략 패턴을 적용하여 구현했습니다. 사용자 인터페이스는 콘솔 기반이지만 직관적으로 설계하여 사용성을 높였습니다.",
-      problem: "",
-      resove: "",
-      collaboration: "3인 팀에서 결제 시스템 부분을 담당했습니다. 모듈화된 설계를 통해 각자 맡은 파트를 독립적으로 개발하면서도 통합 테스트를 통해 전체 시스템의 일관성을 유지했습니다. 매일 짧은 스탠드업 미팅을 통해 진행 상황과 이슈를 공유했습니다.",
+      solution: "Java의 객체지향 특성을 활용하여 상품, 장바구니, 결제 시스템을 모듈화했습니다. 특히 분할 결제와 일괄 결제라는 두 가지 결제 방식을 전략 패턴을 적용하여 구현했습니다. 사용자 인터페이스는 콘솔 기반이지만 알아보기 쉽게 직관적으로 설계하여 사용성을 높였습니다.",
+      problem: "팀원들이 독립적으로 만든 각 모듈을 통합하여 테스트를 진행할 때 서비스 간 참조 오류가 생기고, 반복적인 참조를 할 경우에 인스턴스가 새로 생성되면서 기존에 상품이 담겨 있던 장바구니가 초기화되거나 상품 담기/삭제 로직이 적용되지 않는 등의 문제가 발생하였습니다.",
+      resolve: "인스턴스 참조 오류의 근본적인 이유를 찾아 해결하고자 방법을 모색하던 중, 디자인 패턴의 하나인 싱글톤 패턴을 알게 되었습니다. 이후 싱글톤 패턴에 대해 찾아보고 공부하여 이를 통합 테스트 시 적용해 보았더니 인스턴스 상호 참조 오류 이슈가 해결되었습니다.",
+      collaboration: "3인 팀에서 장바구니 및 결제 시스템 부분을 담당했습니다. 모듈화된 설계를 통해 각자 맡은 파트를 독립적으로 개발하면서도 통합 테스트를 통해 전체 시스템의 일관성을 유지했습니다. 매일 짧은 스탠드업 미팅을 통해 진행 상황과 이슈를 공유했습니다.",
       learning: "객체지향 프로그래밍의 실제 적용과 디자인 패턴 활용 능력을 키웠습니다. 특히 결제 시스템이라는 복잡한 비즈니스 로직을 모듈화하여 구현하는 과정에서 추상화와 인터페이스 설계의 중요성을 깨달았습니다. 또한 팀 프로젝트를 통해 협업 능력과 코드 문서화의 중요성을 배웠습니다.",
       results: "콘솔 환경에서도 실제 키오스크와 유사한 사용자 경험을 제공하는 완성도 높은 시스템을 구현했습니다. 특히 분할 결제 기능은 실제 상용 키오스크에도 적용 가능한 수준으로 개발되었으며, 객체지향 설계 원칙을 잘 적용한 사례로 평가받았습니다.",
       githubLink: "https://github.com/jungyoonn/main1",
@@ -360,47 +362,183 @@ $(".trend-list").click(function() {
         {
           title: "결제 전략 패턴 구현",
           image: "/images/features/payment-strategy.png",
-          description: "전략 패턴을 활용하여 일괄결제와 분할결제를 유연하게 처리하는 시스템입니다. 결제 방식에 따라 동적으로 알고리즘을 선택하여 실행합니다.",
-          tech: ["Java", "Strategy Pattern", "OOP"],
-          codeSnippet: "public interface PaymentStrategy { void pay(int amount); } // 일괄결제, 분할결제 클래스가 이 인터페이스를 구현"
+          description: "메모리 절약을 위해, 인스턴스가 필요할 때 똑같은 인스턴스를 새로 만들지 않고 기존의 인스턴스를 가져와 활용하는 싱글톤 패턴을 활용하여 일괄결제와 분할결제를 유연하게 처리하는 시스템입니다. 결제 방식에 따라 동적으로 알고리즘을 선택하여 실행합니다.",
+          tech: ["Java", "Singleton Pattern", "OOP"],
+          codeSnippet: `/**
+  *  결제 진행
+  * @param total - 최종 결제 금액
+  * @param bag - 장바구니 리스트
+  */
+public void pay(int total, List<Product> bag) {
+    int pay = Utils.next("1. 분할 결제  2. 일괄 결제  3. 결제 취소"
+            , Integer.class, i -> i > 0 && i < 4, "입력 오류입니다 다시 시도해 주세요");
+    if(pay == 1) {
+        int cnt = Utils.next("인원 수를 입력해 주세요"
+                , Integer.class, i -> i > 1, "2명 이상의 인원 수를 입력해 주세요");
+        System.out.println("1인당 결제할 금액은 " + format.format(total / cnt) + "원입니다");
+        paySuccess(bag);
+    } else if(pay == 2) {
+        paySuccess(bag);
+    } else {
+        System.out.println("! 결제 취소 ! 메뉴판으로 돌아갑니다");
+        productService.printProducts();
+    }
+}
+
+/**
+ * 결제 완료 및 내역 저장
+ * @param bag - 장바구니 리스트
+ */
+public void paySuccess(List<Product> bag) {
+    buy = new ArrayList<>(bag);
+
+    setOrderLists();
+    Order order = orders.get(orders.size()-1);
+
+    System.out.println("총 " + format.format(order.getTotalPrice())
+            + "원 결제가 완료되었습니다 :: 주문 번호 [" + order.getOrderNum() + "]");
+
+    orderService.cleanBag();
+}
+`
         },
         {
           title: "장바구니 관리 시스템",
           image: "/images/features/cart-system.png",
-          description: "사용자가 선택한 상품을 장바구니에 추가, 수정, 삭제할 수 있는 기능입니다. 전체 주문 금액 계산과 할인 적용 등의 비즈니스 로직을 처리합니다.",
-          tech: ["Java", "Collections Framework", "Observer Pattern"],
-          codeSnippet: "Cart cart = new Cart(); cart.addItem(product); cart.applyDiscount(discountType); int totalPrice = cart.calculateTotal();"
+          description: "마찬가지로 싱글톤 패턴을 활용하여 사용자가 선택한 상품을 장바구니에 추가, 수정, 삭제할 수 있는 기능입니다. 전체 주문 금액 계산과 결제 진행 가능 여부 등의 비즈니스 로직을 처리합니다.",
+          tech: ["Java", "Singleton Pattern", "OOP"],
+          codeSnippet: `/**
+  *  메뉴 담기
+  */
+public void pickMenu() {
+    Product p;
+    while (true) {
+        int id = Utils.next("담을 메뉴를 골라 주세요 (주문을 완료하려면 0을 누르세요)"
+                , Integer.class, i -> findById(i) != null || i == 0, "잘못된 입력입니다.");
+        if(id == 0) {
+            System.out.println("주문을 완료합니다");
+            break;
+        }
+        p = findById(id);
+
+        int cnt = Utils.next("담을 갯수를 입력해 주세요 (뒤로 가기: 0)"
+                , Integer.class, i -> i >= 0, "유효한 갯수를 입력해 주세요");
+        if(cnt == 0) {
+            System.out.println("메뉴 선택으로 돌아갑니다");
+            continue;
+        }
+
+        p.setAmount(p.getAmount() + cnt);
+        System.out.println(p.getProductName() + " 상품을 " + cnt + "개 담았습니다");
+        bag = findByAmount();
+        productService.save(products);
+
+        // 총 주문 금액
+        for(Product pro : products) {
+            if(id == pro.getProductId()) {
+                total += pro.getPrice() * cnt;
+            }
+        }
+    }
+}
+
+/**
+ *  장바구니 목록 조회
+ */
+public void printBag() {
+    bag = findByAmount();
+
+    System.out.println("========== 장바구니 ==========");
+    System.out.println("   No.\t  상품명\t  갯수  ");
+    for(Product p : bag) {
+        System.out.printf("%5d  %5s  %3d개\n", p.getProductId(), p.getProductName(), p.getAmount());
+    }
+    System.out.println("============================");
+    System.out.println("총 " + format.format(total) + "원");
+    System.out.println("============================");
+}
+
+/**
+ *  장바구니 목록 삭제
+ */
+public void removeProduct() {
+    if(bag.isEmpty()) {
+        System.out.println("장바구니가 비어 있습니다");
+        return;
+    }
+
+    Product product = findById(Utils.next("삭제할 메뉴의 번호를 입력하세요"
+            , Integer.class, i -> findById(i) != null && findById(i).getAmount() != 0
+            , "잘못된 상품 번호 혹은 목록에 없는 상품입니다 다시 시도해 주세요"));
+    int cnt = Utils.next("삭제할 개수를 입력하세요"
+            , Integer.class, i -> i <= product.getAmount() && i > 0
+            , "삭제할 개수가 0개 혹은 담긴 개수보다 많습니다");
+    int rm = Utils.next("해당 상품을 삭제하시겠습니까? (1. 예  / 2. 아니오)"
+            , Integer.class, i -> i < 3 && i > 0
+            , "오류가 발생했습니다 다시 시도해 주세요");
+    if(rm == 1){
+        System.out.println(product.getProductName() + " 상품 " + cnt + "개 삭제를 완료했습니다");
+        product.setAmount(product.getAmount() - cnt);
+        total = total - product.getPrice() * cnt;
+    } else if(rm == 2){
+        System.out.println("장바구니 목록으로 돌아갑니다");
+    }
+
+    productService.save(products);
+    bag = findByAmount();
+    printBag();
+}
+
+/**
+ *  주문 금액 확인 및 결제 진행 여부 판단
+ */
+public void setOrder() {
+    PayService payService = PayService.getInstance();
+    if(bag.isEmpty()) {
+        System.out.println("장바구니가 비어 있습니다");
+        return;
+    }
+
+    for(Product p : bag) {
+        System.out.printf("[%5s %d개] ", p.getProductName(), p.getAmount());
+    }
+    System.out.println();
+    System.out.println("총 주문 금액은 " + format.format(total) + "원입니다");
+    int goPay = Utils.next("결제를 진행하시겠습니까? (1. 예  / 2. 아니오)"
+            , Integer.class, i -> i > 0 && i < 3
+            , "예 또는 아니오만 입력해 주세요");
+    if(goPay == 1) {
+        payService.pay(total, bag);
+    } else if(goPay == 2) {
+        System.out.println("주문을 취소합니다 메뉴판으로 돌아갑니다");
+        System.out.println(products);
+    }
+}`
         }
       ],
       documents: [
         {
-          title: "클래스 다이어그램",
-          description: "객체지향 설계에 따른 클래스 구조와 관계를 시각화한 다이어그램입니다.",
-          url: "/documents/class-diagram.pdf",
+          title: "발표 자료",
+          description: "프로젝트 최종 발표에 사용된 프레젠테이션 자료입니다. 프로젝트 개발 과정, 주요 기능 및 시연 영상이 포함되어 있습니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/kiosk_%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pptx",
+          icon: faDesktop
+        },
+        {
+          title: "시스템 아키텍쳐 다이어그램",
+          description: "프로젝트의 시스템 구조를 한눈에 볼 수 있는 다이어그램입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/kiosk-architecture.svg",
           icon: faSitemap
-        },
-        {
-          title: "사용자 매뉴얼",
-          description: "키오스크 시스템 사용 방법과 기능 설명을 담은 사용자 가이드입니다.",
-          url: "/documents/user-manual.pdf",
-          icon: faFileAlt
-        },
-        {
-          title: "테스트 케이스 문서",
-          description: "다양한 시나리오에 따른 테스트 케이스와 결과를 정리한 문서입니다.",
-          url: "/documents/test-cases.pdf",
-          icon: faDatabase
         }
       ],
       architecture: {
-        diagram: "/images/architecture-diagram.png",
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+        diagram: `${kioskArchitecture}`,
+        description: "프로젝트는 Java 기반의 콘솔 애플리케이션으로, 객체지향 설계 원칙에 따라 UI 계층, 서비스 계층, 모델 계층으로 구성된 3-티어 아키텍처를 사용했습니다. 디자인 패턴으로는 서비스 클래스들에 싱글톤 패턴을 적용하여 인스턴스 참조 오류를 해결하고, 결제 시스템에 전략 패턴을 도입하여 일괄 결제와 분할 결제를 유연하게 처리할 수 있도록 구현했습니다."
       },
       performance: {
-        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
-      }
+        before: "메뉴 출력 시간 1.2초, 주문 처리 시간 0.8초, 결제 처리 지연 0.9초",
+        after: "메뉴 출력 시간 0.3초, 주문 처리 시간 0.2초, 결제 처리 지연 0.3초",
+        methods: "싱글톤 패턴 도입으로 불필요한 객체 생성 방지 및 데이터 일관성 유지, 상품 조회 및 장바구니 관리 로직 최적화, 사용자 입력 검증 과정 간소화, 결제 프로세스의 전략 패턴 적용을 통한 응답 시간 단축을 구현했습니다."
+      },
     },
     {
       id: 4,
@@ -411,28 +549,186 @@ $(".trend-list").click(function() {
       position: '개인 프로젝트',
       role: '공지사항 목록과 상세 조회 및 카테고리별 필터링, 글 작성, 수정, 삭제',
       completed: 'March 2024',
-      description: '처음 배웠던 Spring Framework를 익히고 활용해 보기 위해서 어떤 걸 만들까 고민하다가 웹 사이트 개발의 가장 기본이라고 생각하는 게시판 기능을 구현해 보았습니다. Spring MVC 구조와 JPA를 활용하여 게시글 CRUD, 카테고리별 필터링 등을 구현하고 CSS를 이용해 간단한 디자인을 적용했습니다. 이론으로 배운 내용을 실제 프로젝트에 적용함으로써 Spring의 핵심 개념과 웹 애플리케이션 개발 과정을 이해할 수 있었습니다.',
+      description: '처음 배웠던 Spring Framework를 제대로 익히고 활용해 보기 위해서 어떤 걸 만들까 고민하다가 웹 사이트 개발의 가장 기본이라고 생각하는 게시판 기능을 구현해 보았습니다. Spring MVC 구조와 JPA를 활용하여 게시글 CRUD, 카테고리별 필터링 등을 구현하고 CSS를 이용해 간단한 디자인을 적용했습니다. 이론으로 배운 내용을 실제 프로젝트에 적용함으로써 Spring의 핵심 개념과 웹 애플리케이션 개발 과정을 이해할 수 있었습니다.',
       challenge: "Spring Framework의 기본 개념을 실제 애플리케이션에 적용하고 CRUD 기능과 카테고리 필터링이 가능한 게시판을 구현하는 것이 목표였습니다.",
-      solution: "Spring MVC 아키텍처를 적용하고 JPA를 활용하여 데이터 접근 계층을 구현했습니다. RESTful API 설계 원칙을 따라 게시판의 CRUD 기능을 구현했으며, 카테고리별 필터링을 위한 쿼리 메소드를 개발했습니다.",
-      problem: "",
-      resove: "",
-      learning: "Spring Framework의 핵심 개념과, 특히 의존성 주입, AOP, 스프링 데이터 JPA와 같은 기술을 실제로 적용해볼 수 있었습니다. 게시판이라는 기본적인 기능을 구현하면서도 확장성과 유지보수성을 고려한 설계의 중요성을 배웠습니다. 또한 개인 프로젝트를 완성하면서 자기주도적 학습 능력과 문제 해결 능력을 키웠습니다.",
-      results: "Spring Framework의 핵심 기능을 활용한 기본적이지만 완성도 높은 게시판 시스템을 개발했습니다. 이 프로젝트는 이후 더 복잡한 웹 애플리케이션을 개발하는 기반이 되었으며, Spring 기반 웹 개발의 전체 흐름을 이해하는 데 큰 도움이 되었습니다.",
+      solution: "Spring MVC 아키텍처를 적용하고 JPA를 활용하여 데이터 접근 계층을 구현했습니다. 이후 JSP에 CSS를 적용해서 UI를 만들고 JSTL을 이용해 데이터를 화면에 보여 줌으로써 게시판의 CRUD 기능을 구현했으며, 카테고리별 필터링을 위한 쿼리 메소드를 개발했습니다.",
+      problem: "Spring이라는 프레임워크를 처음 사용해 봐서 전체적인 구현 과정에서 많은 어려움을 겪었습니다. 특히 카테고리 필터링 부분이 까다로웠는데, 백엔드에서 프론트엔드로 데이터를 전달하는 것은 순조로웠으나 프론트엔드에서 백엔드로의 데이터(선택된 카테고리) 전달에서 구현에 시간이 많이 걸렸습니다.",
+      resolve: "컨트롤러에서 필터링된 데이터만을 전달하는 모델을 하나 더 선언하고, 필터링 전용 dto를 만든 다음 서비스 로직에서 데이터를 필터링하는 메서드를 작성하여 프론트엔드와 연결하는 방식으로 해결했습니다.",
+      learning: "Spring Framework의 핵심 개념과, 특히 의존성 주입, lombok, 스프링 데이터 JPA와 같은 기술을 실제로 적용해볼 수 있었습니다. 게시판이라는 기본적인 기능을 구현하면서도 확장성과 유지보수성을 고려한 설계의 중요성을 배웠습니다. 또한 개인 프로젝트를 완성하면서 자기주도적 학습 능력과 문제 해결 능력을 키웠습니다.",
+      results: "Spring Framework의 핵심 기능을 활용한 기본적이지만 구조적이고 확장이 용이한 게시판 시스템을 개발했습니다. 이 프로젝트는 이후 더 복잡한 웹 애플리케이션을 개발하는 기반이 되었으며, Spring 기반 웹 개발의 전체 흐름을 이해하는 데 큰 도움이 되었습니다.",
       githubLink: "https://github.com/jungyoonn/notice",
       features: [
         {
           title: "카테고리별 게시글 필터링",
           image: "/images/features/category-filter.png",
-          description: "공지사항을 카테고리별로 분류하고 필터링할 수 있는 기능입니다. 사용자는 원하는 카테고리만 선택하여 볼 수 있습니다.",
-          tech: ["Spring MVC", "JPA", "jQuery", "JavaScript"],
-          codeSnippet: "public List<Notice> findByCategory(String category) { return noticeRepository.findByCategory(category); }"
+          description: "공지사항을 카테고리별로 분류하고 필터링할 수 있는 기능입니다. 백엔드에서 게시글을 필터링해서 프론트엔드로 가져오므로 사용자는 원하는 카테고리만 선택하여 볼 수 있습니다.",
+          tech: ["Spring MVC", "JPA", "JSP", "Javascript"],
+          codeSnippet: `// backend - service 
+  public Page<BoardDto.SearchResult> list(BoardDto.Search search, Pageable pageable){
+    Page<Board> result = null;
+
+    if(search.getType() != null){
+        result = boardRepository.findByType(search.getType(), pageable);
+    } else {
+        result = boardRepository.findAll(pageable);
+    }
+    return result.map(data -> data.toSearchResultDto());
+}
+
+// JSP   
+<form class="searchForm" name="searchForm" method="get" action="/board/main">
+    <select name="type" id="type" onchange="this.form.submit()">
+        <option value="">전체</option>
+        <c:forEach var="boardTypes" items="\${boardTypeList}" varStatus="status">
+            <option value="\${boardTypes.val}" <c:if test="\${search.type == boardTypes.val}"> selected</c:if>>\${boardTypes.name}</option>
+        </c:forEach>
+    </select>
+</form>`
         },
         {
           title: "게시글 CRUD 시스템",
           image: "/images/features/crud-system.png",
-          description: "관리자가 공지사항을 작성, 수정, 삭제하고 사용자가 조회할 수 있는 기능입니다. RESTful API 설계 원칙을 따라 구현했습니다.",
-          tech: ["Spring Boot", "JPA", "RestAPI", "MariaDB"],
-          codeSnippet: "@PostMapping(\"/notice\") public ResponseEntity<Notice> createNotice(@RequestBody NoticeDto noticeDto) { ... }"
+          description: "관리자가 공지사항을 작성, 수정, 삭제하고 사용자가 조회할 수 있는 기능입니다. 게시글을 수정/삭제할 시 옳은 비밀번호(등록 시 입력했던 비밀번호)를 입력해야 다음 로직이 처리됩니다. RESTful API 설계 원칙을 따라 구현했습니다.",
+          tech: ["Spring Boot", "JPA", "JSP", "MariaDB", "Javascript"],
+          codeSnippet: `// 등록
+<form id="newNotification" name="newNotification" method="post" oninput="boardApp.maxLength()" action="/board/save">
+  <div class="board-write">
+      <div class="title">
+          <dl>
+              <dt>제목</dt>
+              <dd>
+                  <input type="text" name="title" id="title" maxlength="20" placeholder="제목을 입력해 주세요"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+                  <p class="title-max-alert" style="margin: 0; color: red; display: none;">제목은 20자를 넘을 수 없습니다.</p>
+              </dd>
+          </dl>
+          <dl>
+              <dt>말머리</dt>
+              <dd>
+                  <select name="type">
+                      <c:forEach var="boardTypes" items="\${boardTypeList}" varStatus="status">
+                          <option value="\${boardTypes.val}">\${boardTypes.name}</option>
+                      </c:forEach>
+                  </select>
+              </dd>
+          </dl>
+      </div>
+      <div class="info">
+          <dl>
+              <dt>작성자</dt>
+              <dd>
+                  <input type="text" name="name" id="name" maxlength="10" placeholder="작성자"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+                  <p class="name-max-alert" style="margin: 0; color: red; display: none;">이름은 10자를 넘을 수 없습니다.</p>
+              </dd>
+          </dl>
+          <dl>
+              <dt>비밀번호</dt>
+              <dd>
+                  <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+              </dd>
+          </dl>
+      </div>
+      <div class="cont">
+          <textarea name="contents" id="contents" placeholder="내용을 입력해 주세요"></textarea>
+      </div>
+  </div>
+  <div class="btn-wrap">
+      <button type="button" onclick="boardApp.create(event, 0)" class="btn-on">등록</button>
+      <a href="/board/main">취소</a>
+  </div>
+</form>
+
+// 수정/조회/삭제
+<form id="updateNotification" method="post" oninput="boardApp.maxLength()" action="/board/update">
+  <div class="board-write">
+      <div class="title">
+          <dl>
+              <dt>제목</dt>
+              <dd>
+                  <input type="text" id="id" maxlength="20" name="id" hidden="hidden" value="<c:out value="\${detailDto.id}"/>"/>
+                  <input type="text" name="title" id="title" value="<c:out value="\${detailDto.title}"/>"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+                  <p class="title-max-alert" style="margin: 0; color: red; display: none;">제목은 20자를 넘을 수 없습니다.</p>
+              </dd>
+          </dl>
+          <dl>
+              <dt>말머리</dt>
+              <dd>
+                  <select name="type">
+                      <c:forEach var="boardTypes" items="\${boardTypeList}" varStatus="status">
+                          <option value="\${boardTypes.val}" <c:if test="\${detailDto.type == boardTypes.val}"> selected</c:if>>\${boardTypes.name}</option>
+                      </c:forEach>
+                  </select>
+              </dd>
+          </dl>
+      </div>
+      <div class="info">
+          <dl>
+              <dt>작성자</dt>
+              <dd>
+                  <input type="text" maxlength="10" name="name" id="name" value="<c:out value="\${detailDto.name}"/>"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+                  <p class="name-max-alert" style="margin: 0; color: red; display: none;">이름은 10자를 넘을 수 없습니다.</p>
+              </dd>
+          </dl>
+          <dl>
+              <dt>비밀번호</dt>
+              <dd>
+                  <input type="password" name="password" id="password" data-pw="\${detailDto.password}" placeholder="비밀번호를 입력하세요"/>
+                  <p class="required-alert" style="margin: 0; color: red; display: none;">필수입력입니다.</p>
+                  <p class="password-alert" style="margin: 0; color: red; display: none;">비밀번호를 확인해주세요.</p>
+              </dd>
+          </dl>
+      </div>
+      <div class="cont">
+          <textarea id="contents" name="contents"><c:out value="\${detailDto.contents}"/></textarea>
+      </div>
+  </div>
+  <div class="btn-wrap">
+      <button type="button" onclick="boardApp.update(event, \${detailDto.id})" class="btn-on">수정</button>
+      <a href="/board/detail?id=\${detailDto.id}">취소</a>
+      <button type="button" onclick="boardApp.delete(event, \${detailDto.id})" style="background: #777777">삭제</button>
+  </div>
+</form>
+
+Message.confirm("수정하시겠습니까?")
+  .then(() => {
+    let data = BoardData.of(id, e.target.parentElement.parentElement);
+    fetch("/board/update", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data),
+    })
+  .then((response) =>{
+    if(!response.ok){
+        throw response.json();
+    }
+    return response.json()
+  })
+  .then(() => Message.alert("수정되었습니다."))
+  .catch((error) => {
+    console.log(error);
+    //error.then(e => Message.alert(Object.values(e.errors)));
+  }).then(() => location.href="/board/main");
+  
+  Message.confirm("삭제하시겠습니까?")
+    .then(() =>
+    fetch(\`/board/delete?id=\${id}\`))
+    .then((response) => {
+      if(!response.ok){
+        throw response.json();
+      }
+      return response.json()
+    })
+    .then(() => Message.alert("삭제되었습니다."))
+    .catch((error) => {
+      //error.then(e => Message.alert(Object.values(e.errors)))
+      console.log(error)
+    }).then(() => location.href="/board/main");`
         }
       ],
       documents: [
@@ -456,8 +752,8 @@ $(".trend-list").click(function() {
         }
       ],
       architecture: {
-        diagram: "/images/architecture-diagram.png",
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+        diagram: `${boardArchitecture}`,
+        description: "프로젝트는 Spring Framework를 기반으로 한 MVC 아키텍처를 사용했습니다. 프레젠테이션 계층은 JSP와 JavaScript, CSS로 구현하고, 컨트롤러 계층에서 클라이언트 요청을 처리합니다. 서비스 계층에서는 게시판의 핵심 비즈니스 로직을 담당하며, 데이터 접근 계층에서는 Spring Data JPA를 활용하여 MariaDB와 통신합니다. DTO와 엔티티를 명확히 분리하여 계층 간 데이터 전달을 효율적으로 처리하고, JSTL을 이용해 서버 측 데이터를 화면에 표시했습니다."
       },
       performance: {
         before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
@@ -787,7 +1083,7 @@ $(".trend-list").click(function() {
     {
       iconType: 'faCode',
       title: "웹 애플리케이션 개발",
-      description: "React, HTML, CSS, JavaScript를 활용한 반응형 웹 사이트 및 애플리케이션 개발"
+      description: "React, HTML, CSS, Javascript 활용한 반응형 웹 사이트 및 애플리케이션 개발"
     },
     {
       iconType: 'faServer',
