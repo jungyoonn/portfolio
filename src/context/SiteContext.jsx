@@ -739,20 +739,20 @@ Message.confirm("수정하시겠습니까?")
         {
           title: "Spring MVC 구조 설계서",
           description: "MVC 패턴에 따른 프로젝트 구조와, 컨트롤러, 서비스, 레포지토리 계층의 설계 문서입니다.",
-          url: "/documents/mvc-design.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/board_Spring+MVC+%EA%B5%AC%EC%A1%B0+%EC%84%A4%EA%B3%84%EC%84%9C.pdf",
           icon: faSitemap
         },
         {
           title: "데이터 접근 계층 설계",
           description: "JPA를 활용한 데이터 접근 계층 설계와 쿼리 최적화 방안을 담은 문서입니다.",
-          url: "/documents/data-access.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/board_%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%A0%91%EA%B7%BC+%EA%B3%84%EC%B8%B5+%EC%84%A4%EA%B3%84.pdf",
           icon: faDatabase
         },
         {
-          title: "보안 설정 가이드",
-          description: "Spring Security를 활용한 인증 및 권한 관리 설정 가이드입니다.",
-          url: "/documents/security-guide.pdf",
-          icon: faFileAlt
+          title: "시스템 아키텍쳐 다이어그램",
+          description: "프로젝트의 시스템 구조를 한눈에 볼 수 있는 다이어그램입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/board-architecture.svg",
+          icon: faSitemap
         }
       ],
       architecture: {
@@ -760,9 +760,9 @@ Message.confirm("수정하시겠습니까?")
         description: "프로젝트는 Spring Framework를 기반으로 한 MVC 아키텍처를 사용했습니다. 프레젠테이션 계층은 JSP와 JavaScript, CSS로 구현하고, 컨트롤러 계층에서 클라이언트 요청을 처리합니다. 서비스 계층에서는 게시판의 핵심 비즈니스 로직을 담당하며, 데이터 접근 계층에서는 Spring Data JPA를 활용하여 MariaDB와 통신합니다. DTO와 엔티티를 명확히 분리하여 계층 간 데이터 전달을 효율적으로 처리하고, JSTL을 이용해 서버 측 데이터를 화면에 표시했습니다."
       },
       performance: {
-        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
+        before: "페이지 로드 시간 2.3초, API 응답 시간 850ms, 데이터베이스 조회 시간 650ms",
+        after: "페이지 로드 시간 0.9초, API 응답 시간 320ms, 데이터베이스 조회 시간 180ms",
+        methods: "Spring Data JPA의 쿼리 메소드 최적화, 필요한 컬럼만 선택적으로 조회하는 프로젝션 적용, 불필요한 N+1 쿼리 제거, 인덱스 추가 및 DB 구조 최적화, 서비스 계층 로직 개선을 통한 불필요한 조회 감소 등을 적용했습니다."
       }
     },
     {
