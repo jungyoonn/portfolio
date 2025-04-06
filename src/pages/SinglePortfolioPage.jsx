@@ -17,18 +17,41 @@ import {
   faDownload,
   faChartLine,
   faExclamationTriangle,
+  faSearchPlus
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../css/single-portfolio-page.css';
+import '../css/image-modal.css';
+import ImageModal from '../components/layout/ImageModal';
 
 const SinglePortfolioPage = () => {
   const { id } = useParams();
   const { getProjectById } = useSite();
   const [project, setProject] = useState(null);
   const [activeFeature, setActiveFeature] = useState(0);
+  const [modalImage, setModalImage] = useState(null);
+  const [modalAlt, setModalAlt] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleFeature = (index) => {
     setActiveFeature(activeFeature === index ? null : index);
+  };
+  
+  // 이미지 모달 열기 함수
+  const openImageModal = (image, alt) => {
+    setModalImage(image);
+    setModalAlt(alt || '');
+    setModalOpen(true);
+    // 모달이 열릴 때 스크롤 방지
+    document.body.style.overflow = 'hidden';
+  };
+  
+  // 이미지 모달 닫기 함수
+  const closeImageModal = () => {
+    setModalOpen(false);
+    setModalImage(null);
+    // 모달이 닫힐 때 스크롤 복원
+    document.body.style.overflow = 'auto';
   };
   
   useEffect(() => {
@@ -63,9 +86,6 @@ const SinglePortfolioPage = () => {
           <div className="row no-gutters slider-text align-items-end justify-content-center">
             <div className="col-md-9 ftco-animate pb-5 text-center">
               <p className="breadcrumbs">
-                {/* <span className="mr-2 fw-bold"><Link to="/">Home <i className="fa fa-chevron-right"></i></Link></span> 
-                <span className="mr-2 fw-bold"><Link to="/#projects">Projects <i className="fa fa-chevron-right"></i></Link></span> 
-                <span className="noto-sans-kr fw-bold">Project Detail</span> */}
                 {project.projectLink && (
                   <div className="mt-3 noto-sans-kr">
                     <a 
@@ -91,7 +111,15 @@ const SinglePortfolioPage = () => {
             <div className="col-lg-8 ftco-animate">
               {/* 프로젝트 이미지 */}
               <div className="project-img mb-5">
-                <img src={project.image} alt={project.title} className="img-fluid" />
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="img-fluid clickable-image" 
+                  onClick={() => openImageModal(project.image, project.title)}
+                />
+                <div className="image-zoom-hint text-center mt-2 text-muted">
+                  <small><FontAwesomeIcon icon={faSearchPlus} /> 이미지를 클릭하면 확대해서 볼 수 있습니다</small>
+                </div>
               </div>
               
               {/* 프로젝트 개요 */}
@@ -142,7 +170,15 @@ const SinglePortfolioPage = () => {
                           <div className="card-body">
                             <div className="row">
                               <div className="col-md-6 mb-3">
-                                <img src={feature.image} alt={feature.title} className="img-fluid rounded" />
+                                <img 
+                                  src={feature.image} 
+                                  alt={feature.title} 
+                                  className="img-fluid rounded clickable-image" 
+                                  onClick={() => openImageModal(feature.image, feature.title)}
+                                />
+                                <div className="image-zoom-hint text-center mt-2 text-muted">
+                                  <small className='noto-sans-kr'><FontAwesomeIcon icon={faSearchPlus} /> 클릭하여 확대</small>
+                                </div>
                               </div>
                               <div className="col-md-6 noto-sans-kr">
                                 <p className="noto-sans-kr">{feature.description}</p>
@@ -230,8 +266,9 @@ const SinglePortfolioPage = () => {
                         <img 
                           src={project.architecture.diagram} 
                           alt="시스템 아키텍처 다이어그램" 
-                          className="img-fluid"
+                          className="img-fluid clickable-image"
                           style={{ maxWidth: '100%' }}
+                          onClick={() => openImageModal(project.architecture.diagram, "시스템 아키텍처 다이어그램")}
                         />
                       </div>
                       <p className="noto-sans-kr text-secondary">{project.architecture.description}</p>
@@ -479,6 +516,14 @@ const SinglePortfolioPage = () => {
           </div>
         </div>
       </section>
+
+      {/* 이미지 모달 */}
+      <ImageModal 
+        image={modalImage}
+        alt={modalAlt}
+        isOpen={modalOpen}
+        onClose={closeImageModal}
+      />
     </>
   );
 };
