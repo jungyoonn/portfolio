@@ -26,9 +26,9 @@ import boardWrite from '../img/board_write.png'
 import { 
   faDatabase, 
   faDesktop, 
-  faCodeBranch, 
+  // faCodeBranch, 
   faFileAlt,
-  faChartLine,
+  // faChartLine,
   faSitemap,
   faPencilRuler
 } from '@fortawesome/free-solid-svg-icons';
@@ -746,7 +746,7 @@ Message.confirm("수정하시겠습니까?")
           title: "Spring MVC 구조 설계서",
           description: "MVC 패턴에 따른 프로젝트 구조와, 컨트롤러, 서비스, 레포지토리 계층의 설계 문서입니다.",
           url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/board_Spring+MVC+%EA%B5%AC%EC%A1%B0+%EC%84%A4%EA%B3%84%EC%84%9C.pdf",
-          icon: faSitemap
+          icon: faFileAlt
         },
         {
           title: "데이터 접근 계층 설계",
@@ -1040,7 +1040,7 @@ public:
           title: "알고리즘 설계서",
           description: "거리 계산 및 배달비 산정 알고리즘의 설계 원리와 의사코드를 담은 문서입니다.",
           url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/%EB%B0%B0%EB%8B%AC%EB%B9%84+%EA%B3%84%EC%82%B0+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+%EC%84%A4%EA%B3%84%EC%84%9C.pdf",
-          icon: faCodeBranch
+          icon: faFileAlt
         },
         {
           title: "클래스 구조도",
