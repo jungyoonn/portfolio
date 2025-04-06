@@ -338,7 +338,7 @@ const SinglePortfolioPage = () => {
                               rel="noopener noreferrer" 
                               className="btn btn-sm btn-outline-primary"
                             >
-                              <FontAwesomeIcon icon={faDownload} className="mr-1" /> 다운로드
+                              <FontAwesomeIcon icon={faDownload} className="mr-1" /> 보기
                             </a>
                           </div>
                         </div>
