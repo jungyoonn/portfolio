@@ -15,6 +15,8 @@ import kioskArchitecture from '../img/kiosk-architecture.svg'
 import kioskPay from '../img/kiosk_pay.png'
 import kioskCart from '../img/kiosk_cart.png'
 import boardArchitecture from '../img/board-architecture.svg'
+import boardList from '../img/board_list.png'
+import boardWrite from '../img/board_write.png'
 import { 
   faDatabase, 
   faDesktop, 
@@ -562,7 +564,7 @@ public void setOrder() {
       features: [
         {
           title: "카테고리별 게시글 필터링",
-          image: "/images/features/category-filter.png",
+          image: `${boardList}`,
           description: "공지사항을 카테고리별로 분류하고 필터링할 수 있는 기능입니다. 백엔드에서 게시글을 필터링해서 프론트엔드로 가져오므로 사용자는 원하는 카테고리만 선택하여 볼 수 있습니다.",
           tech: ["Spring MVC", "JPA", "JSP", "Javascript"],
           codeSnippet: `// backend - service 
@@ -589,7 +591,7 @@ public void setOrder() {
         },
         {
           title: "게시글 CRUD 시스템",
-          image: "/images/features/crud-system.png",
+          image: `${boardWrite}`,
           description: "관리자가 공지사항을 작성, 수정, 삭제하고 사용자가 조회할 수 있는 기능입니다. 게시글을 수정/삭제할 시 옳은 비밀번호(등록 시 입력했던 비밀번호)를 입력해야 다음 로직이 처리됩니다. RESTful API 설계 원칙을 따라 구현했습니다.",
           tech: ["Spring Boot", "JPA", "JSP", "MariaDB", "Javascript"],
           codeSnippet: `// 등록
