@@ -8,6 +8,9 @@ import publicKeyDecrypt from '../img/elliptic_curve.png';
 import publicKeyAuth from '../img/elliptic_authenticate.png';
 import publicKeyArchitecture from '../img/ecc-authentication-diagram.svg'
 import deliveryBackground from '../img/first_project.png';
+import deliveryDistance from '../img/first_project_1.png'
+import deliveryOrder from '../img/first_project_2.png'
+import deliveryArchitecture from '../img/delivery-system-architecture.svg'
 import pilllawSignin from "../img/PILLLAW_Signin.jpg";
 import pilllawCategory from "../img/PILLLAW_Category.jpg";
 import pilllawArchitecture from "../img/PILLLAW_system_architecture.svg";
@@ -880,65 +883,187 @@ ECPoint multiplyPoint(ECPoint p, unsigned long scalar, ECParams params) {
     {
       id: 6,
       title: '배송지 거리별로 배달비가 달라지는 분식 가게 배달 API',
-      category: 'C++',
+      category: 'C++, OOP',
       image: deliveryBackground,
       position: '대학교 조별 과제',
       role: '지역별, 거리별 배달비 책정 시스템 구현',
       completed: '2019년 2학기',
       description: '대학교 프로그래밍 수업의 일환으로 C++을 활용하여 배달 서비스 API를 구현한 프로젝트입니다. 배송지와 가게 간의 거리를 계산하여 거리별로 차등화된 배달비를 산정하는 알고리즘을 개발했습니다. 지역 코드와 실제 거리 데이터를 매핑하고, 사용자 주문 정보에 따라 자동으로 배달비를 계산하는 시스템을 구축했습니다. 이 프로젝트를 통해 알고리즘 설계 능력을 향상시키고, 실제 비즈니스 로직을 프로그래밍으로 구현하는 경험을 쌓았습니다.',
-      challenge: "지역과 거리에 따른 배달비 차등 계산 알고리즘을 설계하고 구현하는 것이 주요 과제였습니다. 복잡한 비즈니스 로직을 프로그래밍으로 구현해야 했습니다.",
-      solution: "C++의 객체지향 특성을 활용해 지역 코드와 거리 데이터를 관리하는 클래스를 설계했습니다. 거리 계산 알고리즘과 배달비 책정 로직을 분리하여 구현했으며, 사용자 주문 정보에 따라 자동으로 배달비를 계산하는 시스템을 개발했습니다.",
-      problem: "",
-      resove: "",
-      collaboration: "4인 조별 과제에서 거리별 배달비 책정 시스템을 담당했습니다. 팀원들과 함께 요구사항을 분석하고 클래스 다이어그램을 작성하여 전체 시스템 구조를 설계했습니다. 각자 맡은 모듈을 개발한 후 통합하는 과정에서 발생한 인터페이스 불일치 문제를 해결하기 위해 적극적으로 소통했습니다.",
+      challenge: "지역별로 차등화된 배달비를 계산하고 최소 주문 금액을 충족하는 주문 시스템을 구현하는 것이 과제였습니다. 사용자가 입력한 주소를 파싱하여 지역을 식별하고, 해당 지역에 맞는 배달비를 적용해야 했으며, 배달 불가 지역도 처리해야 했습니다.",
+      solution: "C++의 상속과 가상 함수를 활용한 다형성으로 문제를 해결했습니다. 기본 배달 클래스를 생성하고 각 지역별로 자식 클래스를 구현하여 지역에 따라 다른 배달비를 적용했습니다. 포인터와 동적 메모리 할당을 통해 적절한 지역 클래스를 실행 시간에 결정하고, 문자열 처리 함수를 활용해 사용자 입력 주소에서 지역명을 추출하여 분류했습니다. 또한 최소 주문 금액 체크 로직을 구현하여 주문 요건을 충족하는지 확인했습니다.",
+      problem: "프로젝트 개발 중 두 가지 주요 문제에 직면했습니다. 첫째, 주소 파싱 로직이 단순하여 첫 공백 전까지의 문자만 지역으로 인식하는 한계가 있었습니다. 이 방식은 주소 입력 형식이 '지역명 + 상세주소'로 정확히 입력되어야만 작동했습니다. 둘째, 메뉴 처리 과정에서 메뉴 번호를 체크할 때 불필요하게 0부터 127까지 반복문을 돌리는 비효율적인 코드 구조가 있었습니다.",
+      resolve: "주소 파싱 문제는 사용자에게 정확한 입력 가이드라인을 제공하고, 입력 예시를 명확히 보여주는 방식으로 해결했습니다. 메뉴 처리 비효율성은 반복문의 범위를 실제 메뉴 수(1~6)에 맞게 조정하여 불필요한 연산을 줄였습니다. 또한 원래 계획했던 지역 코드와 거리 데이터 매핑 시스템을 단순화하여, 직접적인 조건문으로 지역별 배달비를 결정하는 방식을 채택했습니다. 이러한 실용적인 접근으로 프로그램의 성능을 개선하고 사용자 경험을 향상시켰습니다.",
+      collaboration: "4인 조별 과제에서 거리별 배달비 책정 시스템을 담당했습니다. 팀원들과 함께 시스템 체계를 분석하고 클래스 다이어그램을 작성하여 전체 시스템 구조를 설계했습니다. 각자 맡은 모듈을 개발한 후 통합하는 과정에서 발생한 인터페이스 불일치 문제를 해결하기 위해 적극적으로 소통했습니다.",
       learning: "C++ 언어의 객체지향적 특성을 활용한 프로그래밍 능력을 향상시켰습니다. 실제 비즈니스 로직을 코드로 구현하는 과정에서 요구사항 분석과 알고리즘 설계 능력을 키웠습니다. 또한 조별 과제를 통해 코드 통합과 버전 관리의 기초를 배웠으며, 이는 후속 프로젝트에서 큰 도움이 되었습니다.",
       results: "프로그래밍 기초 과목에서 높은 평가를 받았으며, 특히 실제 비즈니스 로직을 프로그래밍으로 구현한 접근 방식이 인정받았습니다. 이 프로젝트는 C++ 언어의 기본 문법을 넘어 실제 문제 해결에 적용하는 능력을 키우는 중요한 경험이 되었습니다.",
       githubLink: "https://github.com/jungyoonn/C-Assignment-Project",
       features: [
         {
           title: "거리 기반 배달비 계산 알고리즘",
-          image: "/images/features/distance-calc.png",
-          description: "출발지와 도착지 사이의 거리를 계산하고 구간별로 차등화된 배달비를 산정하는 알고리즘입니다. 지역 코드를 활용한 최적화된 계산 방식을 적용했습니다.",
+          image: `${deliveryDistance}`,
+          description: "출발지와 도착지 사이의 거리를 계산하고 구간별로 차등화된 배달비를 산정하는 알고리즘입니다. 배달비를 미포함한 전체 상품 금액만으로 결제액을 책정한 기본 클래스에 거리별로, 지역별로 자식 클래스가 상속되어 배달비가 책정되는 시스템입니다.",
           tech: ["C++", "STL", "Algorithm Design"],
-          codeSnippet: "float calculateDeliveryFee(int originCode, int destCode) { float distance = distanceMap[originCode][destCode]; return applyFeeByZone(distance); }"
+          codeSnippet: `class A : public delivery { //A동네 배달료 1000원
+public:
+	virtual int setpay(char dis[20], int total) {
+		fee = 1000;
+
+		strcmp(dis, this->dis);
+		this->total = total;
+
+		int price = setprice();
+		cout << "해당 지역(" << dis << ")은 배달료가 1000원 추가됩니다." << endl;
+		cout << "총 결제 금액 : " << price << endl;
+		return price;
+	}
+};
+
+class B : public delivery { //B동네 배달료 1000원 부과
+public:
+	virtual int setpay(char dis[20], int total) {
+		fee = 2000;
+
+		strcmp(dis, this->dis);
+		this->total = total;
+
+		int price = setprice();
+		cout << "해당 지역(" << dis << ")은 배달료가 2000원 추가됩니다." << endl;
+		cout << "총 결제 금액 : " << price << endl;
+		return price;
+	}
+};
+
+class C : public delivery { //C동네 배달료 2000원 부과
+public:
+	virtual int setpay(char dis[20], int total) {
+		fee = 3000;
+
+		strcmp(dis, this->dis);
+		this->total = total;
+
+		int price = setprice();
+		cout << "해당 지역(" << dis << ")은 배달료가 3000원 추가됩니다." << endl;
+		cout << "총 결제 금액 : " << price << endl;
+		return price;
+	}
+};
+
+class others : public delivery { //가맹점과 거리가 너무 멀어서 배달 불가능
+public:
+	virtual int setpay(char dis[20], int total) {
+		strcmp(dis, this->dis);
+		this->total = total;
+		cout << "지역이 너무 멀어 주문이 접수되지 않았습니다." << endl;
+		return 0;
+	}
+};`
         },
         {
-          title: "지역 코드 매핑 시스템",
-          image: "/images/features/region-mapping.png",
-          description: "지역별 코드와 실제 거리 데이터를 매핑하는 시스템입니다. 데이터 구조를 최적화하여 빠른 검색과 변환을 가능하게 합니다.",
-          tech: ["C++", "Data Structures", "Mapping Algorithms"],
-          codeSnippet: "class RegionMapper { private: std::unordered_map<int, Region> regionMap; public: Region getRegionByCode(int code); }"
+          title: "메뉴를 골라 담은 후 주문",
+          image: `${deliveryOrder}`,
+          description: "최소 주문 금액을 채우지 않으면 주문으로 넘어가지 않고, 주문 시 배송지를 입력하여 거리에 따른 배송비가 책정되는 메인 메서드입니다. 배송지가 가게와 너무 먼 거리에 있으면 주문이 접수되지 않았다는 안내 메시지를 띄웁니다.",
+          tech: ["C++", "OOP(객체지향 프로그래밍)", "다형성", "메모리 관리", "문자열 처리"],
+          codeSnippet: `while (1) {
+		if (sum1 < MIN) {
+			cout << endl << "최소 주문 금액은 8000원입니다. 메뉴를 추가해 주세요. 현재 주문 금액은 " << total << "원" << endl << endl;
+			order();
+			while (1) {
+				cin >> menu;
+				if (menu == 7) break;
+				vc.push_back(menu);
+			}
+			for (int i = cnt; i < vc.size(); i++) {
+				for (int t = 0; t < 127; t++) {
+					if (t == vc[i])
+						sum2 += price[t];
+				}
+			}
+			total = sum1 + sum2;
+			cnt++;
+		}
+		if (total >= MIN)
+			break;
+	}
+	cout << endl << "현재 주문 금액은 " << total << "원입니다." << endl;
+	cout << endl << "주소를 입력하세요 : ";
+	string address; //주소를 입력받는 string 타입 변수
+	cin.ignore();
+	getline(cin, address);
+
+	char home[20] = { 0 };
+	for (int i = 0; ; i++)
+	{
+		if (address[i] == ' ')
+			break;
+		else if (address[i] != ' ')
+			home[i] = address[i];
+	}
+
+	int money;
+	if (!strcmp(home, "덕명동")) {
+		delivery *pdelivery = new A();
+		money = pdelivery->setpay(home, total);
+		delete pdelivery;
+	}
+	else if (!strcmp(home, "노은동")) {
+		delivery *pdelivery = new B();
+		money = pdelivery->setpay(home, total);
+		delete pdelivery;
+	}
+	else if (!strcmp(home, "궁동")) {
+		delivery *pdelivery = new C();
+		money = pdelivery->setpay(home, total);
+		delete pdelivery;
+	}
+	else {
+		delivery *pdelivery = new others();
+		money = pdelivery->setpay(home, total);
+		delete pdelivery;
+		return 0;
+	}
+
+	cout << endl << "------------------------------------------------------------------------" << endl << endl;
+	cout << "주소는 " << address << ", 총 주문 금액은 " << money << "원 입니다!" << endl << "★ 결제를 진행하시겠습니까?(Y/N)";
+	char c;
+	cin >> c;
+	cout << endl;
+	if (c == 'N') {
+		cout << "주문을 취소합니다. " << endl;
+		return 0;
+	}
+	else if (c == 'Y')
+		cout << "결제 페이지로 넘어갑니다. 잠시만 기다려 주세요." << endl << endl;`
         }
       ],
       documents: [
         {
           title: "알고리즘 설계서",
           description: "거리 계산 및 배달비 산정 알고리즘의 설계 원리와 의사코드를 담은 문서입니다.",
-          url: "/documents/algorithm-design.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/%EB%B0%B0%EB%8B%AC%EB%B9%84+%EA%B3%84%EC%82%B0+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+%EC%84%A4%EA%B3%84%EC%84%9C.pdf",
           icon: faCodeBranch
         },
         {
           title: "클래스 구조도",
           description: "객체지향 설계에 따른 C++ 클래스 구조와 상속 관계를 정리한 문서입니다.",
-          url: "/documents/class-structure.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/delivery-class-structure-diagram-svg.svg",
           icon: faSitemap
         },
         {
-          title: "성능 테스트 보고서",
-          description: "다양한 입력 데이터와 규모에 따른 알고리즘 성능 테스트 결과를 분석한 보고서입니다.",
-          url: "/documents/performance-test.pdf",
-          icon: faChartLine
+          title: "시스템 아키텍쳐 다이어그램",
+          description: "프로젝트의 시스템 구조를 한눈에 볼 수 있는 다이어그램입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/delivery-system-architecture.svg",
+          icon: faSitemap
         }
       ],
       architecture: {
-        diagram: "/images/architecture-diagram.png",
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+        diagram: `${deliveryArchitecture}`,
+        description: "이 다이어그램은 배달 서비스 시스템의 아키텍처를 나타냅니다. 3계층 구조(사용자 인터페이스 계층, 비즈니스 로직 계층, 데이터 계층)로 구성되어 있으며, 객체지향 설계 원칙을 따릅니다. 사용자 인터페이스에서는 메뉴 선택, 주소 입력, 결제 확인 기능을 제공하고, 비즈니스 로직에서는 주문 처리와 지역 기반 배달비 계산을 담당합니다. 데이터 계층은 메뉴, 지역, 가격 정보를 관리하며, 우측 하단에는 배달 서비스의 클래스 계층 구조(기본 클래스인 delivery와 지역별 자식 클래스)를 보여줍니다. 이 시스템은 특히 다형성을 활용하여 지역별로 다른 배달비 계산 로직을 효율적으로 구현했습니다."
       },
-      performance: {
-        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
-      }
+      // performance: {
+      //   before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
+      //   after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
+      //   methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
+      // }
     }
   ],
   // DeveloperJourney.jsx
