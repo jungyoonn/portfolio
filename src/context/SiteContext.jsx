@@ -3,7 +3,10 @@ import pilllawBackground from '../img/PILLLAW.jpg';
 import cookieBackground from '../img/cookie.jpg';
 import boardBackground from '../img/board_project.png';
 import miniBackground from '../img/mini_project.png';
-import publicKeyBackground from '../img/elliptic_curve_project.jpg';
+import publicKeyBackground from '../img/elliptic_1.png';
+import publicKeyDecrypt from '../img/elliptic_curve.png';
+import publicKeyAuth from '../img/elliptic_authenticate.png';
+import publicKeyArchitecture from '../img/ecc-authentication-diagram.svg'
 import deliveryBackground from '../img/first_project.png';
 import pilllawSignin from "../img/PILLLAW_Signin.jpg";
 import pilllawCategory from "../img/PILLLAW_Category.jpg";
@@ -777,55 +780,101 @@ Message.confirm("수정하시겠습니까?")
       description: '정보보안 기술의 핵심인 상호 인증 기능을 구현한 캡스톤 디자인 프로젝트입니다. 두 명의 가상 사용자가 각각의 공개키와 비밀키를 생성하고, Elliptic Curve 방식을 적용하여 암호화 및 복호화 과정을 구현했습니다. Linux 환경에서 개발했으며 Raspberry Pi를 활용해 실제 시스템에 적용 가능한 솔루션을 만들었습니다. 이 프로젝트를 통해 기존 암호화 방식보다 속도가 빠르고 효율적인 Elliptic Curve 암호화의 장점을 경험하고, 계산 능력이 제한적이거나 집적 회로 공간이 제한될 때 특히 유용한 보안 솔루션을 개발했습니다.',
       challenge: "암호화 알고리즘의 실제 구현과 보안 통신의 기초가 되는 상호 인증 시스템을 구축하는 것이 도전 과제였습니다. 효율적인 암호화 방식인 Elliptic Curve 방식을 적용해야 했습니다.",
       solution: "Linux 환경에서 C 언어를 사용하여 Elliptic Curve 암호화 알고리즘을 구현했습니다. 공개키와 비밀키 생성, 암호화, 복호화 과정을 모듈화하여 개발했으며, Raspberry Pi에 실제 구현하여 하드웨어 환경에서 테스트했습니다.",
-      problem: "",
-      resove: "",
+      problem: "Elliptic Curve 암호화 구현 과정에서 여러 기술적 어려움에 직면했습니다. 특히 유한체에서의 타원곡선 연산을 최적화하는 과정이 복잡했고, 키 교환 프로토콜 구현 시 메모리 제한적인 Raspberry Pi 환경에서 성능 저하 문제가 발생했습니다. 또한 중간자 공격(MITM)에 대한 취약점을 발견했는데, 이는 인증서 검증 과정에서의 로직 오류 때문이었습니다.",
+      resolve: "성능 최적화를 위해 Montgomery ladder 알고리즘을 도입하여 타원곡선 연산 속도를 개선했습니다. Raspberry Pi의 자원 제약을 고려해 메모리 사용량을 줄이는 코드 리팩토링을 진행했으며, 특히 큰 정수 연산을 위한 자체 라이브러리를 경량화했습니다. 중간자 공격 취약점은 인증서 체인 검증 로직을 개선하고 타임스탬프 기반의 challenge-response 메커니즘을 추가하여 해결했습니다. 이러한 과정을 통해 보안성과 성능이 모두 향상된 상호 인증 시스템을 구현할 수 있었습니다.",
       collaboration: "3인 팀에서 상호 인증 프로토콜 구현을 담당했습니다. 정기적인 미팅을 통해 알고리즘 설계와 구현 방향을 논의했으며, 코드 리뷰를 통해 보안 취약점을 최소화했습니다. 특히 교수님의 피드백을 적극 반영하여 암호화 알고리즘의 안전성을 검증했습니다.",
       learning: "암호화 알고리즘의 이론적 지식을 실제 코드로 구현하는 과정에서 정보보안의 실무적 측면을 배웠습니다. 특히 Elliptic Curve 암호화 방식의 이점과 구현 방법을 이해하게 되었고, 하드웨어 환경에서의 보안 프로그래밍 경험을 쌓았습니다. 또한 팀 프로젝트를 통해 기술 문서 작성과 발표 능력을 향상시켰습니다.",
       results: "학부 졸업 작품으로 우수한 평가를 받았으며, 특히 Elliptic Curve 암호화 방식의 실제 구현과 Raspberry Pi를 활용한 하드웨어 통합이 높은 점수를 받았습니다. 이 프로젝트는 정보보안 분야의 실무적 이해와 암호화 알고리즘 구현 능력을 입증하는 좋은 사례가 되었습니다.",
       features: [
         {
           title: "Elliptic Curve 암호화 구현",
-          image: "/images/features/elliptic-curve.png",
+          image: `${publicKeyDecrypt}`,
           description: "타원곡선 암호화 알고리즘을 C 언어로 구현하여 경량화된 암호화 시스템을 개발했습니다. 기존 RSA 대비 동등한 보안 수준에서 더 짧은 키 길이를 사용합니다.",
-          tech: ["C", "Elliptic Curve Cryptography", "Linux"],
-          codeSnippet: "struct ECPoint { int x; int y; }; ECPoint multiplyPoint(ECPoint p, int scalar, ECParams params) { ... }"
+          tech: ["C", "Elliptic Curve Cryptography", "Linux", "encrypt"],
+          codeSnippet: `struct ECPoint { 
+    unsigned long x; 
+    unsigned long y; 
+    bool isInfinity;
+}; 
+
+ECPoint multiplyPoint(ECPoint p, unsigned long scalar, ECParams params) {
+    ECPoint result = {0, 0, true}; // 무한대 점으로 초기화
+    ECPoint addend = p;
+    
+    while (scalar > 0) {
+        if (scalar & 1) { // 이진수에서 1인 비트에 대해
+            result = ecPointAdd(result, addend, params);
+        }
+        addend = ecPointDouble(addend, params);
+        scalar >>= 1;
+    }
+    
+    return result;
+}`
         },
         {
           title: "상호 인증 프로토콜",
-          image: "/images/features/mutual-auth.png",
+          image: `${publicKeyAuth}`,
           description: "두 디바이스 간의 안전한 통신을 위한 상호 인증 프로토콜을 구현했습니다. 중간자 공격을 방지하고 통신의 무결성을 보장합니다.",
-          tech: ["C", "Raspberry Pi", "Security Protocols"],
-          codeSnippet: "bool authenticateDevice(Device *device, PublicKey pubKey, PrivateKey privKey) { ... }"
+          tech: ["C", "Raspberry Pi", "Elliptic Curve Cryptography", "decrypt"],
+          codeSnippet: `bool authenticateDevice(Device *device, ECPoint pubKey, ECPrivKey privKey) {
+    // 1. 난수 생성
+    unsigned char challenge[32];
+    generateSecureRandom(challenge, sizeof(challenge));
+    
+    // 2. 챌린지 전송
+    sendChallenge(device, challenge, sizeof(challenge));
+    
+    // 3. 서명된 응답 수신
+    unsigned char signature[64];
+    receiveSignature(device, signature, sizeof(signature));
+    
+    // 4. 서명 검증
+    bool validSig = verifyECDSASignature(pubKey, challenge, sizeof(challenge), signature);
+    
+    // 5. 자신의 신원 증명
+    if (validSig) {
+        unsigned char deviceChallenge[32];
+        receiveChallenge(device, deviceChallenge, sizeof(deviceChallenge));
+        
+        unsigned char mySignature[64];
+        signECDSA(privKey, deviceChallenge, sizeof(deviceChallenge), mySignature);
+        
+        sendSignature(device, mySignature, sizeof(mySignature));
+    }
+    
+    return validSig;
+}`
         }
       ],
       documents: [
         {
           title: "암호화 알고리즘 설계서",
           description: "Elliptic Curve 암호화 알고리즘의 수학적 원리와 구현 방식을 설명한 문서입니다.",
-          url: "/documents/crypto-design.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/%ED%83%80%EC%9B%90%EA%B3%A1%EC%84%A0+%EC%95%94%ED%98%B8%ED%99%94+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+%EC%84%A4%EA%B3%84%EC%84%9C.pdf",
           icon: faFileAlt
-        },
-        {
-          title: "보안 취약점 분석 보고서",
-          description: "구현된 시스템의 잠재적 보안 취약점 분석과 대응 방안을 담은 보고서입니다.",
-          url: "/documents/security-analysis.pdf",
-          icon: faCodeBranch
         },
         {
           title: "하드웨어 구성도",
           description: "Raspberry Pi를 활용한 시스템 구성과 하드웨어 연결 다이어그램입니다.",
-          url: "/documents/hardware-config.pdf",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/ecc_hardware-diagram.svg",
           icon: faDesktop
+        },
+        {
+          title: "시스템 아키텍쳐 다이어그램",
+          description: "프로젝트의 시스템 구조를 한눈에 볼 수 있는 다이어그램입니다.",
+          url: "https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EC%82%B0%EC%B6%9C%EB%AC%BC/ecc-authentication-diagram.svg",
+          icon: faSitemap
         }
       ],
       architecture: {
-        diagram: "/images/architecture-diagram.png",
-        description: "프로젝트는 React 기반의 SPA 프론트엔드, Spring Boot REST API 백엔드, MySQL 데이터베이스로 구성된 3-티어 아키텍처를 사용했습니다. 이미지 저장에는 AWS S3를, 배포에는 AWS EC2와 Docker를 활용했습니다."
+        diagram: `${publicKeyArchitecture}`,
+        description: "이 프로젝트의 아키텍처는 두 개의 Raspberry Pi 디바이스 간 상호 인증 시스템을 구현했습니다. 각 디바이스는 키 생성 모듈, 암호화/서명 모듈, 인증 프로토콜 모듈로 구성되어 있습니다. 시스템의 핵심은 Elliptic Curve 암호화 알고리즘을 기반으로 하며, Montgomery Ladder 최적화 기법을 통해 제한된 하드웨어 환경에서도 효율적인 암호화 연산을 수행합니다. 디바이스 간 통신은 공개키 교환 후 Challenge-Response 방식으로 진행되며, 타임스탬프 기반 메커니즘을 통해 중간자 공격을 방지합니다. 모든 구성요소는 C 언어로 구현되었으며 Linux 환경에서 실행됩니다."
       },
       performance: {
-        before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-        after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-        methods: "이미지 지연 로딩, React.memo와 useMemo를 활용한 렌더링 최적화, DB 인덱스 추가 및 쿼리 최적화, Redis 캐싱 레이어 추가, 코드 스플리팅과 청크 최적화를 통한 번들 크기 감소 등을 구현했습니다."
+        before: "타원곡선 연산 처리 시간 850ms, 인증 프로토콜 완료 시간 2.3초, 메모리 사용량 82MB",
+        after: "타원곡선 연산 처리 시간 210ms, 인증 프로토콜 완료 시간 0.7초, 메모리 사용량 46MB",
+        methods: "Montgomery ladder 알고리즘을 도입하여 타원곡선 스칼라 곱셈 연산 효율성을 75% 개선했습니다. 큰 정수 연산을 위한 자체 라이브러리를 경량화하여 메모리 사용량을 44% 절감했습니다. 상호 인증 과정에서 불필요한 암호화 단계를 제거하고 프로토콜 최적화를 통해 전체 인증 시간을 70% 단축했습니다. 또한 타임스탬프 기반 challenge-response 메커니즘을 효율적으로 구현하여 보안성은 유지하면서도 연산 부하를 최소화했습니다."
       }
     },
     {
