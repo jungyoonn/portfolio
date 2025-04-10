@@ -128,62 +128,63 @@ const Skills = () => {
     
     return (
       <div className="mobile-skills-container">
-        <div className="category-tabs">
-          {Object.keys(skillCategories).map((category) => (
-            <button
-              key={category}
-              className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleCategorySelect(category)}
-            >
-              {category} ({categorySkillCounts[category]})
-            </button>
-          ))}
-        </div>
-        
-        <div className="skills-scroll-container">
-          <div className="d-flex">
-            {skillCategories[selectedCategory]?.map((skill, index) => (
-              <div className="skill-card" key={index}>
-                <div className="bg-white">
-                  <h3>{skill.name}</h3>
-                  
-                  <div className="mobile-circular-progress" data-percentage={skill.value}>
-                    <span className="mobile-circular-progress-left">
-                      <span className="mobile-circular-progress-bar" style={{ 
-                        transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
-                      }}></span>
-                    </span>
-                    <span className="mobile-circular-progress-right">
-                      <span className="mobile-circular-progress-bar" style={{ 
-                        transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
-                      }}></span>
-                    </span>
-                    <div className="mobile-circular-progress-value">
-                      <div className="mobile-circular-progress-percentage">{skill.value}<sup>%</sup></div>
-                    </div>
-                  </div>
-                  
-                  <div className="skill-categories-mobile text-center mt-2">
-                    {Array.isArray(skill.category) ? (
-                      skill.category.map((cat, idx) => (
-                        <span key={idx} className="badge badge-light badge-sm mr-1">
-                          {cat}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="badge badge-light badge-sm mr-1">
-                        {skill.category || 'Other'}
-                      </span>
-                    )}
-                  </div>
-                </div>
+        <div className="category-grid">
+          <div className="row">
+            {Object.keys(skillCategories).map((category) => (
+              <div className="col-6 mb-2" key={category}>
+                <button
+                  className={`btn btn-category ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
+                  onClick={() => handleCategorySelect(category)}
+                >
+                  {category} ({categorySkillCounts[category]})
+                </button>
               </div>
             ))}
           </div>
         </div>
         
-        <div className="swipe-hint">
-          <i className="fa fa-arrow-right"></i> 옆으로 스와이프하여 더 보기
+        <div className="mobile-skills-grid">
+          <div className="row">
+            {skillCategories[selectedCategory]?.map((skill, index) => (
+              <div className="col-6 mb-3" key={index}>
+                <div className="mobile-skill-card">
+                  <div className="bg-white">
+                    <h3>{skill.name}</h3>
+                    
+                    <div className="mobile-circular-progress" data-percentage={skill.value}>
+                      <span className="mobile-circular-progress-left">
+                        <span className="mobile-circular-progress-bar" style={{ 
+                          transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
+                        }}></span>
+                      </span>
+                      <span className="mobile-circular-progress-right">
+                        <span className="mobile-circular-progress-bar" style={{ 
+                          transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
+                        }}></span>
+                      </span>
+                      <div className="mobile-circular-progress-value">
+                        <div className="mobile-circular-progress-percentage">{skill.value}<sup>%</sup></div>
+                      </div>
+                    </div>
+                    
+                    <div className="skill-categories-mobile text-center mt-2">
+                      {Array.isArray(skill.category) ? (
+                        skill.category.map((cat, idx) => (
+                          <span key={idx} className="badge badge-light badge-sm mr-1">
+                            {cat}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="badge badge-light badge-sm mr-1">
+                          {skill.category || 'Other'}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
