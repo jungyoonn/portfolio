@@ -1114,144 +1114,168 @@ public:
     { 
       name: 'HTML', 
       value: 97, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(169.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' }
     },
     { 
       name: 'C', 
       value: 95, 
+      category: 'Languages',
       leftStyle: { transform: 'rotate(162deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Spring', 
       value: 92, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(151.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'JPA, JPQL', 
       value: 92, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(151.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'CSS', 
       value: 91, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(147.6deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Nodejs', 
       value: 90, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(144deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Javascript', 
       value: 89, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(140.4deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'jQuery', 
       value: 89, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(140.4deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'MyBatis', 
       value: 88, 
+      category: 'Database',
       leftStyle: { transform: 'rotate(136.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Servlet', 
       value: 88, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(136.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'C++', 
       value: 88, 
+      category: 'Languages',
       leftStyle: { transform: 'rotate(136.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'JSP', 
       value: 88, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(136.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'SQL', 
       value: 87, 
+      category: 'Database',
       leftStyle: { transform: 'rotate(133.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Java', 
       value: 85, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(126deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Ubuntu', 
       value: 85, 
+      category: 'Infrastructure',
       leftStyle: { transform: 'rotate(126deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'AWS', 
       value: 82, 
+      category: 'Infrastructure',
       leftStyle: { transform: 'rotate(115.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'React', 
       value: 80, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(108deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'NginX', 
       value: 79, 
+      category: 'Infrastructure',
       leftStyle: { transform: 'rotate(104.4deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Mustache', 
       value: 76, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(93.6deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'NoSQL', 
       value: 72, 
+      category: 'Database',
       leftStyle: { transform: 'rotate(79.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Kotlin', 
       value: 71, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(75.6deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Querydsl', 
       value: 70, 
+      category: 'Backend',
       leftStyle: { transform: 'rotate(72deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'C#', 
       value: 68, 
+      category: 'Languages',
       leftStyle: { transform: 'rotate(64.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
       name: 'Thymeleaf', 
       value: 69, 
+      category: 'Frontend',
       leftStyle: { transform: 'rotate(68.4deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     }

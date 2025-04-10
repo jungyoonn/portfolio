@@ -1,10 +1,136 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSite } from '../../context/SiteContext';
+import '../../css/skills.css'; 
 
 const Skills = () => {
-  // SiteContext에서 skills 데이터 가져오기
   const { state } = useSite();
   const { skills } = state;
+  
+  const [isMobile, setIsMobile] = useState(false);
+  const [skillCategories, setSkillCategories] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState('');
+  
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIfMobile();
+    
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
+  
+  useEffect(() => {
+    if (skills && skills.length > 0) {
+      const categories = skills.reduce((acc, skill) => {
+        const category = skill.category || 'Other';
+        
+        if (!acc[category]) {
+          acc[category] = [];
+        }
+        
+        acc[category].push(skill);
+        return acc;
+      }, {});
+      
+      setSkillCategories(categories);
+      
+      if (Object.keys(categories).length > 0) {
+        setSelectedCategory(Object.keys(categories)[0]);
+      }
+    }
+  }, [skills]);
+  
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const renderDesktopView = () => (
+    <div className="row progress-circle mb-5">
+      {skills.map((skill, index) => (
+        <div className="col-lg-4 mb-4" key={index}>
+          <div className="bg-white rounded-lg shadow p-4">
+            <h2 className="h5 font-weight-bold text-center mb-4 text-dark">{skill.name}</h2>
+
+            <div className="circular-progress mx-auto" data-percentage={skill.value}>
+              <span className="circular-progress-left">
+                <span className="circular-progress-bar" style={{ 
+                  transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
+                }}></span>
+              </span>
+              <span className="circular-progress-right">
+                <span className="circular-progress-bar" style={{ 
+                  transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
+                }}></span>
+              </span>
+              <div className="circular-progress-value">
+                <div className="circular-progress-percentage">{skill.value}<sup className="small">%</sup></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderMobileView = () => {
+    const categorySkillCounts = Object.entries(skillCategories).reduce((acc, [category, skills]) => {
+      acc[category] = skills.length;
+      return acc;
+    }, {});
+    
+    return (
+      <div className="mobile-skills-container">
+        <div className="category-tabs">
+          {Object.keys(skillCategories).map((category) => (
+            <button
+              key={category}
+              className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleCategorySelect(category)}
+            >
+              {category} ({categorySkillCounts[category]})
+            </button>
+          ))}
+        </div>
+        
+        <div className="skills-scroll-container">
+          <div className="d-flex">
+            {skillCategories[selectedCategory]?.map((skill, index) => (
+              <div className="skill-card" key={index}>
+                <div className="bg-white">
+                  <h3>{skill.name}</h3>
+                  
+                  <div className="mobile-circular-progress" data-percentage={skill.value}>
+                    <span className="mobile-circular-progress-left">
+                      <span className="mobile-circular-progress-bar" style={{ 
+                        transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
+                      }}></span>
+                    </span>
+                    <span className="mobile-circular-progress-right">
+                      <span className="mobile-circular-progress-bar" style={{ 
+                        transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
+                      }}></span>
+                    </span>
+                    <div className="mobile-circular-progress-value">
+                      <div className="mobile-circular-progress-percentage">{skill.value}<sup>%</sup></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="swipe-hint">
+          <i className="fa fa-arrow-right"></i> 옆으로 스와이프하여 더 보기
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section className="ftco-section bg-light" id="skills">
@@ -16,38 +142,9 @@ const Skills = () => {
             <p className='noto-sans-kr'>백엔드는 Java와 Spring framework, 프론트엔드는 HTML, JSP, Javascript, React 활용에 강점을 가지고 있습니다.</p>
           </div>
         </div>
-        <div className="row progress-circle mb-5">
-          {skills.map((skill, index) => (
-            <div className="col-lg-4 mb-4" key={index}>
-              <div className="bg-white rounded-lg shadow p-4 ">
-                <h2 className="h5 font-weight-bold text-center mb-4 text-dark">{skill.name}</h2>
-
-                {/* Progress bar */}
-                <div className="progress mx-auto text-dark mb-4" data-value={skill.value}>
-                  <span className="progress-left">
-                    <span className="progress-bar border-primary" style={skill.leftStyle}></span>
-                  </span>
-                  <span className="progress-right">
-                    <span className="progress-bar border-primary" style={skill.rightStyle}></span>
-                  </span>
-                  <div className="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                    <div className="h2 font-weight-bold">{skill.value}<sup className="small">%</sup></div>
-                  </div>
-                </div>
-
-                {/* Demo info */}
-                {/* <div className="row text-center mt-4">
-                  <div className="col-6 border-right">
-                    <div className="h4 font-weight-bold mb-0">28%</div><span className="small text-gray">Last week</span>
-                  </div>
-                  <div className="col-6">
-                    <div className="h4 font-weight-bold mb-0">60%</div><span className="small text-gray">Last month</span>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          ))}
-        </div>
+        
+        {/* 화면 크기에 따라 다른 뷰 렌더링 */}
+        {isMobile ? renderMobileView() : renderDesktopView()}
       </div>
     </section>
   );
