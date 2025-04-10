@@ -26,19 +26,27 @@ const Skills = () => {
   
   useEffect(() => {
     if (skills && skills.length > 0) {
-      const categories = skills.reduce((acc, skill) => {
-        const category = skill.category || 'Other';
+      const categories = {};
+      
+      skills.forEach(skill => {
+        // 카테고리가 문자열인 경우와 배열인 경우 모두 처리
+        const skillCategories = Array.isArray(skill.category) 
+          ? skill.category 
+          : [skill.category || 'Other'];
         
-        if (!acc[category]) {
-          acc[category] = [];
-        }
-        
-        acc[category].push(skill);
-        return acc;
-      }, {});
+        // 각 카테고리에 스킬 추가
+        skillCategories.forEach(category => {
+          if (!categories[category]) {
+            categories[category] = [];
+          }
+          
+          categories[category].push(skill);
+        });
+      });
       
       setSkillCategories(categories);
       
+      // 첫 번째 카테고리를 기본 선택
       if (Object.keys(categories).length > 0) {
         setSelectedCategory(Object.keys(categories)[0]);
       }
@@ -49,33 +57,68 @@ const Skills = () => {
     setSelectedCategory(category);
   };
 
-  const renderDesktopView = () => (
-    <div className="row progress-circle mb-5">
-      {skills.map((skill, index) => (
-        <div className="col-lg-4 mb-4" key={index}>
-          <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="h5 font-weight-bold text-center mb-4 text-dark">{skill.name}</h2>
+  const renderDesktopView = () => {
+    const categorySkillCounts = Object.entries(skillCategories).reduce((acc, [category, skills]) => {
+      acc[category] = skills.length;
+      return acc;
+    }, {});
+    
+    return (
+      <div className="desktop-skills-container">
+        <div className="category-nav">
+          {Object.keys(skillCategories).map((category) => (
+            <button
+              key={category}
+              className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleCategorySelect(category)}
+            >
+              {category} ({categorySkillCounts[category]})
+            </button>
+          ))}
+        </div>
+        
+        <div className="row progress-circle mb-5">
+          {skillCategories[selectedCategory]?.map((skill, index) => (
+            <div className="col-lg-4 col-md-6 mb-4" key={index}>
+              <div className="bg-white rounded-lg shadow p-4 skill-card-desktop">
+                <h2 className="h5 font-weight-bold text-center mb-4 text-dark skill-name">{skill.name}</h2>
 
-            <div className="circular-progress mx-auto" data-percentage={skill.value}>
-              <span className="circular-progress-left">
-                <span className="circular-progress-bar" style={{ 
-                  transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
-                }}></span>
-              </span>
-              <span className="circular-progress-right">
-                <span className="circular-progress-bar" style={{ 
-                  transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
-                }}></span>
-              </span>
-              <div className="circular-progress-value">
-                <div className="circular-progress-percentage">{skill.value}<sup className="small">%</sup></div>
+                <div className="circular-progress mx-auto" data-percentage={skill.value}>
+                  <span className="circular-progress-left">
+                    <span className="circular-progress-bar" style={{ 
+                      transform: `rotate(${skill.value <= 50 ? skill.value * 3.6 : 180}deg)`
+                    }}></span>
+                  </span>
+                  <span className="circular-progress-right">
+                    <span className="circular-progress-bar" style={{ 
+                      transform: `rotate(${skill.value <= 50 ? 0 : (skill.value - 50) * 3.6}deg)`
+                    }}></span>
+                  </span>
+                  <div className="circular-progress-value">
+                    <div className="circular-progress-percentage">{skill.value}<sup className="small">%</sup></div>
+                  </div>
+                </div>
+
+                <div className="skill-categories text-center mt-3">
+                  {Array.isArray(skill.category) ? (
+                    skill.category.map((cat, idx) => (
+                      <span key={idx} className="badge badge-light mr-1">
+                        {cat}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="badge badge-light mr-1">
+                      {skill.category || 'Other'}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
+      </div>
+    );
+  };
 
   const renderMobileView = () => {
     const categorySkillCounts = Object.entries(skillCategories).reduce((acc, [category, skills]) => {
@@ -119,6 +162,20 @@ const Skills = () => {
                       <div className="mobile-circular-progress-percentage">{skill.value}<sup>%</sup></div>
                     </div>
                   </div>
+                  
+                  <div className="skill-categories-mobile text-center mt-2">
+                    {Array.isArray(skill.category) ? (
+                      skill.category.map((cat, idx) => (
+                        <span key={idx} className="badge badge-light badge-sm mr-1">
+                          {cat}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="badge badge-light badge-sm mr-1">
+                        {skill.category || 'Other'}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -143,7 +200,6 @@ const Skills = () => {
           </div>
         </div>
         
-        {/* 화면 크기에 따라 다른 뷰 렌더링 */}
         {isMobile ? renderMobileView() : renderDesktopView()}
       </div>
     </section>
