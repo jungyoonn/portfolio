@@ -20,7 +20,7 @@ const Hero = () => {
           <span className="highlight">허정윤</span>입니다.
         </>
       ),
-      image: profileImg1
+      image: profileImg2
     },
     {
       subheading: "Learning is the driving force of life",
@@ -40,7 +40,7 @@ const Hero = () => {
           <span className="highlight">성장하는 인재</span>가 되겠습니다.
         </>
       ),
-      image: profileImg3
+      image: profileImg2
     }
   ];
   
