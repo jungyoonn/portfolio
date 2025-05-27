@@ -1,5 +1,5 @@
 import React from 'react';
-import hireMeImg from '../../img/slider_profile_img1.png';
+import hireMeImg from '../../img/slider_profile_img10.png';
 
 const HireMeSection = () => {
   return (

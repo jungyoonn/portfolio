@@ -3,7 +3,8 @@ import { useAnimation } from '../../hooks/useAnimation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDatabase, faMicrochip, faLanguage, faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faAws } from "@fortawesome/free-brands-svg-icons";
-import myProfileImg from '../../img/my-profile-img.jpg';
+// import myProfileImg from '../../img/my-profile-img.jpg';
+import myProfileImg from '../../img/about_profile_img.jpg';
 
 const About = () => {
   const { ref: animRef } = useAnimation();
