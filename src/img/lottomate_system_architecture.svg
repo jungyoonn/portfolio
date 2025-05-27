@@ -1,0 +1,157 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; fill: #34495e; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; font-weight: bold; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .tech-text { font-family: Arial, sans-serif; font-size: 9px; fill: #e74c3c; font-weight: bold; }
+      .arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .dashed-arrow { stroke: #95a5a6; stroke-width: 1.5; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead-gray); }
+      .aws-bg { fill: #ff9900; opacity: 0.1; }
+      .aws-border { stroke: #ff9900; stroke-width: 2; fill: none; }
+      .github-bg { fill: #24292e; opacity: 0.1; }
+      .github-border { stroke: #24292e; stroke-width: 2; fill: none; }
+      .external-bg { fill: #95a5a6; opacity: 0.1; }
+      .external-border { stroke: #95a5a6; stroke-width: 2; fill: none; }
+      .server-bg { fill: #3498db; opacity: 0.15; }
+      .server-border { stroke: #3498db; stroke-width: 2; fill: none; }
+      .db-bg { fill: #e67e22; opacity: 0.15; }
+      .db-border { stroke: #e67e22; stroke-width: 2; fill: none; }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+    
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#95a5a6" />
+    </marker>
+  </defs>
+
+  <!-- 제목 -->
+  <text x="600" y="30" class="title" text-anchor="middle">LottoMate System Architecture</text>
+  <text x="600" y="50" class="subtitle" text-anchor="middle">CI/CD Pipeline with Docker & AWS Infrastructure</text>
+
+  <!-- GitHub Actions 영역 -->
+  <rect x="50" y="80" width="280" height="120" class="github-bg" rx="10"/>
+  <rect x="50" y="80" width="280" height="120" class="github-border" rx="10"/>
+  <text x="190" y="105" class="label" text-anchor="middle">GitHub Repository</text>
+  
+  <!-- Frontend Repository -->
+  <rect x="70" y="120" width="100" height="60" fill="#f8f9fa" stroke="#6c757d" stroke-width="1" rx="5"/>
+  <text x="120" y="140" class="small-text" text-anchor="middle">Frontend</text>
+  <text x="120" y="155" class="small-text" text-anchor="middle">(React)</text>
+  <text x="120" y="170" class="tech-text" text-anchor="middle">GitHub Actions</text>
+  
+  <!-- Backend Repository -->
+  <rect x="190" y="120" width="100" height="60" fill="#f8f9fa" stroke="#6c757d" stroke-width="1" rx="5"/>
+  <text x="240" y="140" class="small-text" text-anchor="middle">Backend</text>
+  <text x="240" y="155" class="small-text" text-anchor="middle">(Spring Boot)</text>
+  <text x="240" y="170" class="tech-text" text-anchor="middle">GitHub Actions</text>
+
+  <!-- Docker Hub -->
+  <rect x="400" y="120" width="120" height="60" fill="#0db7ed" opacity="0.1" stroke="#0db7ed" stroke-width="2" rx="5"/>
+  <text x="460" y="140" class="label" text-anchor="middle">Docker Hub</text>
+  <text x="460" y="155" class="small-text" text-anchor="middle">Container Registry</text>
+  <text x="460" y="170" class="tech-text" text-anchor="middle">Docker Images</text>
+
+  <!-- AWS 클라우드 영역 -->
+  <rect x="50" y="250" width="700" height="400" class="aws-bg" rx="15"/>
+  <rect x="50" y="250" width="700" height="400" class="aws-border" rx="15"/>
+  <text x="400" y="280" class="label" text-anchor="middle" fill="#ff9900">AWS Cloud</text>
+
+  <!-- EC2 인스턴스 -->
+  <rect x="100" y="320" width="600" height="280" class="server-bg" rx="10"/>
+  <rect x="100" y="320" width="600" height="280" class="server-border" rx="10"/>
+  <text x="400" y="345" class="label" text-anchor="middle">EC2 Instance (Ubuntu)</text>
+
+  <!-- Frontend 서버 -->
+  <rect x="130" y="370" width="200" height="100" fill="#61dafb" opacity="0.2" stroke="#61dafb" stroke-width="2" rx="8"/>
+  <text x="230" y="390" class="label" text-anchor="middle">Frontend Server</text>
+  <text x="230" y="410" class="small-text" text-anchor="middle">React App</text>
+  <text x="230" y="425" class="small-text" text-anchor="middle">NginX</text>
+  <text x="230" y="440" class="tech-text" text-anchor="middle">lottomate.eeerrorcode.com</text>
+  <text x="230" y="455" class="tech-text" text-anchor="middle">Port: 80/443</text>
+
+  <!-- Backend 서버 -->
+  <rect x="370" y="370" width="200" height="100" fill="#6db33f" opacity="0.2" stroke="#6db33f" stroke-width="2" rx="8"/>
+  <text x="470" y="390" class="label" text-anchor="middle">Backend Server</text>
+  <text x="470" y="410" class="small-text" text-anchor="middle">Spring Boot</text>
+  <text x="470" y="425" class="small-text" text-anchor="middle">RESTful API</text>
+  <text x="470" y="440" class="tech-text" text-anchor="middle">lottomateapi.eeerrorcode.com</text>
+  <text x="470" y="455" class="tech-text" text-anchor="middle">Port: 8080</text>
+
+  <!-- 데이터베이스 -->
+  <rect x="130" y="500" width="440" height="80" class="db-bg" rx="8"/>
+  <rect x="130" y="500" width="440" height="80" class="db-border" rx="8"/>
+  <text x="350" y="525" class="label" text-anchor="middle">AWS Aurora RDS</text>
+  <text x="350" y="545" class="small-text" text-anchor="middle">MariaDB Compatible</text>
+  <text x="350" y="560" class="tech-text" text-anchor="middle">사용자 데이터, 복권 데이터, 당첨 이력</text>
+
+  <!-- 외부 서비스들 -->
+  <rect x="850" y="200" width="300" height="400" class="external-bg" rx="10"/>
+  <rect x="850" y="200" width="300" height="400" class="external-border" rx="10"/>
+  <text x="1000" y="230" class="label" text-anchor="middle">External Services</text>
+
+  <!-- 동행복권 사이트 -->
+  <rect x="880" y="260" width="240" height="60" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="1" rx="5"/>
+  <text x="1000" y="280" class="small-text" text-anchor="middle">동행복권 공식 사이트</text>
+  <text x="1000" y="295" class="small-text" text-anchor="middle">당첨 번호 데이터</text>
+  <text x="1000" y="310" class="tech-text" text-anchor="middle">Web Crawling</text>
+
+  <!-- 포트원 API -->
+  <rect x="880" y="340" width="240" height="60" fill="#4ecdc4" opacity="0.2" stroke="#4ecdc4" stroke-width="1" rx="5"/>
+  <text x="1000" y="360" class="small-text" text-anchor="middle">포트원 (PortOne)</text>
+  <text x="1000" y="375" class="small-text" text-anchor="middle">결제 API</text>
+  <text x="1000" y="390" class="tech-text" text-anchor="middle">Payment Gateway</text>
+
+  <!-- 토스페이먼츠 -->
+  <rect x="880" y="420" width="240" height="60" fill="#0050ff" opacity="0.2" stroke="#0050ff" stroke-width="1" rx="5"/>
+  <text x="1000" y="440" class="small-text" text-anchor="middle">토스페이먼츠</text>
+  <text x="1000" y="455" class="small-text" text-anchor="middle">PG사</text>
+  <text x="1000" y="470" class="tech-text" text-anchor="middle">실제 결제 처리</text>
+
+  <!-- 사용자 -->
+  <rect x="50" y="700" width="150" height="60" fill="#9b59b6" opacity="0.2" stroke="#9b59b6" stroke-width="2" rx="8"/>
+  <text x="125" y="720" class="label" text-anchor="middle">사용자</text>
+  <text x="125" y="740" class="small-text" text-anchor="middle">웹 브라우저</text>
+  <text x="125" y="755" class="tech-text" text-anchor="middle">복권 구매 및 관리</text>
+
+  <!-- 화살표들 -->
+  <!-- CI/CD 파이프라인 -->
+  <line x1="170" y1="150" x2="400" y2="150" class="arrow"/>
+  <text x="285" y="145" class="small-text" text-anchor="middle">Push to main</text>
+  
+  <line x1="520" y1="150" x2="600" y2="320" class="arrow"/>
+  <text x="570" y="235" class="small-text" text-anchor="middle">Deploy</text>
+
+  <!-- 사용자 → 프론트엔드 -->
+  <line x1="200" y1="730" x2="230" y2="470" class="arrow"/>
+  <text x="205" y="600" class="small-text" text-anchor="middle">HTTPS</text>
+
+  <!-- 프론트엔드 ↔ 백엔드 -->
+  <line x1="330" y1="420" x2="370" y2="420" class="arrow"/>
+  <line x1="370" y1="440" x2="330" y2="440" class="arrow"/>
+  <text x="350" y="415" class="small-text" text-anchor="middle">API</text>
+
+  <!-- 백엔드 ↔ 데이터베이스 -->
+  <line x1="470" y1="470" x2="470" y2="500" class="arrow"/>
+  <line x1="450" y1="500" x2="450" y2="470" class="arrow"/>
+  <text x="430" y="485" class="small-text" text-anchor="middle">SQL</text>
+
+  <!-- 백엔드 → 외부 서비스들 -->
+  <line x1="570" y1="400" x2="880" y2="290" class="dashed-arrow"/>
+  <text x="725" y="340" class="small-text" text-anchor="middle">크롤링</text>
+
+  <line x1="570" y1="420" x2="880" y2="370" class="dashed-arrow"/>
+  <text x="725" y="390" class="small-text" text-anchor="middle">결제 API</text>
+
+  <!-- 포트원 → 토스페이먼츠 -->
+  <line x1="1000" y1="400" x2="1000" y2="420" class="dashed-arrow"/>
+  <text x="1020" y="410" class="small-text">PG 연동</text>
+
+  <!-- 범례 -->
+  <rect x="50" y="680" width="300" height="15" fill="white" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="55" y="690" class="small-text">🔹 실선: 직접 연결  🔹 점선: API 호출  🔹 진행중: 정기구매 스케줄러 (미구현)</text>
+</svg>
