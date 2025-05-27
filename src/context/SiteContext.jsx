@@ -25,6 +25,8 @@ import boardArchitecture from '../img/board-architecture.svg'
 import boardList from '../img/board_list.png'
 import boardWrite from '../img/board_write.png'
 import lottomateArchitecture from '../img/lottomate_systemarchitecture.svg';
+import lottomateCICD from '../img/lottomate_cicd.jpg';
+import lottomateNumberPicker from '../img/lottomate_number_picker.jpg';
 import { 
   faDatabase, 
   faDesktop, 
@@ -84,120 +86,192 @@ const initialState = {
       deploy: 'AWS, Docker, GitHub Actions, Aurora RDS, NginX',
       image: lottomateBackground,
       position: '팀원',
-      role: '초기 기획 및 설계, 전반적인 프론트엔드 디자인 및 컴포넌트 설계, 백엔드 CI/CD 파이프라인 구성, 인프라 구축, 구독과 결제',
+      role: '전반적인 프론트엔드 스타일시트 및 컴포넌트 설계, 백엔드 CI/CD 파이프라인 구성, 인프라 구축, 구독과 결제',
       completed: '개발 진행 중 (2025.04 ~ )',
-      description: '동행복권 구매의 불편함을 해소하고 데이터 기반의 인사이트를 제공하는 온라인 구매 대행 서비스입니다. 사용자는 직접 번호를 선택하거나 시스템이 추천하는 번호로 복권을 구매할 수 있으며, 역대 당첨 번호 분석을 통한 통계 정보와 각 번호의 출현 빈도를 제공합니다. 구독 기반의 정기 구매 서비스를 통해 주 1~3회 자동 구매가 가능하며, 당첨 결과 자동 확인 및 알림 기능을 제공합니다. Docker와 GitHub Actions을 활용한 CI/CD 파이프라인으로 개발부터 배포까지 완전 자동화된 DevOps 환경을 구축했으며, AWS Aurora RDS를 통해 대용량 당첨 데이터 처리와 확장 가능한 서비스 아키텍처를 구현했습니다. 현재 핵심 기능인 복권 구매, 당첨 조회, 데이터 분석 기능이 완료되었으며, 구독 서비스와 결제 시스템 고도화 작업을 진행 중입니다.',
-      challenge: "복권 구매의 물리적 제약과 당첨 확률에 대한 정보 부족 문제를 해결하고, 사용자가 편리하게 복권을 관리할 수 있는 플랫폼을 구축하는 것이 목표였습니다. 특히 20년 이상의 역대 당첨 데이터를 효율적으로 처리하고, 정기 구매 스케줄링, 실시간 당첨 확인 등 복잡한 비즈니스 로직을 안정적으로 구현해야 했습니다.",
-      solution: "현대적인 클라우드 네이티브 아키텍처와 마이크로서비스 지향적 설계를 적용했습니다. 프론트엔드는 React로 사용자 친화적인 SPA를 구현하고, 백엔드는 Spring Boot로 RESTful API를 설계했습니다. 프론트엔드와 백엔드를 독립적인 도메인으로 분리하여 개발하고, Docker 컨테이너화를 통해 배포 환경의 일관성을 확보했습니다. GitHub Actions을 활용한 CI/CD 파이프라인으로 코드 푸시부터 배포까지 완전 자동화했으며, AWS Aurora RDS를 통해 확장 가능한 데이터베이스 환경을 구축했습니다.",
-      problem: "개발 초기 단계에서 대용량 당첨 데이터 처리 시 성능 저하 문제가 발생했습니다. 20년치 당첨 번호 데이터를 조회할 때 초기 로딩 시간이 5초 이상 소요되었고, CI/CD 파이프라인 구성 과정에서 Docker 컨테이너 간 환경 변수 관리와 네트워크 설정에 어려움을 겪었습니다. 또한 프론트엔드와 백엔드의 도메인 분리 과정에서 CORS 이슈와 쿠키/세션 관리 문제가 발생했습니다.",
-      resolve: "데이터베이스 성능 최적화를 위해 당첨 번호 테이블에 복합 인덱스를 생성하고, Spring Boot의 JPA 캐싱 기능을 활용하여 자주 조회되는 데이터를 메모리에 캐싱했습니다. CI/CD 파이프라인에서는 Docker Compose를 활용해 환경 변수를 체계적으로 관리하고, GitHub Secrets를 통해 민감한 정보를 안전하게 처리했습니다. 도메인 분리 이슈는 Spring Security의 CORS 설정을 상세히 구성하고, JWT 기반 인증으로 세션 의존성을 제거하여 해결했습니다. 이러한 최적화를 통해 데이터 조회 시간을 1초 이내로 단축하고 배포 안정성을 크게 향상시켰습니다.",
-      collaboration: "팀원으로서 초기 기획 단계부터 참여하여 서비스 아이디어 구체화와 기술 스택 선정에 기여했습니다. 프론트엔드 개발과 인프라 구축을 주로 담당하면서 팀원들과 Discord와 GitHub을 통해 지속적으로 소통했습니다. 주 2회 온라인 회의를 통해 진행 상황을 공유하고, 각자 담당 파트의 이슈와 해결 방안을 논의했습니다. 특히 CI/CD 파이프라인 구축과 AWS 인프라 설정 과정에서 팀원들에게 기술 가이드를 제공하고, 코드 리뷰를 통해 프로젝트 품질 향상에 기여했습니다.",
-      deploymentDetails: "AWS EC2 인스턴스에 Docker 컨테이너로 배포하고, NginX를 리버스 프록시 및 정적 파일 서버로 구성했습니다. 프론트엔드(lottomate.eeerrorcode.com)와 백엔드 API(lottomateapi.eeerrorcode.com)를 독립적인 도메인으로 분리하여 서비스하고 있습니다. GitHub Actions을 통한 자동 배포 파이프라인으로 main 브랜치 푸시 시 Docker Hub에 이미지를 빌드하고 EC2 인스턴스에 자동 배포됩니다. SSL 인증서를 적용하여 HTTPS 통신을 보장하고, 데이터베이스는 AWS Aurora RDS의 자동 백업과 스케일링 기능을 활용하고 있습니다.",
-      learning: "팀 프로젝트를 통해 협업 기반의 클라우드 네이티브 개발 경험을 쌓을 수 있었습니다. 팀원들과 함께 Docker 컨테이너화, GitHub Actions을 통한 CI/CD 파이프라인 구축, AWS 클라우드 서비스 활용 등 현대적인 개발 및 배포 기술을 학습하고 적용했습니다. 프론트엔드 개발을 주도하면서 사용자 경험 최적화와 컴포넌트 설계에 대한 깊은 이해를 얻었고, 인프라 구축 과정에서 DevOps 실무 역량을 크게 향상시켰습니다. 또한 팀원들과의 기술 공유와 코드 리뷰를 통해 다양한 관점에서 문제를 해결하는 능력을 기를 수 있었습니다.",
-      results: "팀원으로서 담당한 프론트엔드와 인프라 부분이 성공적으로 구현되어 현재 70% 완성도에 도달했습니다. 구축한 CI/CD 파이프라인을 통해 팀 전체의 개발 효율성이 크게 향상되었고, Docker 컨테이너화로 모든 팀원이 일관된 개발 환경에서 작업할 수 있게 되었습니다. 프론트엔드 컴포넌트 설계와 사용자 인터페이스 최적화를 통해 직관적이고 사용하기 쉬운 서비스를 구현했으며, AWS 인프라 구축으로 확장 가능하고 안정적인 서비스 기반을 마련했습니다. 현재 팀원들과 함께 베타 테스트를 진행하며 사용자 피드백을 수집하고 있고, 완성 후 실제 서비스 런칭을 목표로 하고 있습니다.",
+      description: '동행복권 구매의 불편함을 해소하고 데이터 기반의 인사이트를 제공하는 온라인 구매 대행 서비스입니다. 사용자는 직접 번호를 선택하거나 시스템이 추천하는 번호로 복권을 구매할 수 있으며, 역대 당첨 번호 분석을 통한 통계 정보와 각 번호의 출현 빈도를 제공할 예정입니다. 구독 기반의 정기 구매 서비스를 통해 주 1~3회 자동 구매가 가능하며, 당첨 결과 자동 확인 및 알림 기능을 구현할 계획입니다. Docker와 GitHub Actions을 활용한 CI/CD 파이프라인으로 개발부터 배포까지 자동화된 DevOps 환경을 구축했으며, AWS Aurora RDS를 통해 대용량 당첨 데이터 처리와 확장 가능한 서비스 아키텍처를 구현 중입니다. 현재 핵심 기능인 복권 구매, 당첨 조회, 데이터 분석 기능을 구현 중이며, 구독 서비스와 결제 시스템 고도화 작업 및 미완성 기능 구현을 진행 중입니다.',
+      challenge: "복권 구매의 물리적 제약과 당첨 확률에 대한 정보 부족 문제를 해결하고, 사용자가 편리하게 복권을 관리할 수 있는 플랫폼을 구축하는 것이 목표입니다. 특히 20년 이상의 역대 당첨 데이터를 효율적으로 처리하고, 정기 구매 스케줄링, 실시간 당첨 확인 등의 기능을 구현하는 것이 주요 과제입니다.",
+      solution: "현대적인 분리형 아키텍처와 클라우드 기반 배포를 적용했습니다. 프론트엔드는 React로 사용자 친화적인 SPA를 구현하고, 백엔드는 Spring Boot로 RESTful API를 설계했습니다. 프론트엔드와 백엔드를 독립적인 도메인으로 분리하여 개발하고, Docker 컨테이너화를 통해 배포 환경의 일관성을 확보했습니다. GitHub Actions을 활용한 CI/CD 파이프라인으로 코드 푸시부터 배포까지 자동화하고 있으며, AWS Aurora RDS를 통해 확장 가능한 데이터베이스 환경을 구축했습니다.",
+      problem: "개발 환경과 배포 환경에서의 시크릿 키 관리 이슈가 발생했습니다. 개발 시에는 application.yml에 직접 시크릿 키를 작성했는데, 보안을 위해 .gitignore에 추가하여 GitHub에 업로드하지 않았습니다. 하지만 배포 환경에서는 해당 시크릿 키 정보가 없어 애플리케이션이 정상적으로 동작하지 않는 문제가 발생했습니다. 또한 프론트엔드와 백엔드의 도메인 분리 과정에서 CORS 이슈와 쿠키/세션 관리 문제가 발생했습니다.",
+      resolve: "시크릿 키 관리 문제는 개발 환경과 배포 환경을 명확히 분리하여 해결했습니다. 개발 환경에서는 application-local.yml에 시크릿 키를 직접 설정하고 .gitignore에 추가하여 보안을 유지했으며, 배포 환경에서는 GitHub Secrets에 모든 민감한 정보를 등록하고 GitHub Actions를 통해 Docker 컨테이너 실행 시 환경 변수로 주입하도록 구성했습니다. 도메인 분리 이슈는 Spring Security의 CORS 설정을 상세히 구성하고, JWT 기반 인증으로 세션 의존성을 제거하여 해결했습니다. 이러한 최적화를 통해 배포 안정성을 향상시키고 도메인 간 통신 문제를 해결했습니다.",
+      collaboration: "팀원으로서 초기 기획 단계부터 참여하여 서비스 아이디어 구체화와 기술 스택 선정에 기여했습니다. 컴포넌트 설계와 인프라 구축을 주로 담당하면서 팀원들과 Discord와 GitHub을 통해 지속적으로 소통했습니다. 주 2회 오프라인 회의를 통해 진행 상황을 공유하고, 각자 담당 파트의 이슈와 해결 방안을 논의했습니다. 특히 CI/CD 파이프라인 구축과 AWS 인프라 설정 과정에서 팀원들에게 기술 가이드를 제공하고, 코드 리뷰를 통해 프로젝트 품질 향상에 기여했습니다.",
+      deploymentDetails: "AWS EC2 인스턴스에 Docker 컨테이너로 배포하고, NginX를 리버스 프록시 및 정적 파일 서버로 구성했습니다. 프론트엔드(lottomate.eeerrorcode.com)와 백엔드 API(lottomateapi.eeerrorcode.com)를 독립적인 도메인으로 분리하여 서비스하고 있습니다. GitHub Actions을 통한 자동 배포 파이프라인으로 main 브랜치 푸시 시 Docker Hub에 이미지를 빌드하고 EC2 인스턴스에 자동 배포됩니다.",
+      learning: "팀 프로젝트를 통해 협업 기반의 현대적인 분리형 아키텍처와 클라우드 기반 배포 경험을 쌓을 수 있었습니다. 팀원들과 함께 Docker 컨테이너화, GitHub Actions을 통한 CI/CD 파이프라인 구축, AWS 클라우드 서비스 활용 등 현대적인 개발 및 배포 기술을 학습하고 적용했습니다. 프론트엔드 개발을 주도하면서 사용자 경험 최적화와 컴포넌트 설계에 대한 깊은 이해를 얻었고, 인프라 구축 과정에서 DevOps 실무 역량을 크게 향상시켰습니다. 또한 팀원들과의 기술 공유와 코드 리뷰를 통해 다양한 관점에서 문제를 해결하는 능력을 기를 수 있었습니다.",
+      results: "팀원으로서 담당한 프론트엔드와 인프라 부분을 중심으로 현재 65% 완성도까지 진행했습니다. 구축한 CI/CD 파이프라인을 통해 팀 전체의 개발 효율성이 향상되었고, Docker 컨테이너화로 팀원들이 일관된 개발 환경에서 작업할 수 있는 기반을 마련했습니다. 프론트엔드에서는 기본적인 사용자 인터페이스와 주요 컴포넌트들이 구현되었으며, AWS 인프라는 안정적으로 구축되어 개발과 테스트가 원활하게 진행되고 있습니다. 현재 각자 담당 파트의 기능 구현을 계속 진행하고 있으며, 주요 기능들이 완성되면 통합 테스트와 사용자 피드백 수집 단계로 넘어갈 예정입니다.",
       githubLink: "https://github.com/jungyoonn/lotto_mate_backend", 
       projectLink: "https://lottomate.eeerrorcode.com/",
       features: [
         {
-          title: "복권 번호 생성 및 구매 시스템",
-          image: `${pilllawSignin}`, // 실제 이미지 변수로 교체 필요
-          description: "사용자가 직접 번호를 선택하거나 시스템이 랜덤으로 생성한 번호로 복권을 구매할 수 있는 기능입니다. 당첨 확률 기반 추천 알고리즘을 통해 통계적으로 유리한 번호 조합을 제안합니다.",
-          tech: ["React", "Spring Boot", "JPA", "알고리즘"],
-          codeSnippet: `@Service
-public class LottoNumberService {
+          title: "복권 번호 기본 기능 구현",
+          image: `${lottomateNumberPicker}`,
+          description: "사용자가 직접 번호를 선택하거나 시스템이 랜덤으로 생성한 번호로 복권을 구매할 수 있는 기본 기능을 자바스크립트로 구현했습니다. 통계 기반 추천 알고리즘은 현재 개발 진행 중입니다.",
+          tech: ["React", "Spring Boot", "JPA"],
+          codeSnippet: `
+// 사용자 선택 번호 상태
+const [userNumbers, setUserNumbers] = useState(Array(45).fill(false));
+const [selectedCount, setSelectedCount] = useState(0);
+
+// 랜덤 생성 번호 상태
+const [randomNumbers, setRandomNumbers] = useState([]);
+
+// 인기 번호 상태 (실제로는 API에서 가져올 수 있음)
+// const [popularNumbers, setPopularNumbers] = useState([3, 11, 23, 28, 33, 45]);
+const popularNumbers = [3, 11, 23, 28, 33, 45];
+
+// 컴포넌트 마운트 시 랜덤 번호 생성
+useEffect(() => {
+  generateRandomNumbers();
+}, []);
+
+// 사용자 번호 선택 처리
+const handleNumberSelect = (index) => {
+  if (userNumbers[index] || selectedCount < 6) {
+    const newUserNumbers = [...userNumbers];
+    newUserNumbers[index] = !newUserNumbers[index];
+    setUserNumbers(newUserNumbers);
     
-    @Autowired
-    private WinningNumberRepository winningNumberRepository;
-    
-    // 랜덤 번호 생성
-    public List<Integer> generateRandomNumbers() {
-        Set<Integer> numbers = new HashSet<>();
-        Random random = new Random();
-        
-        while (numbers.size() < 6) {
-            numbers.add(random.nextInt(45) + 1);
-        }
-        
-        return numbers.stream()
-                      .sorted()
-                      .collect(Collectors.toList());
+    // 선택된 번호 개수 업데이트
+    setSelectedCount(newUserNumbers.filter(selected => selected).length);
+  }
+};
+
+// 랜덤 번호 생성 함수
+const generateRandomNumbers = () => {
+  const numbers = [];
+  while (numbers.length < 6) {
+    const randomNum = Math.floor(Math.random() * 45) + 1;
+    if (!numbers.includes(randomNum)) {
+      numbers.push(randomNum);
     }
-    
-    // 통계 기반 추천 번호 생성
-    public List<Integer> generateRecommendedNumbers() {
-        // 최근 100회 당첨 번호 분석
-        List<WinningNumber> recentWinnings = 
-            winningNumberRepository.findTop100ByOrderByDrawDateDesc();
-        
-        Map<Integer, Long> frequencyMap = recentWinnings.stream()
-            .flatMap(w -> w.getNumbers().stream())
-            .collect(Collectors.groupingBy(
-                Function.identity(), 
-                Collectors.counting()
-            ));
-        
-        // 빈도가 적은 번호 우선 선택 (확률론적 접근)
-        return frequencyMap.entrySet().stream()
-            .sorted(Map.Entry.comparingByValue())
-            .limit(6)
-            .map(Map.Entry::getKey)
-            .sorted()
-            .collect(Collectors.toList());
-    }
-}`
-        },
-        {
-          title: "당첨 번호 조회 및 통계 분석",
-          image: `${pilllawSignin}`, // 실제 이미지 변수로 교체 필요
-          description: "역대 당첨 번호 데이터를 기반으로 각 번호의 출현 빈도, 연속 출현 패턴, 홀짝 비율 등 다양한 통계 정보를 제공합니다. 동행복권 사이트에서 크롤링한 실시간 데이터를 활용합니다.",
-          tech: ["React", "Chart.js", "Spring Boot", "Web Crawling"],
-          codeSnippet: `// React 컴포넌트 - 통계 차트
-const StatisticsChart = () => {
-  const [frequencyData, setFrequencyData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  }
+  // 오름차순 정렬
+  numbers.sort((a, b) => a - b);
+  setRandomNumbers(numbers);
+};
 
-  useEffect(() => {
-    const fetchStatistics = async () => {
-      try {
-        const response = await axios.get('/api/statistics/frequency');
-        setFrequencyData(response.data);
-      } catch (error) {
-        console.error('통계 데이터 로딩 실패:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+// 사용자 선택 번호 초기화
+const resetUserSelection = () => {
+  setUserNumbers(Array(45).fill(false));
+  setSelectedCount(0);
+};
 
-    fetchStatistics();
-  }, []);
-
-  const chartData = {
-    labels: frequencyData.map(item => \`\${item.number}번\`),
-    datasets: [{
-      label: '출현 빈도',
-      data: frequencyData.map(item => item.frequency),
-      backgroundColor: 'rgba(54, 162, 235, 0.6)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1
-    }]
-  };
-
-  if (loading) return <div>로딩 중...</div>;
-
-  return (
-    <div className="statistics-container">
-      <h3>번호별 출현 빈도 분석</h3>
-      <Bar data={chartData} options={{
-        responsive: true,
-        plugins: {
-          legend: { position: 'top' },
-          title: { display: true, text: '최근 100회 당첨 번호 분석' }
-        }
-      }} />
-    </div>
-  );
+// 번호 색상 결정 함수
+const getBallColorClass = (number) => {
+  if (number <= 10) return 'lotto-ball-1';
+  if (number <= 20) return 'lotto-ball-2';
+  if (number <= 30) return 'lotto-ball-3';
+  if (number <= 40) return 'lotto-ball-4';
+  return 'lotto-ball-5';
 };`
         },
+        {
+          title: "백엔드의 CI/CD 자동 배포 파이프라인",
+          image: `${lottomateCICD}`, 
+          description: "GitHub Actions을 활용한 자동화된 배포 시스템입니다. 코드 푸시 시 Docker 이미지 빌드, 테스트, 배포가 자동으로 진행되며, 프론트엔드와 백엔드가 독립적으로 배포됩니다.",
+          tech: ["GitHub Actions", "Docker", "AWS EC2", "NginX"],
+          codeSnippet: `name: Deploy Spring Boot to Docker Hub
+on:
+  push:
+    branches:
+      - master
+
+env:
+  DOCKER_IMAGE_NAME: jungyoonn/lottomate
+  DOCKER_TAG: latest
+  CONTAINER_NAME: lottomate-backend-container
+
+jobs:
+  build-and-push-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      with:
+        gradle-version: 8.13
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew build -x test
+
+    - name: Log in to Docker Hub
+      run: echo "\${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u \${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+    - name: Build Docker Image
+      run: |
+        docker build \\
+          --build-arg RDS_ENDPOINT=\${{ secrets.RDS_ENDPOINT }} \\
+          --build-arg RDS_DB_NAME=\${{ secrets.RDS_DB_NAME }} \\
+          --build-arg RDS_USERNAME=\${{ secrets.RDS_USERNAME }} \\
+          --build-arg RDS_PASSWORD=\${{ secrets.RDS_PASSWORD }} \\
+          --build-arg GOOGLE_REDIRECT_URI=\${{ secrets.GOOGLE_REDIRECT_URI }} \\
+          --build-arg GOOGLE_CLIENT_ID=\${{ secrets.GOOGLE_CLIENT_ID }} \\
+          --build-arg GOOGLE_CLIENT_SECRET=\${{ secrets.GOOGLE_CLIENT_SECRET }} \\
+          --build-arg KAKAO_REDIRECT_URI=\${{ secrets.KAKAO_REDIRECT_URI }} \\
+          --build-arg KAKAO_CLIENT_ID=\${{ secrets.KAKAO_CLIENT_ID }} \\
+          --build-arg KAKAO_CLIENT_SECRET=\${{ secrets.KAKAO_CLIENT_SECRET }} \\
+          --build-arg IAMPORT_API_KEY=\${{ secrets.IAMPORT_API_KEY }} \\
+          --build-arg IAMPORT_API_SECRET=\${{ secrets.IAMPORT_API_SECRET }} \\
+          -t \${{ env.DOCKER_IMAGE_NAME }}:\${{ env.DOCKER_TAG }} .
+
+    - name: Push Docker Image to Docker Hub
+      run: docker push \${{ env.DOCKER_IMAGE_NAME }}:\${{ env.DOCKER_TAG }}
+
+  deploy-to-ec2:
+    needs: build-and-push-docker
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: \${{ secrets.EC2_PUBLIC_IP }}
+        username: ubuntu
+        key: \${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        script: |
+          CONTAINER_NAME="\${{ env.CONTAINER_NAME }}"
+          IMAGE_NAME="\${{ env.DOCKER_IMAGE_NAME }}:\${{ env.DOCKER_TAG }}"
+
+          # 기존 컨테이너 중지 및 삭제
+          if sudo docker ps -a --format "{{.Names}}" | grep -w "$CONTAINER_NAME"; then
+            echo "Stopping and removing existing container: $CONTAINER_NAME"
+            sudo docker stop $CONTAINER_NAME
+            sudo docker rm $CONTAINER_NAME
+          fi
+          
+          # 최신 이미지 Pull
+          echo "Pulling the latest Docker image: $IMAGE_NAME"
+          sudo docker pull $IMAGE_NAME
+          
+          # 새 컨테이너 실행 
+          echo "Starting a new container: $CONTAINER_NAME"
+          sudo docker run -d \\
+            --name $CONTAINER_NAME \\
+            -p 8082:8080 \\
+            -e RDS_ENDPOINT=\${{ secrets.RDS_ENDPOINT }} \\
+            -e RDS_DB_NAME=\${{ secrets.RDS_DB_NAME }} \\
+            -e RDS_USERNAME=\${{ secrets.RDS_USERNAME }} \\
+            -e RDS_PASSWORD=\${{ secrets.RDS_PASSWORD }} \\
+            -e GOOGLE_REDIRECT_URI=\${{ secrets.GOOGLE_REDIRECT_URI }} \\
+            -e GOOGLE_CLIENT_ID=\${{ secrets.GOOGLE_CLIENT_ID }} \\
+            -e GOOGLE_CLIENT_SECRET=\${{ secrets.GOOGLE_CLIENT_SECRET }} \\
+            -e KAKAO_REDIRECT_URI=\${{ secrets.KAKAO_REDIRECT_URI }} \\
+            -e KAKAO_CLIENT_ID=\${{ secrets.KAKAO_CLIENT_ID }} \\
+            -e KAKAO_CLIENT_SECRET=\${{ secrets.KAKAO_CLIENT_SECRET }} \\
+            -e IAMPORT_API_KEY=\${{ secrets.IAMPORT_API_KEY }} \\
+            -e IAMPORT_API_SECRET=\${{ secrets.IAMPORT_API_SECRET }} \\
+            $IMAGE_NAME`
+        }
       ],
       documents: [
         {
@@ -221,13 +295,8 @@ const StatisticsChart = () => {
       ],
       architecture: {
         diagram: `${lottomateArchitecture}`,
-        description: "LottoMate는 클라우드 네이티브 아키텍처와 현대적인 DevOps 방법론을 적용한 동행복권 구매 대행 서비스입니다. 프론트엔드와 백엔드를 분리하여 개발하고 각각 독립적인 CI/CD 파이프라인을 구축했습니다. 단일 EC2 인스턴스에서 NginX를 통해 React 앱을 서빙하고, Spring Boot API 서버와 통신하는 구조로 설계했습니다. 데이터베이스는 AWS Aurora RDS(MariaDB 호환)를 사용하여 확장성과 안정성을 확보했으며, Docker 컨테이너화를 통해 배포 환경의 일관성을 보장했습니다. GitHub Actions를 활용한 자동 배포 시스템으로 main 브랜치 푸시 시 Docker Hub를 거쳐 EC2 인스턴스에 자동으로 배포되는 완전 자동화된 파이프라인을 구현했습니다. 외부 서비스로는 동행복권 공식 사이트에서 당첨 데이터를 크롤링하고, 포트원과 토스페이먼츠를 연동하여 안전한 결제 시스템을 구축했습니다."
-      },
-      // performance: {
-      //   before: "페이지 로드 시간 4.5초, API 응답 시간 1.2초, Bundle 크기 2.8MB",
-      //   after: "페이지 로드 시간 1.2초, API 응답 시간 0.3초, Bundle 크기 980KB",
-      //   methods: "이미지 지연 로딩 기법을 도입하여 초기 로딩 속도를 개선했습니다. DB 인덱스 추가 및 쿼리 최적화를 통해 API 응답 시간을 단축했으며, 불필요한 라이브러리 제거와 코드 스플리팅을 적용해 번들 크기를 효과적으로 줄였습니다. 또한 정적 자원에 적절한 캐싱 전략을 적용하고 성능 병목 지점을 지속적으로 모니터링하여 사용자 경험을 향상시켰습니다."
-      // }
+        description: "LottoMate는 현대적인 분리형 아키텍처와 클라우드 기반 배포를 적용한 동행복권 구매 대행 서비스입니다. 프론트엔드와 백엔드를 분리하여 개발하고 각각 독립적인 CI/CD 파이프라인을 구축했습니다. 단일 EC2 인스턴스에서 NginX를 통해 React 앱을 서빙하고, Spring Boot API 서버와 통신하는 구조로 설계했습니다. 데이터베이스는 AWS Aurora RDS(MariaDB 호환)를 사용하여 확장성과 안정성을 확보했으며, Docker 컨테이너화를 통해 배포 환경의 일관성을 보장했습니다. GitHub Actions를 활용한 자동 배포 시스템으로 main 브랜치 푸시 시 Docker Hub를 거쳐 EC2 인스턴스에 자동으로 배포되는 파이프라인을 구축했습니다. 외부 서비스로는 동행복권 공식 사이트에서 당첨 데이터를 크롤링하고, 포트원과 토스페이먼츠를 연동하여 안전한 결제 시스템을 구축할 예정입니다."
+      }
     },
     {
       id: 2,
