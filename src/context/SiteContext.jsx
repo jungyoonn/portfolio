@@ -1111,95 +1111,21 @@ public:
   ],
   // Skills.jsx
   skills: [
+    // === 90-100: 전문가/마스터 수준 ===
     { 
       name: 'HTML', 
-      value: 97, 
+      value: 90, 
       category: ['Frontend'],
-      leftStyle: { transform: 'rotate(169.2deg)' },
+      leftStyle: { transform: 'rotate(144deg)' },
       rightStyle: { transform: 'rotate(180deg)' }
     },
-    { 
-      name: 'C', 
-      value: 95, 
-      category: ['Languages'],
-      leftStyle: { transform: 'rotate(162deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
+    
+    // === 80-89: 실무 숙련 수준 ===
     { 
       name: 'Spring', 
-      value: 92, 
+      value: 85, 
       category: ['Backend', 'Java Framework'],
-      leftStyle: { transform: 'rotate(151.2deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'JPA, JPQL', 
-      value: 92, 
-      category: ['Backend', 'Database'],
-      leftStyle: { transform: 'rotate(151.2deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'CSS', 
-      value: 91, 
-      category: ['Frontend'],
-      leftStyle: { transform: 'rotate(147.6deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'Nodejs', 
-      value: 90, 
-      category: ['Backend', 'Javascript Framework'],
-      leftStyle: { transform: 'rotate(144deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'Javascript', 
-      value: 89, 
-      category: ['Frontend', 'Languages'],
-      leftStyle: { transform: 'rotate(140.4deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'jQuery', 
-      value: 89, 
-      category: ['Frontend', 'Javascript Framework'],
-      leftStyle: { transform: 'rotate(140.4deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'MyBatis', 
-      value: 88, 
-      category: ['Database', 'Java Framework'],
-      leftStyle: { transform: 'rotate(136.8deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'Servlet', 
-      value: 88, 
-      category: ['Backend', 'Java Framework'],
-      leftStyle: { transform: 'rotate(136.8deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'C++', 
-      value: 88, 
-      category: ['Languages'],
-      leftStyle: { transform: 'rotate(136.8deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'JSP', 
-      value: 88, 
-      category: ['Frontend', 'Java Framework'],
-      leftStyle: { transform: 'rotate(136.8deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'SQL', 
-      value: 87, 
-      category: ['Database', 'Languages'],
-      leftStyle: { transform: 'rotate(133.2deg)' },
+      leftStyle: { transform: 'rotate(126deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
@@ -1210,73 +1136,163 @@ public:
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'Ubuntu', 
+      name: 'CSS', 
       value: 85, 
-      category: ['Infrastructure'],
+      category: ['Frontend'],
       leftStyle: { transform: 'rotate(126deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'AWS', 
+      name: 'JPA, JPQL', 
       value: 82, 
-      category: ['Infrastructure', 'Cloud'],
+      category: ['Backend', 'Database'],
       leftStyle: { transform: 'rotate(115.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'React', 
+      name: 'C', 
+      value: 82, 
+      category: ['Languages'],
+      leftStyle: { transform: 'rotate(115.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Javascript', 
       value: 80, 
-      category: ['Frontend', 'Javascript Framework'],
+      category: ['Frontend', 'Languages'],
       leftStyle: { transform: 'rotate(108deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'NginX', 
-      value: 79, 
-      category: ['Infrastructure', 'Web Server'],
-      leftStyle: { transform: 'rotate(104.4deg)' },
+      name: 'JSP', 
+      value: 80, 
+      category: ['Frontend', 'Java Framework'],
+      leftStyle: { transform: 'rotate(108deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'Mustache', 
-      value: 76, 
-      category: ['Frontend', 'Template Engine'],
-      leftStyle: { transform: 'rotate(93.6deg)' },
+      name: 'SQL', 
+      value: 80, 
+      category: ['Database', 'Languages'],
+      leftStyle: { transform: 'rotate(108deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'NoSQL', 
+      name: 'MyBatis', 
+      value: 80, 
+      category: ['Database', 'Java Framework'],
+      leftStyle: { transform: 'rotate(108deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    
+    // === 70-79: 중급 수준 ===
+    { 
+      name: 'Servlet', 
+      value: 78, 
+      category: ['Backend', 'Java Framework'],
+      leftStyle: { transform: 'rotate(100.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'C++', 
+      value: 75, 
+      category: ['Languages'],
+      leftStyle: { transform: 'rotate(90deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'React', 
+      value: 75, 
+      category: ['Frontend', 'Javascript Framework'],
+      leftStyle: { transform: 'rotate(90deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'jQuery', 
+      value: 75, 
+      category: ['Frontend', 'Javascript Framework'],
+      leftStyle: { transform: 'rotate(90deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Ubuntu', 
       value: 72, 
-      category: ['Database'],
+      category: ['Infrastructure'],
       leftStyle: { transform: 'rotate(79.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'Kotlin', 
-      value: 71, 
-      category: ['Backend', 'Languages'],
-      leftStyle: { transform: 'rotate(75.6deg)' },
-      rightStyle: { transform: 'rotate(180deg)' } 
-    },
-    { 
-      name: 'Querydsl', 
+      name: 'AWS', 
       value: 70, 
-      category: ['Backend', 'Database', 'Java Framework'],
+      category: ['Infrastructure', 'Cloud'],
       leftStyle: { transform: 'rotate(72deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
-      name: 'C#', 
+      name: 'NginX', 
+      value: 70, 
+      category: ['Infrastructure', 'Web Server'],
+      leftStyle: { transform: 'rotate(72deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    
+    // === 60-69: 기초-중급 ===
+    { 
+      name: 'Nodejs', 
       value: 68, 
-      category: ['Languages'],
+      category: ['Backend', 'Javascript Framework'],
       leftStyle: { transform: 'rotate(64.8deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     },
     { 
+      name: 'Docker', 
+      value: 65, 
+      category: ['Infrastructure', 'DevOps'],
+      leftStyle: { transform: 'rotate(54deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Mustache', 
+      value: 65, 
+      category: ['Frontend', 'Template Engine'],
+      leftStyle: { transform: 'rotate(54deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
       name: 'Thymeleaf', 
-      value: 69, 
+      value: 62, 
       category: ['Frontend', 'Template Engine', 'Java Framework'],
-      leftStyle: { transform: 'rotate(68.4deg)' },
+      leftStyle: { transform: 'rotate(43.2deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Querydsl', 
+      value: 60, 
+      category: ['Backend', 'Database', 'Java Framework'],
+      leftStyle: { transform: 'rotate(36deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    
+    // === 50-59: 기초 수준 ===
+    { 
+      name: 'NoSQL', 
+      value: 58, 
+      category: ['Database'],
+      leftStyle: { transform: 'rotate(28.8deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'Kotlin', 
+      value: 55, 
+      category: ['Backend', 'Languages'],
+      leftStyle: { transform: 'rotate(18deg)' },
+      rightStyle: { transform: 'rotate(180deg)' } 
+    },
+    { 
+      name: 'C#', 
+      value: 52, 
+      category: ['Languages'],
+      leftStyle: { transform: 'rotate(7.2deg)' },
       rightStyle: { transform: 'rotate(180deg)' } 
     }
   ],
