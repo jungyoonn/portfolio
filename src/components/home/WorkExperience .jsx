@@ -73,8 +73,8 @@ const WorkExperience = () => {
                       <img src={companyLogo} alt="Company Logo" className="img-fluid mt-3" />
                     </div>
                     <div>
-                      <h3 className="mb-1 text-dark noto-sans-kr fw-bold">{workExperience.position}</h3>
-                      <h4 className="company-name noto-sans-kr">
+                      {/* <h3 className="mb-1 text-dark noto-sans-kr fw-bold">{workExperience.position}</h3> */}
+                      <h4 className="company-name text-dark fw-bold noto-sans-kr">
                         <FontAwesomeIcon icon={faBuilding} className="mr-2" />
                         {workExperience.company}
                       </h4>
