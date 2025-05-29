@@ -81,8 +81,22 @@ const Hero = () => {
                   <div className="button-group">
                     <a href="#contact" className="btn btn-primary">Hire me</a>
                     {/* <a href="#" className="btn btn-outline-primary">Visit github</a> */}
-                    <Link to={"https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/resume_%ED%97%88%EC%A0%95%EC%9C%A4.zip"} className="btn btn-secondary">Download resume</Link>
-                    <Link to={"https://github.com/jungyoonn"} className="btn btn-outline-primary">Visit github <FontAwesomeIcon icon={faGithub} className='fa-xl' /></Link>
+                    <Link 
+                      to={"https://s3.ap-northeast-2.amazonaws.com/eeerrorcode.bucket/uploads/portfolio/resume_%ED%97%88%EC%A0%95%EC%9C%A4.pdf"} 
+                      className="btn btn-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download resume
+                    </Link>
+                    <Link 
+                      to={"https://github.com/jungyoonn"} 
+                      className="btn btn-outline-primary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit github <FontAwesomeIcon icon={faGithub} className='fa-xl' />
+                    </Link>
                   </div>
                 </div>
                 <div className="image-area col-md-5">
